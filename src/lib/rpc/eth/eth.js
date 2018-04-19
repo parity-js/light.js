@@ -4,19 +4,15 @@
 // SPDX-License-Identifier: MIT
 
 import Api from '@parity/api';
-import {
-  distinctUntilChanged,
-  map,
-  shareReplay,
-  switchMap
-} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import memoize from 'lodash/memoize';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/fromPromise';
 
-import { addSubscribedRpc } from '../../overview';
 import api from '../../api';
-import doOnSubscribe from '../../utils/doOnSubscribe';
+import {
+  addToOverview,
+  distinctReplayRefCount,
+  switchMapPromise
+} from '../../utils/operators';
 import priotization from '../../priotization';
 
 /**
@@ -27,10 +23,10 @@ import priotization from '../../priotization';
  * @returns {Observable<Array<String>>} - An Observable containing the list of accounts
  */
 export const accounts$ = priotization.accounts$.pipe(
-  switchMap(() => Observable.fromPromise(api.eth.accounts())),
+  switchMapPromise(() => api.eth.accounts()),
   map(accounts => accounts.map(Api.util.toChecksumAddress)),
-  doOnSubscribe(() => addSubscribedRpc('accounts$')),
-  shareReplay(1)
+  addToOverview('accounts$'),
+  distinctReplayRefCount()
 );
 
 /**
@@ -43,11 +39,10 @@ export const accounts$ = priotization.accounts$.pipe(
  */
 export const balanceOf$ = memoize(address =>
   priotization.balanceOf$.pipe(
-    switchMap(() => Observable.fromPromise(api.eth.getBalance(address))),
+    switchMapPromise(() => api.eth.getBalance(address)),
     map(_ => +_), // Return number instead of BigNumber
-    doOnSubscribe(() => addSubscribedRpc('balanceOf$')),
-    distinctUntilChanged(),
-    shareReplay(1)
+    addToOverview('balanceOf$'),
+    distinctReplayRefCount()
   )
 );
 
@@ -58,8 +53,8 @@ export const balanceOf$ = memoize(address =>
  */
 export const defaultAccount$ = accounts$.pipe(
   map(accounts => accounts[0]),
-  doOnSubscribe(() => addSubscribedRpc('balanceOf$')),
-  distinctUntilChanged()
+  addToOverview('defaultAccount$', 'accounts$'),
+  distinctReplayRefCount()
 );
 
 /**
@@ -69,14 +64,16 @@ export const defaultAccount$ = accounts$.pipe(
  *
  * @returns {Observable<Number>} - An Observable containing the block height
  */
-export const height$ = priotization.height$;
+export const height$ = priotization.height$.pipe(addToOverview('height$'));
 
 /**
  * Alias for {@link height$}
  */
-export const blockNumber$ = height$;
+export const blockNumber$ = height$.pipe(
+  addToOverview('blockNumber', 'height$')
+);
 
 /**
  * Alias for {@link defaultAccount$}
  */
-export const me$ = defaultAccount$;
+export const me$ = defaultAccount$.pipe(addToOverview('me$', 'accounts$'));

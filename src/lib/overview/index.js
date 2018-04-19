@@ -11,9 +11,13 @@ const subscribed = {};
 /**
  * Add an Observable from the rpc/ folder into the subscribed object.
  * This function should be called every time an Observable is subscribed to.
+ *
+ * @param {String} rpc - The RPC Observable name.
+ * @param {String} [source] - The source Observable `rpc` is listening to
+ * (optional). If none is specified, will default to `rpc`.
  */
-export const addSubscribedRpc = rpc => {
-  subscribed[rpc] = priotization[rpc].metadata.name;
+export const addSubscribedRpc = (rpc, source) => {
+  subscribed[rpc] = priotization[source || rpc].metadata.name;
 };
 
 /**
@@ -22,6 +26,7 @@ export const addSubscribedRpc = rpc => {
  */
 if (typeof window !== 'undefined') {
   window.parity = {
+    ...window.parity,
     rpcOverview() {
       return subscribed;
     }

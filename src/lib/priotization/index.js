@@ -7,6 +7,7 @@ import {
   onAccountsChanged$,
   onEvery2Blocks$,
   onEveryBlock$,
+  onEvery2Seconds$,
   onlyAtStartup$
 } from './on';
 
@@ -16,7 +17,8 @@ const priotization = {
   blockNumber$: onEveryBlock$,
   chainName$: onlyAtStartup$,
   chainStatus$: onEveryBlock$,
-  height$: onEveryBlock$
+  height$: onEveryBlock$,
+  nodeHealth$: onEvery2Seconds$
 };
 
 export default priotization;

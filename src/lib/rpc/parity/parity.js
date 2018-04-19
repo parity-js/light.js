@@ -3,15 +3,14 @@
 
 // SPDX-License-Identifier: MIT
 
-import { distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/observable/defer';
-import 'rxjs/add/observable/fromPromise';
 
-import { addSubscribedRpc } from '../../overview';
 import api from '../../api';
-import doOnSubscribe from '../../utils/doOnSubscribe';
+import {
+  addToOverview,
+  distinctReplayRefCount,
+  switchMapPromise
+} from '../../utils/operators';
 import priotization from '../../priotization';
 
 /**
@@ -22,8 +21,8 @@ import priotization from '../../priotization';
  * @returns {Observable<String>} - An Observable containing the name of the current chain.
  */
 export const chainName$ = priotization.chainName$.pipe(
-  switchMap(() => Observable.fromPromise(api.parity.netChain())),
-  doOnSubscribe(() => addSubscribedRpc('chainName$'))
+  switchMapPromise(() => api.parity.netChain()),
+  addToOverview('chainName$')
 );
 
 /**
@@ -34,9 +33,21 @@ export const chainName$ = priotization.chainName$.pipe(
  * @returns {Observable<String>} - An Observable containing the status.
  */
 export const chainStatus$ = priotization.chainStatus$.pipe(
-  switchMap(() => Observable.fromPromise(api.parity.chainStatus())),
-  doOnSubscribe(() => addSubscribedRpc('chainStatus$')),
-  distinctUntilChanged()
+  switchMapPromise(() => api.parity.chainStatus()),
+  addToOverview('chainStatus$'),
+  distinctReplayRefCount()
+);
+
+/**
+ * Get the node's health.
+ *
+ * Calls parity_nodeHealth.
+ *
+ * @returns {Observable<Object>} - An Observable containing the health.
+ */
+export const nodeHealth$ = priotization.nodeHealth$.pipe(
+  switchMapPromise(() => api.parity.nodeHealth()),
+  addToOverview('nodeHealth$')
 );
 
 /**
@@ -78,5 +89,3 @@ export const post$ = tx =>
       observer.error({ failed: error });
     }
   });
-
-export const setDefaultAccount = address => Subject.create();
