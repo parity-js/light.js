@@ -3,25 +3,26 @@
 
 // SPDX-License-Identifier: MIT
 
-import { publishReplay, refCount, filter, startWith } from 'rxjs/operators';
+import { filter, publishReplay, refCount, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { timer } from 'rxjs/observable/timer';
 
 import api from '../api';
+import { addReplaySubject } from '../utils/operators';
 
 /**
  * Observable that emits each time accounts change.
  */
-export const onAccountsChanged$ = Subject.create().pipe(startWith(0));
+export const onAccountsChanged$ = new BehaviorSubject(0);
 onAccountsChanged$.metadata = { name: 'onAccountsChanged$' };
 
 /**
  * Observable that emits on every new block.
  */
 export const onEveryBlock$ = Observable.create(observer => {
-  const subscription = api.pubsub.eth.blockNumber((error, result) => {
+  const subscription = api().pubsub.eth.blockNumber((error, result) => {
     if (error) {
       observer.error(error);
     } else {
@@ -29,7 +30,9 @@ export const onEveryBlock$ = Observable.create(observer => {
     }
   });
   return () =>
-    subscription.then(subscriptionId => api.pubsub.unsubscribe(subscriptionId));
+    subscription.then(subscriptionId =>
+      api().pubsub.unsubscribe(subscriptionId)
+    );
 }).pipe(startWith(0), publishReplay(1), refCount());
 onEveryBlock$.metadata = { name: 'onEveryBlock$' };
 
@@ -62,7 +65,10 @@ onEverySecond$.metadata = { name: 'onEverySecond$' };
 /**
  * Observable that emits on every other second.
  */
-export const onEvery2Seconds$ = timer(0, 2000);
+export const onEvery2Seconds$ = timer(0, 2000).pipe(
+  publishReplay(1),
+  refCount()
+);
 onEvery2Seconds$.metadata = { name: 'onEvery2Seconds$' };
 
 /**

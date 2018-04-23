@@ -3,21 +3,26 @@
 
 // SPDX-License-Identifier: MIT
 
+import { Subject } from 'rxjs/Subject';
+
+import * as rpc from '../rpc';
 import priotization from '../priotization';
 
-// Mapping of subscribed
-const subscribed = {};
-
-/**
- * Add an Observable from the rpc/ folder into the subscribed object.
- * This function should be called every time an Observable is subscribed to.
- *
- * @param {String} rpc - The RPC Observable name.
- * @param {String} [source] - The source Observable `rpc` is listening to
- * (optional). If none is specified, will default to `rpc`.
- */
-export const addSubscribedRpc = (rpc, source) => {
-  subscribed[rpc] = priotization[source || rpc].metadata.name;
+const observersCount = method => {
+  if (method instanceof Subject) {
+    return method.observers.length;
+  }
+  if (typeof method === 'function') {
+    return -1;
+  }
+  if (
+    method.operator &&
+    method.operator.connectable &&
+    typeof method.operator.connectable.subjectFactory === 'function'
+  ) {
+    return method.operator.connectable.subjectFactory().observers.length;
+  }
+  return -1;
 };
 
 /**
@@ -28,9 +33,18 @@ if (typeof window !== 'undefined') {
   window.parity = {
     ...window.parity,
     rpcOverview() {
-      return subscribed;
+      const overview = {};
+      Object.keys(rpc).forEach(key => {
+        console.log(key, rpc[key]);
+        const count = observersCount(rpc[key]);
+        if (count > 0) {
+          overview[key] = {
+            name: priotization[key].metadata.name,
+            subscribersCount: count
+          };
+        }
+      });
+      return overview;
     }
   };
 }
-
-export default subscribed;

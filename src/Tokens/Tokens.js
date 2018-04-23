@@ -12,10 +12,6 @@ class Accounts extends Component {
     visible: true
   };
 
-  componentWillMount() {
-    this.handleClick();
-  }
-
   handleClick = () => {
     this.setState({ visible: true });
     setTimeout(() => this.setState({ visible: false }), 10000);

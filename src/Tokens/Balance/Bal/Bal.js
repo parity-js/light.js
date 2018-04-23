@@ -16,8 +16,8 @@ import {
 @light({
   accounts: accounts$,
   balanceOf: balanceOf$('0x00Ae02834e91810B223E54ce3f9B7875258a1747'),
-  defaultAccount: defaultAccount$,
-  nodeHealth: nodeHealth$
+  defaultAccount: defaultAccount$
+  // nodeHealth: nodeHealth$
 })
 class Bal extends Component {
   render() {

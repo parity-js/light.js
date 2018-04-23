@@ -9,7 +9,6 @@ import memoize from 'lodash/memoize';
 
 import api from '../../api';
 import {
-  addToOverview,
   distinctReplayRefCount,
   switchMapPromise
 } from '../../utils/operators';
@@ -20,12 +19,12 @@ import priotization from '../../priotization';
  *
  * Calls eth_accounts.
  *
- * @returns {Observable<Array<String>>} - An Observable containing the list of accounts
+ * @return {Observable<Array<String>>} - An Observable containing the list of accounts.
  */
 export const accounts$ = priotization.accounts$.pipe(
-  switchMapPromise(() => api.eth.accounts()),
+  switchMapPromise(() => api().eth.accounts()),
   map(accounts => accounts.map(Api.util.toChecksumAddress)),
-  addToOverview('accounts$'),
+  // addToOverview('accounts$'),
   distinctReplayRefCount()
 );
 
@@ -35,13 +34,13 @@ export const accounts$ = priotization.accounts$.pipe(
  * Calls eth_getBalance.
  *
  * @param {String} address - The account address to query the balance.
- * @returns {Observable<Number>} - An Observable containing the balance.
+ * @return {Observable<Number>} - An Observable containing the balance.
  */
 export const balanceOf$ = memoize(address =>
   priotization.balanceOf$.pipe(
-    switchMapPromise(() => api.eth.getBalance(address)),
+    switchMapPromise(() => api().eth.getBalance(address)),
     map(_ => +_), // Return number instead of BigNumber
-    addToOverview('balanceOf$'),
+    // addToOverview('balanceOf$'),
     distinctReplayRefCount()
   )
 );
@@ -53,7 +52,7 @@ export const balanceOf$ = memoize(address =>
  */
 export const defaultAccount$ = accounts$.pipe(
   map(accounts => accounts[0]),
-  addToOverview('defaultAccount$', 'accounts$'),
+  // addToOverview('defaultAccount$', 'accounts$'),
   distinctReplayRefCount()
 );
 
@@ -62,18 +61,19 @@ export const defaultAccount$ = accounts$.pipe(
  *
  * Calls parity_subscribe('eth_blockNumber').
  *
- * @returns {Observable<Number>} - An Observable containing the block height
+ * @return {Observable<Number>} - An Observable containing the block height
  */
-export const height$ = priotization.height$.pipe(addToOverview('height$'));
+export const height$ = priotization.height$ /*.pipe(addToOverview('height$'))*/;
 
 /**
  * Alias for {@link height$}
  */
-export const blockNumber$ = height$.pipe(
-  addToOverview('blockNumber', 'height$')
-);
+export const blockNumber$ = height$
+  .pipe
+  // addToOverview('blockNumber', 'height$')
+  ();
 
 /**
  * Alias for {@link defaultAccount$}
  */
-export const me$ = defaultAccount$.pipe(addToOverview('me$', 'accounts$'));
+export const me$ = defaultAccount$ /*.pipe(addToOverview('me$', 'accounts$'))*/;

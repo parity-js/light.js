@@ -3,4 +3,9 @@
 
 // SPDX-License-Identifier: MIT
 
+import { setApi } from './api';
+import './overview';
+
 export * from './rpc';
+
+export default { setApi };

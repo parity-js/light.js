@@ -7,10 +7,18 @@ import React, { Component } from 'react';
 
 import Bal from './Bal';
 import light from '../../hoc';
-import { balanceOf$, chainName$, defaultAccount$, height$ } from '../../lib'; // from '@parity/light'
+import {
+  accounts$,
+  balanceOf$,
+  chainName$,
+  defaultAccount$,
+  height$,
+  setDefaultAccount$
+} from '../../lib'; // from '@parity/light'
 import TxProgress from './TxProgress';
 
 @light({
+  accounts: accounts$,
   balance: ownProps => balanceOf$(ownProps.address),
   chainName: chainName$,
   defaultAccount: defaultAccount$,
@@ -23,6 +31,14 @@ class Balance extends Component {
     setTimeout(() => this.setState({ visible: true }), 3000);
   }
 
+  handleChange = ({ target: { value } }) => {
+    setDefaultAccount$(value).subscribe(
+      console.log,
+      () => console.log('error'),
+      () => console.log('completed')
+    );
+  };
+
   handleSend = () => {
     this.setState({
       tx: {
@@ -34,13 +50,22 @@ class Balance extends Component {
   };
 
   render() {
-    const { balance, chainName, defaultAccount, height } = this.props;
+    const { accounts, balance, chainName, defaultAccount, height } = this.props;
     const { tx, visible } = this.state;
     return (
       <div>
         <p>Chain: {chainName}.</p>
         <p>Block: {height}.</p>
         <p>My Account: {defaultAccount}.</p>
+        {accounts && (
+          <select onChange={this.handleChange} value={accounts[0]}>
+            {accounts.map((account, index) => (
+              <option key={account} value={account}>
+                {account}
+              </option>
+            ))}
+          </select>
+        )}
         <p>My Balance: {balance}.</p>
         <button onClick={this.handleSend}>Send 0.01ETH to myself</button>
         {tx && <TxProgress tx={tx} />}

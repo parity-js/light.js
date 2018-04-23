@@ -7,10 +7,10 @@ import { Observable } from 'rxjs/Observable';
 
 import api from '../../api';
 import {
-  addToOverview,
   distinctReplayRefCount,
   switchMapPromise
 } from '../../utils/operators';
+import { onAccountsChanged$ } from '../../priotization/on';
 import priotization from '../../priotization';
 
 /**
@@ -18,11 +18,13 @@ import priotization from '../../priotization';
  *
  * Calls parity_netChain.
  *
- * @returns {Observable<String>} - An Observable containing the name of the current chain.
+ * @return {Observable<String>} - An Observable containing the name of the
+ * current chain.
  */
 export const chainName$ = priotization.chainName$.pipe(
-  switchMapPromise(() => api.parity.netChain()),
-  addToOverview('chainName$')
+  switchMapPromise(() => api().parity.netChain()),
+  // addToOverview('chainName$')
+  distinctReplayRefCount()
 );
 
 /**
@@ -30,11 +32,11 @@ export const chainName$ = priotization.chainName$.pipe(
  *
  * Calls parity_chainStatus.
  *
- * @returns {Observable<String>} - An Observable containing the status.
+ * @return {Observable<String>} - An Observable containing the status.
  */
 export const chainStatus$ = priotization.chainStatus$.pipe(
-  switchMapPromise(() => api.parity.chainStatus()),
-  addToOverview('chainStatus$'),
+  switchMapPromise(() => api().parity.chainStatus()),
+  // addToOverview('chainStatus$'),
   distinctReplayRefCount()
 );
 
@@ -43,31 +45,33 @@ export const chainStatus$ = priotization.chainStatus$.pipe(
  *
  * Calls parity_nodeHealth.
  *
- * @returns {Observable<Object>} - An Observable containing the health.
+ * @return {Observable<Object>} - An Observable containing the health.
  */
 export const nodeHealth$ = priotization.nodeHealth$.pipe(
-  switchMapPromise(() => api.parity.nodeHealth()),
-  addToOverview('nodeHealth$')
+  switchMapPromise(() => api().parity.nodeHealth()),
+  // addToOverview('nodeHealth$'),
+  distinctReplayRefCount()
 );
 
 /**
  * Post a transaction to the network.
  *
- * Calls parity_postTransaction. Subsequently calls parity_checkRequest and
- * eth_getTransactionReceipt to get the status of the transaction.
+ * Calls, in this order, eth_estimateGas, parity_postTransaction,
+ * parity_checkRequest and eth_getTransactionReceipt to get the status of the
+ * transaction.
  *
  * @param {Object} tx - A transaction object
- * @returns {Observable<Object>}
+ * @return {Observable<Object>}
  */
-export const post$ = tx =>
-  Observable.create(async observer => {
+export const post$ = tx => {
+  const source$ = Observable.create(async observer => {
     try {
       observer.next({ estimating: null });
-      const gas = await api.eth.estimateGas(tx);
+      const gas = await api().eth.estimateGas(tx);
       observer.next({ estimated: gas });
-      const signerRequestId = await api.parity.postTransaction(tx);
+      const signerRequestId = await api().parity.postTransaction(tx);
       observer.next({ requested: signerRequestId });
-      const transactionHash = await api.pollMethod(
+      const transactionHash = await api().pollMethod(
         'parity_checkRequest',
         signerRequestId
       );
@@ -75,7 +79,7 @@ export const post$ = tx =>
         observer.next({ signed: transactionHash, schedule: tx.condition });
       } else {
         observer.next({ signed: transactionHash });
-        const receipt = await api.pollMethod(
+        const receipt = await api().pollMethod(
           'eth_getTransactionReceipt',
           transactionHash,
           receipt =>
@@ -86,6 +90,26 @@ export const post$ = tx =>
 
       observer.complete();
     } catch (error) {
-      observer.error({ failed: error });
+      observer.next({ failed: error });
+      observer.error(error);
     }
-  });
+  }).pipe(distinctReplayRefCount());
+
+  source$.subscribe(); // Run this Observable immediately;
+  return source$;
+};
+
+export const setDefaultAccount$ = value => {
+  const source$ = Observable.create(async observer => {
+    try {
+      await api().parity.setNewDappsDefaultAddress(value);
+      onAccountsChanged$.next();
+      observer.complete();
+    } catch (error) {
+      observer.error(error);
+    }
+  }).pipe(distinctReplayRefCount());
+
+  source$.subscribe(); // Run this Observable immediately
+  return source$;
+};

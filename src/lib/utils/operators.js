@@ -1,15 +1,29 @@
+// Copyright 2015-2018 Parity Technologies (UK) Ltd.
+// This file is part of Parity.
+
+// SPDX-License-Identifier: MIT
+
 import {
   catchError,
-  switchMap,
+  distinctUntilChanged,
+  multicast,
   publishReplay,
   refCount,
-  distinctUntilChanged
+  switchMap
 } from 'rxjs/operators';
 import { defer } from 'rxjs/observable/defer';
 import { empty } from 'rxjs/observable/empty';
 import { fromPromise } from 'rxjs/observable/fromPromise';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
 
-import { addSubscribedRpc } from '../overview';
+// import { addSubscribedRpc } from '../overview';
+
+export const addReplaySubject = (n = 1) => source$ => {
+  const subject = new ReplaySubject(n);
+  const result$ = source$.pipe(multicast(() => subject));
+  result$.getReplaySubject = () => subject; // Patching Observable here
+  return result$;
+};
 
 /**
  * Calls a function everytime an observer subscribes to an Observable.
@@ -35,14 +49,14 @@ export const doOnSubscribe = onSubscribe => source =>
  * @param {String} rpc - See {@link addSubscribedRpc}
  * @param {String} source - See {@link addSubscribedRpc}
  */
-export const addToOverview = (rpc, source) =>
-  doOnSubscribe(() => addSubscribedRpc(rpc, source));
+// export const addToOverview = (rpc, source$) =>
+// doOnSubscribe(() => addSubscribedRpc(rpc, source$));
 
 /**
- * Shorthand for distinctUntilChanged(), publishReplay(1) and refCount().
+ * Shorthand for distinctUntilChanged(), addReplaySubject(1) and refCount().
  */
-export const distinctReplayRefCount = () => source =>
-  source.pipe(distinctUntilChanged(), publishReplay(1), refCount());
+export const distinctReplayRefCount = () => source$ =>
+  source$.pipe(distinctUntilChanged(), addReplaySubject(1), refCount());
 
 /**
  * SwitchMap to an Observable.fromPromise that catches errors and returns an
