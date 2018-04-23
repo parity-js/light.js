@@ -3,26 +3,20 @@
 
 // SPDX-License-Identifier: MIT
 
-import { Subject } from 'rxjs/Subject';
-
 import * as rpc from '../rpc';
 import priotization from '../priotization';
 
-const observersCount = method => {
-  if (method instanceof Subject) {
-    return method.observers.length;
-  }
-  if (typeof method === 'function') {
-    return -1;
-  }
-  if (
-    method.operator &&
-    method.operator.connectable &&
-    typeof method.operator.connectable.subjectFactory === 'function'
-  ) {
-    return method.operator.connectable.subjectFactory().observers.length;
-  }
-  return -1;
+const subscribersCount = {};
+
+/**
+ * Set the number of subscribers (i.e. refCount) an Observable currently has.
+ *
+ * @param {String} key - The Observable name inside the rpc/ folder.
+ * @param {Number} count - The number of subscribers the Observable currently
+ * has.
+ */
+export const setSubscribersCount = (key, count) => {
+  subscribersCount[key] = count;
 };
 
 /**
@@ -35,13 +29,15 @@ if (typeof window !== 'undefined') {
     rpcOverview() {
       const overview = {};
       Object.keys(rpc).forEach(key => {
-        console.log(key, rpc[key]);
-        const count = observersCount(rpc[key]);
+        const count = subscribersCount[key];
         if (count > 0) {
           overview[key] = {
-            name: priotization[key].metadata.name,
+            ...rpc[key].metadata,
             subscribersCount: count
           };
+          if (priotization[key]) {
+            overview[key].priority = priotization[key].metadata.name;
+          }
         }
       });
       return overview;

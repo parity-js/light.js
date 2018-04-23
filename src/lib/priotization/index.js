@@ -17,6 +17,7 @@ const priotization = {
   blockNumber$: onEveryBlock$,
   chainName$: onlyAtStartup$,
   chainStatus$: onEveryBlock$,
+  defaultAccount$: onAccountsChanged$,
   height$: onEveryBlock$,
   nodeHealth$: onEvery2Seconds$
 };

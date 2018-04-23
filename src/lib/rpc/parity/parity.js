@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 
 import api from '../../api';
 import {
+  addToOverview,
   distinctReplayRefCount,
   switchMapPromise
 } from '../../utils/operators';
@@ -23,9 +24,10 @@ import priotization from '../../priotization';
  */
 export const chainName$ = priotization.chainName$.pipe(
   switchMapPromise(() => api().parity.netChain()),
-  // addToOverview('chainName$')
-  distinctReplayRefCount()
+  distinctReplayRefCount(),
+  addToOverview('chainName$')
 );
+chainName$.metadata = { calls: ['parity_netChain'] };
 
 /**
  * Get the status of the current chain.
@@ -36,9 +38,10 @@ export const chainName$ = priotization.chainName$.pipe(
  */
 export const chainStatus$ = priotization.chainStatus$.pipe(
   switchMapPromise(() => api().parity.chainStatus()),
-  // addToOverview('chainStatus$'),
-  distinctReplayRefCount()
+  distinctReplayRefCount(),
+  addToOverview('chainStatus$')
 );
+chainStatus$.metadata = { calls: ['parity_chainStatus'] };
 
 /**
  * Get the node's health.
@@ -49,9 +52,10 @@ export const chainStatus$ = priotization.chainStatus$.pipe(
  */
 export const nodeHealth$ = priotization.nodeHealth$.pipe(
   switchMapPromise(() => api().parity.nodeHealth()),
-  // addToOverview('nodeHealth$'),
-  distinctReplayRefCount()
+  distinctReplayRefCount(),
+  addToOverview('nodeHealth$')
 );
+nodeHealth$.metadata = { calls: ['parity_nodeHealth'] };
 
 /**
  * Post a transaction to the network.
@@ -93,10 +97,18 @@ export const post$ = tx => {
       observer.next({ failed: error });
       observer.error(error);
     }
-  }).pipe(distinctReplayRefCount());
+  }).pipe(distinctReplayRefCount(), addToOverview('post$'));
 
   source$.subscribe(); // Run this Observable immediately;
   return source$;
+};
+post$.metadata = {
+  calls: [
+    'eth_estimateGas',
+    'parity_postTransaction',
+    'parity_checkRequest',
+    'eth_getTransactionReceipt'
+  ]
 };
 
 export const setDefaultAccount$ = value => {
@@ -108,8 +120,9 @@ export const setDefaultAccount$ = value => {
     } catch (error) {
       observer.error(error);
     }
-  }).pipe(distinctReplayRefCount());
+  }).pipe(distinctReplayRefCount(), addToOverview('setDefaultAccount$'));
 
   source$.subscribe(); // Run this Observable immediately
   return source$;
 };
+setDefaultAccount$.metadata = { calls: ['parity_setNewDappsDefaultAddress'] };

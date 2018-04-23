@@ -6,57 +6,67 @@
 import {
   catchError,
   distinctUntilChanged,
-  multicast,
   publishReplay,
   refCount,
   switchMap
 } from 'rxjs/operators';
-import { defer } from 'rxjs/observable/defer';
 import { empty } from 'rxjs/observable/empty';
 import { fromPromise } from 'rxjs/observable/fromPromise';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Observable } from 'rxjs/Observable';
 
-// import { addSubscribedRpc } from '../overview';
+import { setSubscribersCount } from '../overview';
 
-export const addReplaySubject = (n = 1) => source$ => {
-  const subject = new ReplaySubject(n);
-  const result$ = source$.pipe(multicast(() => subject));
-  result$.getReplaySubject = () => subject; // Patching Observable here
-  return result$;
+/**
+ * Same as tap, but passing in addtion (refCount, prevRefCount) as callback
+ * arguments.
+ *
+ * @param {Function} onChange - The function to call every time the source
+ * Observable's refCount changes (i.e. on subscribe or unsubscribe).
+ * @see https://stackoverflow.com/questions/49976825/check-if-publishreplay-refcount-has-observers-or-not/49980784#49980784
+ * @example
+ * const source$ = Observable.of(1)
+ *   .pipe(tapRefCount((refCount) => console.log('Refcount is now', refCount)));
+ * source$.subscribe(() => {}); // Logs 'Refcount is now 1'
+ */
+export const tapRefCount = onChange => source$ => {
+  // Mute the operator if it has nothing to do
+  if (typeof onChange !== 'function') {
+    return source$;
+  }
+
+  let refCount = 0;
+
+  // Spy on subscribe
+  return Observable.create(observer => {
+    const subscription = source$.subscribe(observer);
+    const prevRefCount = refCount;
+    refCount++;
+    onChange(refCount, prevRefCount);
+
+    // Spy on unsubscribe
+    return () => {
+      subscription.unsubscribe();
+      const prevRefCount = refCount;
+      refCount--;
+      onChange(refCount, prevRefCount);
+    };
+  });
 };
 
 /**
- * Calls a function everytime an observer subscribes to an Observable.
+ * Calls {@link setSubscribersCount} every time a new observer subscribes or
+ * unsubscribed to the Observable, passing in the refCount.
  *
- * @param {Function} onSubscribe - The function to call every time the source
- * observable is subscribed.
- * @see https://stackoverflow.com/questions/41883339/observable-onsubscribe-equivalent-in-rxjs
- * @example
- * const source$ = Observable.of(1)
- *   .pipe(doOnSubscribe(() => console.log('Subscribed!')));
- * source$.subscribe(() => {}); // Logs 'Subscribed!'
+ * @param {String} rpc - See {@link setSubscribersCount}
  */
-export const doOnSubscribe = onSubscribe => source =>
-  defer(() => {
-    onSubscribe();
-    return source;
-  });
+export const addToOverview = rpc =>
+  tapRefCount(refCount => setSubscribersCount(rpc, refCount));
 
 /**
- * Calls {@link addSubscribedRpc} every time a new observer subscribes to the
- * Observable.
- *
- * @param {String} rpc - See {@link addSubscribedRpc}
- * @param {String} source - See {@link addSubscribedRpc}
- */
-// export const addToOverview = (rpc, source$) =>
-// doOnSubscribe(() => addSubscribedRpc(rpc, source$));
-
-/**
- * Shorthand for distinctUntilChanged(), addReplaySubject(1) and refCount().
+ * Shorthand for distinctUntilChanged(), publishReplay(1) and refCount().
  */
 export const distinctReplayRefCount = () => source$ =>
-  source$.pipe(distinctUntilChanged(), addReplaySubject(1), refCount());
+  source$.pipe(distinctUntilChanged(), publishReplay(1), refCount());
 
 /**
  * SwitchMap to an Observable.fromPromise that catches errors and returns an

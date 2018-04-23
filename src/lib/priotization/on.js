@@ -3,14 +3,14 @@
 
 // SPDX-License-Identifier: MIT
 
-import { filter, publishReplay, refCount, startWith } from 'rxjs/operators';
+import { filter, startWith } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { timer } from 'rxjs/observable/timer';
 
 import api from '../api';
-import { addReplaySubject } from '../utils/operators';
+import { distinctReplayRefCount } from '../utils/operators';
 
 /**
  * Observable that emits each time accounts change.
@@ -33,16 +33,14 @@ export const onEveryBlock$ = Observable.create(observer => {
     subscription.then(subscriptionId =>
       api().pubsub.unsubscribe(subscriptionId)
     );
-}).pipe(startWith(0), publishReplay(1), refCount());
+}).pipe(startWith(0), distinctReplayRefCount());
 onEveryBlock$.metadata = { name: 'onEveryBlock$' };
 
 /**
  * Observable that emits on every 2nd block.
  */
 export const onEvery2Blocks$ = onEveryBlock$.pipe(
-  filter(n => n % 2 === 0), // Around ~30s on mainnet
-  publishReplay(1),
-  refCount()
+  filter(n => n % 2 === 0) // Around ~30s on mainnet
 );
 onEvery2Blocks$.metadata = { name: 'onEvery2Blocks$' };
 
@@ -50,9 +48,7 @@ onEvery2Blocks$.metadata = { name: 'onEvery2Blocks$' };
  * Observable that emits on every 4th block.
  */
 export const onEvery4Blocks$ = onEveryBlock$.pipe(
-  filter(n => n % 4 === 0), // Around ~1min on mainnet
-  publishReplay(1),
-  refCount()
+  filter(n => n % 4 === 0) // Around ~1min on mainnet
 );
 onEvery4Blocks$.metadata = { name: 'onEvery4Blocks$' };
 
@@ -65,14 +61,11 @@ onEverySecond$.metadata = { name: 'onEverySecond$' };
 /**
  * Observable that emits on every other second.
  */
-export const onEvery2Seconds$ = timer(0, 2000).pipe(
-  publishReplay(1),
-  refCount()
-);
+export const onEvery2Seconds$ = timer(0, 2000);
 onEvery2Seconds$.metadata = { name: 'onEvery2Seconds$' };
 
 /**
  * Observable that emits only once.
  */
-export const onlyAtStartup$ = of(0).pipe(publishReplay(1), refCount());
+export const onlyAtStartup$ = of(0);
 onlyAtStartup$.metadata = { name: 'onlyAtStartup$' };

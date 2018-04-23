@@ -9,13 +9,15 @@ import memoize from 'lodash/memoize';
 
 import api from '../../api';
 import {
+  addToOverview,
   distinctReplayRefCount,
   switchMapPromise
 } from '../../utils/operators';
 import priotization from '../../priotization';
 
 /**
- * Get all accounts managed by the light client.
+ * Observable which contains the array of all accounts managed by the light
+ * client.
  *
  * Calls eth_accounts.
  *
@@ -24,9 +26,9 @@ import priotization from '../../priotization';
 export const accounts$ = priotization.accounts$.pipe(
   switchMapPromise(() => api().eth.accounts()),
   map(accounts => accounts.map(Api.util.toChecksumAddress)),
-  // addToOverview('accounts$'),
-  distinctReplayRefCount()
+  addToOverview('accounts$')
 );
+accounts$.metadata = { calls: ['eth_accounts'] };
 
 /**
  * Get the balance of a given account.
@@ -40,10 +42,11 @@ export const balanceOf$ = memoize(address =>
   priotization.balanceOf$.pipe(
     switchMapPromise(() => api().eth.getBalance(address)),
     map(_ => +_), // Return number instead of BigNumber
-    // addToOverview('balanceOf$'),
-    distinctReplayRefCount()
+    distinctReplayRefCount(),
+    addToOverview('balanceOf$')
   )
 );
+balanceOf$.metadata = { calls: ['eth_getBalance'] };
 
 /**
  * Get the default account managed by the light client.
@@ -52,8 +55,7 @@ export const balanceOf$ = memoize(address =>
  */
 export const defaultAccount$ = accounts$.pipe(
   map(accounts => accounts[0]),
-  // addToOverview('defaultAccount$', 'accounts$'),
-  distinctReplayRefCount()
+  addToOverview('defaultAccount$')
 );
 
 /**
@@ -63,17 +65,14 @@ export const defaultAccount$ = accounts$.pipe(
  *
  * @return {Observable<Number>} - An Observable containing the block height
  */
-export const height$ = priotization.height$ /*.pipe(addToOverview('height$'))*/;
+export const height$ = priotization.height$.pipe(addToOverview('height$'));
 
 /**
  * Alias for {@link height$}
  */
-export const blockNumber$ = height$
-  .pipe
-  // addToOverview('blockNumber', 'height$')
-  ();
+export const blockNumber$ = height$.pipe(addToOverview('blockNumber'));
 
 /**
  * Alias for {@link defaultAccount$}
  */
-export const me$ = defaultAccount$ /*.pipe(addToOverview('me$', 'accounts$'))*/;
+export const me$ = defaultAccount$.pipe(addToOverview('me$'));
