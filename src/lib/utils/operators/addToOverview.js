@@ -3,9 +3,6 @@
 
 // SPDX-License-Identifier: MIT
 
-import { distinctUntilChanged, refCount } from 'rxjs/operators';
-import { empty } from 'rxjs/observable/empty';
-import { fromPromise } from 'rxjs/observable/fromPromise';
 import { Observable } from 'rxjs/Observable';
 
 import { setSubscribersCount } from '../../overview';

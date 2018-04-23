@@ -10,6 +10,7 @@ import {
   onEvery2Seconds$,
   onlyAtStartup$
 } from './on';
+import * as rpc from '../rpc';
 
 const priotization = {
   accounts$: onAccountsChanged$,
@@ -33,6 +34,13 @@ const priotization = {
  */
 export const setPriority = priority => {
   Object.assign(priotization, priority);
+
+  Object.keys(priority).forEach(key => {
+    // If necessary, we clear the memoize cache
+    if (typeof rpc[key].clear === 'function') {
+      rpc[key].clear();
+    }
+  });
 };
 
 export default priotization;

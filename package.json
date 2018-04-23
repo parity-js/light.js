@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@parity/api": "^2.1.20",
-    "lodash": "^4.17.5",
+    "memoizee": "^0.4.12",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-router-dom": "^4.2.2",

@@ -22,11 +22,12 @@ import priotization from '../../priotization';
  * @return {Observable<String>} - An Observable containing the name of the
  * current chain.
  */
-export const chainName$ = priotization.chainName$.pipe(
-  switchMapPromise(() => api().parity.netChain()),
-  distinctReplayRefCount(),
-  addToOverview('chainName$')
-);
+export const chainName$ = () =>
+  priotization.chainName$.pipe(
+    switchMapPromise(() => api().parity.netChain()),
+    distinctReplayRefCount(),
+    addToOverview('chainName$')
+  );
 chainName$.metadata = { calls: ['parity_netChain'] };
 
 /**
@@ -36,11 +37,12 @@ chainName$.metadata = { calls: ['parity_netChain'] };
  *
  * @return {Observable<String>} - An Observable containing the status.
  */
-export const chainStatus$ = priotization.chainStatus$.pipe(
-  switchMapPromise(() => api().parity.chainStatus()),
-  distinctReplayRefCount(),
-  addToOverview('chainStatus$')
-);
+export const chainStatus$ = () =>
+  priotization.chainStatus$.pipe(
+    switchMapPromise(() => api().parity.chainStatus()),
+    distinctReplayRefCount(),
+    addToOverview('chainStatus$')
+  );
 chainStatus$.metadata = { calls: ['parity_chainStatus'] };
 
 /**
@@ -50,11 +52,12 @@ chainStatus$.metadata = { calls: ['parity_chainStatus'] };
  *
  * @return {Observable<Object>} - An Observable containing the health.
  */
-export const nodeHealth$ = priotization.nodeHealth$.pipe(
-  switchMapPromise(() => api().parity.nodeHealth()),
-  distinctReplayRefCount(),
-  addToOverview('nodeHealth$')
-);
+export const nodeHealth$ = () =>
+  priotization.nodeHealth$.pipe(
+    switchMapPromise(() => api().parity.nodeHealth()),
+    distinctReplayRefCount(),
+    addToOverview('nodeHealth$')
+  );
 nodeHealth$.metadata = { calls: ['parity_nodeHealth'] };
 
 /**

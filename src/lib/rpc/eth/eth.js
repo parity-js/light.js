@@ -5,7 +5,7 @@
 
 import Api from '@parity/api';
 import { map } from 'rxjs/operators';
-import memoize from 'lodash/memoize';
+import memoize from 'memoizee';
 
 import api from '../../api';
 import {
@@ -23,11 +23,13 @@ import priotization from '../../priotization';
  *
  * @return {Observable<Array<String>>} - An Observable containing the list of accounts.
  */
-export const accounts$ = priotization.accounts$.pipe(
-  switchMapPromise(() => api().eth.accounts()),
-  map(accounts => accounts.map(Api.util.toChecksumAddress)),
-  distinctReplayRefCount(),
-  addToOverview('accounts$')
+export const accounts$ = memoize(() =>
+  priotization.accounts$.pipe(
+    switchMapPromise(() => api().eth.accounts()),
+    map(accounts => accounts.map(Api.util.toChecksumAddress)),
+    distinctReplayRefCount(),
+    addToOverview('accounts$')
+  )
 );
 accounts$.metadata = { calls: ['eth_accounts'] };
 
@@ -54,10 +56,11 @@ balanceOf$.metadata = { calls: ['eth_getBalance'] };
  *
  * Fetches the first account in {@link accounts$}.
  */
-export const defaultAccount$ = accounts$.pipe(
-  map(accounts => accounts[0]),
-  addToOverview('defaultAccount$')
-);
+export const defaultAccount$ = () =>
+  accounts$().pipe(
+    map(accounts => accounts[0]),
+    addToOverview('defaultAccount$')
+  );
 
 /**
  * Get the current block height.
@@ -66,14 +69,15 @@ export const defaultAccount$ = accounts$.pipe(
  *
  * @return {Observable<Number>} - An Observable containing the block height
  */
-export const height$ = priotization.height$.pipe(addToOverview('height$'));
+export const height$ = () =>
+  priotization.height$.pipe(addToOverview('height$'));
 
 /**
  * Alias for {@link height$}
  */
-export const blockNumber$ = height$.pipe(addToOverview('blockNumber'));
+export const blockNumber$ = () => height$.pipe(addToOverview('blockNumber'));
 
 /**
  * Alias for {@link defaultAccount$}
  */
-export const me$ = defaultAccount$.pipe(addToOverview('me$'));
+export const me$ = () => defaultAccount$.pipe(addToOverview('me$'));
