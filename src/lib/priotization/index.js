@@ -22,4 +22,18 @@ const priotization = {
   nodeHealth$: onEvery2Seconds$
 };
 
+/**
+ * Change the priority of an Observable.
+ *
+ * @param {String} key - The name of the Observable to change the priority.
+ * @param {Observable} priority$ - An Observable representing the priority of
+ * the target Observable.
+ * @example
+ * setPriority('balanceOf$', onEverySecond$); // Will fetch balance every
+ * second.
+ */
+export const setPriority = (key, priority$) => {
+  priotization[key] = priority$;
+};
+
 export default priotization;
