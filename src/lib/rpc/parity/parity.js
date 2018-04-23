@@ -64,8 +64,8 @@ nodeHealth$.metadata = { calls: ['parity_nodeHealth'] };
  * parity_checkRequest and eth_getTransactionReceipt to get the status of the
  * transaction.
  *
- * @param {Object} tx - A transaction object
- * @return {Observable<Object>}
+ * @param {Object} tx - A transaction object.
+ * @return {Observable<Object>} - The status of the transaction.
  */
 export const post$ = tx => {
   const source$ = Observable.create(async observer => {
@@ -111,6 +111,13 @@ post$.metadata = {
   ]
 };
 
+/**
+ * Set a new default account for dapps.
+ *
+ * @param {String} value - The public address of the account to make default.
+ * @return {Observable<Object>} - An empty Observable that completes when the
+ * api calls succeeds.
+ */
 export const setDefaultAccount$ = value => {
   const source$ = Observable.create(async observer => {
     try {

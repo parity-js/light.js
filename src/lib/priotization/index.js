@@ -25,15 +25,14 @@ const priotization = {
 /**
  * Change the priority of an Observable.
  *
- * @param {String} key - The name of the Observable to change the priority.
- * @param {Observable} priority$ - An Observable representing the priority of
- * the target Observable.
+ * @param {Object} priority - An Object where the key is an RPC Observable
+ * name, and the value is a priority Observable.
  * @example
- * setPriority('balanceOf$', onEverySecond$); // Will fetch balance every
+ * setPriority({balanceOf$: onEverySecond$}); // Will fetch balance every
  * second.
  */
-export const setPriority = (key, priority$) => {
-  priotization[key] = priority$;
+export const setPriority = priority => {
+  Object.assign(priotization, priority);
 };
 
 export default priotization;

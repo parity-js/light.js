@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { timer } from 'rxjs/observable/timer';
 
 import api from '../api';
-import { distinctReplayRefCount } from '../utils/operators';
+import { distinctReplayRefCount } from '../utils/operators/distinctReplayRefCount';
 
 /**
  * Observable that emits each time accounts change.

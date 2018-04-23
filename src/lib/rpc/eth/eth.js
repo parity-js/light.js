@@ -26,6 +26,7 @@ import priotization from '../../priotization';
 export const accounts$ = priotization.accounts$.pipe(
   switchMapPromise(() => api().eth.accounts()),
   map(accounts => accounts.map(Api.util.toChecksumAddress)),
+  distinctReplayRefCount(),
   addToOverview('accounts$')
 );
 accounts$.metadata = { calls: ['eth_accounts'] };

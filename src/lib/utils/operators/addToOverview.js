@@ -3,18 +3,12 @@
 
 // SPDX-License-Identifier: MIT
 
-import {
-  catchError,
-  distinctUntilChanged,
-  publishReplay,
-  refCount,
-  switchMap
-} from 'rxjs/operators';
+import { distinctUntilChanged, refCount } from 'rxjs/operators';
 import { empty } from 'rxjs/observable/empty';
 import { fromPromise } from 'rxjs/observable/fromPromise';
 import { Observable } from 'rxjs/Observable';
 
-import { setSubscribersCount } from '../overview';
+import { setSubscribersCount } from '../../overview';
 
 /**
  * Same as tap, but passing in addtion (refCount, prevRefCount) as callback
@@ -61,16 +55,3 @@ export const tapRefCount = onChange => source$ => {
  */
 export const addToOverview = rpc =>
   tapRefCount(refCount => setSubscribersCount(rpc, refCount));
-
-/**
- * Shorthand for distinctUntilChanged(), publishReplay(1) and refCount().
- */
-export const distinctReplayRefCount = () => source$ =>
-  source$.pipe(distinctUntilChanged(), publishReplay(1), refCount());
-
-/**
- * SwitchMap to an Observable.fromPromise that catches errors and returns an
- * empty Observable. Will log an error in the console.
- */
-export const switchMapPromise = promise =>
-  switchMap(() => fromPromise(promise()).pipe(catchError(() => empty())));
