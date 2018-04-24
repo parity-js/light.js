@@ -4,7 +4,6 @@
 // SPDX-License-Identifier: MIT
 
 import { Observable } from 'rxjs/Observable';
-import memoize from 'memoizee';
 
 import api from '../../api';
 import {
@@ -32,13 +31,11 @@ import {
 export const chainName$ = createRpc$({
   calls: ['parity_netChain'],
   priority: [onStartup$]
-})(
-  memoize(() =>
-    getPriority(chainName$).pipe(
-      switchMapPromise(() => api().parity.netChain()),
-      distinctReplayRefCount(),
-      addToOverview('chainName$')
-    )
+})(() =>
+  getPriority(chainName$).pipe(
+    switchMapPromise(() => api().parity.netChain()),
+    distinctReplayRefCount(),
+    addToOverview('chainName$')
   )
 );
 
@@ -52,13 +49,11 @@ export const chainName$ = createRpc$({
 export const chainStatus$ = createRpc$({
   calls: ['parity_chainStatus'],
   priority: [onEveryBlock$]
-})(
-  memoize(() =>
-    getPriority(chainStatus$).pipe(
-      switchMapPromise(() => api().parity.chainStatus()),
-      distinctReplayRefCount(),
-      addToOverview('chainStatus$')
-    )
+})(() =>
+  getPriority(chainStatus$).pipe(
+    switchMapPromise(() => api().parity.chainStatus()),
+    distinctReplayRefCount(),
+    addToOverview('chainStatus$')
   )
 );
 
@@ -72,13 +67,11 @@ export const chainStatus$ = createRpc$({
 export const nodeHealth$ = createRpc$({
   calls: ['parity_nodeHealth'],
   priority: [onEvery2Seconds$]
-})(
-  memoize(() =>
-    getPriority(nodeHealth$).pipe(
-      switchMapPromise(() => api().parity.nodeHealth()),
-      distinctReplayRefCount(),
-      addToOverview('nodeHealth$')
-    )
+})(() =>
+  getPriority(nodeHealth$).pipe(
+    switchMapPromise(() => api().parity.nodeHealth()),
+    distinctReplayRefCount(),
+    addToOverview('nodeHealth$')
   )
 );
 

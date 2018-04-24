@@ -5,7 +5,6 @@
 
 import Api from '@parity/api';
 import { map } from 'rxjs/operators';
-import memoize from 'memoizee';
 
 import api from '../../api';
 import {
@@ -33,14 +32,12 @@ import {
 export const accounts$ = createRpc$({
   calls: ['eth_accounts'],
   priority: [onAccountsChanged$]
-})(
-  memoize(() =>
-    getPriority(accounts$).pipe(
-      switchMapPromise(() => api().eth.accounts()),
-      map(accounts => accounts.map(Api.util.toChecksumAddress)),
-      distinctReplayRefCount(),
-      addToOverview('accounts$')
-    )
+})(() =>
+  getPriority(accounts$).pipe(
+    switchMapPromise(() => api().eth.accounts()),
+    map(accounts => accounts.map(Api.util.toChecksumAddress)),
+    distinctReplayRefCount(),
+    addToOverview('accounts$')
   )
 );
 
@@ -55,14 +52,12 @@ export const accounts$ = createRpc$({
 export const balanceOf$ = createRpc$({
   calls: ['eth_getBalance'],
   priority: [onEvery2Blocks$, onStartup$]
-})(
-  memoize(address =>
-    getPriority(balanceOf$).pipe(
-      switchMapPromise(() => api().eth.getBalance(address)),
-      map(_ => +_), // Return number instead of BigNumber
-      distinctReplayRefCount(),
-      addToOverview('balanceOf$')
-    )
+})(address =>
+  getPriority(balanceOf$).pipe(
+    switchMapPromise(() => api().eth.getBalance(address)),
+    map(_ => +_), // Return number instead of BigNumber
+    distinctReplayRefCount(),
+    addToOverview('balanceOf$')
   )
 );
 
@@ -71,12 +66,10 @@ export const balanceOf$ = createRpc$({
  *
  * Fetches the first account in {@link accounts$}.
  */
-export const defaultAccount$ = createRpc$()(
-  memoize(() =>
-    accounts$().pipe(
-      map(accounts => accounts[0]),
-      addToOverview('defaultAccount$')
-    )
+export const defaultAccount$ = createRpc$()(() =>
+  accounts$().pipe(
+    map(accounts => accounts[0]),
+    addToOverview('defaultAccount$')
   )
 );
 
@@ -87,20 +80,20 @@ export const defaultAccount$ = createRpc$()(
  *
  * @return {Observable<Number>} - An Observable containing the block height
  */
-export const height$ = createRpc$({ priority: [onEveryBlock$] })(
-  memoize(() => getPriority(height$).pipe(addToOverview('height$')))
+export const height$ = createRpc$({ priority: [onEveryBlock$] })(() =>
+  getPriority(height$).pipe(addToOverview('height$'))
 );
 
 /**
  * Alias for {@link height$}
  */
-export const blockNumber$ = createRpc$()(
-  memoize(() => height$.pipe(addToOverview('blockNumber')))
+export const blockNumber$ = createRpc$()(() =>
+  height$.pipe(addToOverview('blockNumber'))
 );
 
 /**
  * Alias for {@link defaultAccount$}
  */
-export const me$ = createRpc$()(
-  memoize(() => defaultAccount$.pipe(addToOverview('me$')))
+export const me$ = createRpc$()(() =>
+  defaultAccount$.pipe(addToOverview('me$'))
 );

@@ -3,6 +3,8 @@
 
 // SPDX-License-Identifier: MIT
 
+import memoize from 'memoizee';
+
 import { priorityMixins } from '../priorities/priorityMixins';
 
 /**
@@ -12,9 +14,10 @@ import { priorityMixins } from '../priorities/priorityMixins';
  * @return {Observable} - The original rpc$ Observable with patched metadata.
  */
 const createRpc = (metadata = {}) => rpc$ => {
-  Object.assign(rpc$, priorityMixins);
-  rpc$.metadata = metadata;
-  return rpc$;
+  const result$ = memoize(rpc$);
+  Object.assign(result$, priorityMixins);
+  result$.metadata = metadata;
+  return result$;
 };
 
 export default createRpc;
