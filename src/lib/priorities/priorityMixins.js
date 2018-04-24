@@ -18,11 +18,9 @@ export const priorityMixins = {
 
     this.metadata.priority = priority;
 
-    // Object.keys(priority).forEach(key => {
-    //   // If necessary, we clear the memoize cache
-    //   if (typeof rpc[key].clear === 'function') {
-    //     rpc[key].clear();
-    //   }
-    // });
+    // If necessary, we clear the memoize cache
+    if (typeof this.clear === 'function') {
+      this.clear();
+    }
   }
 };
