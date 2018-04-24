@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import * as rpc from '../rpc';
-import priotization from '../priotization';
+import priorities from '../priorities';
 
 const subscribersCount = {};
 
@@ -35,8 +35,10 @@ if (typeof window !== 'undefined') {
             ...rpc[key].metadata,
             subscribersCount: count
           };
-          if (priotization[key]) {
-            overview[key].priority = priotization[key].metadata.name;
+          if (priorities[key]) {
+            overview[key].priority = priorities[key].map(
+              rpc$ => rpc$.metadata.name
+            );
           }
         }
       });

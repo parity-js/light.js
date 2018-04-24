@@ -13,7 +13,7 @@ import {
   distinctReplayRefCount,
   switchMapPromise
 } from '../../utils/operators';
-import priotization from '../../priotization';
+import { getPriority } from '../../priorities';
 
 /**
  * Observable which contains the array of all accounts managed by the light
@@ -24,7 +24,7 @@ import priotization from '../../priotization';
  * @return {Observable<Array<String>>} - An Observable containing the list of accounts.
  */
 export const accounts$ = memoize(() =>
-  priotization.accounts$.pipe(
+  getPriority('accounts$').pipe(
     switchMapPromise(() => api().eth.accounts()),
     map(accounts => accounts.map(Api.util.toChecksumAddress)),
     distinctReplayRefCount(),
@@ -42,7 +42,7 @@ accounts$.metadata = { calls: ['eth_accounts'] };
  * @return {Observable<Number>} - An Observable containing the balance.
  */
 export const balanceOf$ = memoize(address =>
-  priotization.balanceOf$.pipe(
+  getPriority('balanceOf$').pipe(
     switchMapPromise(() => api().eth.getBalance(address)),
     map(_ => +_), // Return number instead of BigNumber
     distinctReplayRefCount(),
@@ -56,11 +56,12 @@ balanceOf$.metadata = { calls: ['eth_getBalance'] };
  *
  * Fetches the first account in {@link accounts$}.
  */
-export const defaultAccount$ = () =>
+export const defaultAccount$ = memoize(() =>
   accounts$().pipe(
     map(accounts => accounts[0]),
     addToOverview('defaultAccount$')
-  );
+  )
+);
 
 /**
  * Get the current block height.
@@ -69,15 +70,18 @@ export const defaultAccount$ = () =>
  *
  * @return {Observable<Number>} - An Observable containing the block height
  */
-export const height$ = () =>
-  priotization.height$.pipe(addToOverview('height$'));
+export const height$ = memoize(() =>
+  getPriority('height$').pipe(addToOverview('height$'))
+);
 
 /**
  * Alias for {@link height$}
  */
-export const blockNumber$ = () => height$.pipe(addToOverview('blockNumber'));
+export const blockNumber$ = memoize(() =>
+  height$.pipe(addToOverview('blockNumber'))
+);
 
 /**
  * Alias for {@link defaultAccount$}
  */
-export const me$ = () => defaultAccount$.pipe(addToOverview('me$'));
+export const me$ = memoize(() => defaultAccount$.pipe(addToOverview('me$')));

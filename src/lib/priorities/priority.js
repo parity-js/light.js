@@ -3,44 +3,42 @@
 
 // SPDX-License-Identifier: MIT
 
-import {
-  onAccountsChanged$,
-  onEvery2Blocks$,
-  onEveryBlock$,
-  onEvery2Seconds$,
-  onlyAtStartup$
-} from './on';
+import { merge } from 'rxjs/observable/merge';
+
+import priorities from './';
 import * as rpc from '../rpc';
 
-const priotization = {
-  accounts$: onAccountsChanged$,
-  balanceOf$: onEvery2Blocks$,
-  blockNumber$: onEveryBlock$,
-  chainName$: onlyAtStartup$,
-  chainStatus$: onEveryBlock$,
-  defaultAccount$: onAccountsChanged$,
-  height$: onEveryBlock$,
-  nodeHealth$: onEvery2Seconds$
+/**
+ * Get the priority of a RPC Observable, i.e. how often is this Observable
+ * updated.
+ *
+ * @param {String} name - The name of the Observable.
+ * @return {Observable} - An Observable that represents the priority.
+ */
+export const getPriority = name => {
+  return merge(...priorities[name]);
 };
 
 /**
- * Change the priority of an Observable.
+ * Change the priority of a RPC Observable.
  *
  * @param {Object} priority - An Object where the key is an RPC Observable
  * name, and the value is a priority Observable.
+ * @return {Null}
  * @example
  * setPriority({balanceOf$: onEverySecond$}); // Will fetch balance every
  * second.
  */
 export const setPriority = priority => {
-  Object.assign(priotization, priority);
+  // TODO Check that priority is well-formed
+
+  Object.assign(priorities, priority);
 
   Object.keys(priority).forEach(key => {
+    console.log(rpc[key]());
     // If necessary, we clear the memoize cache
     if (typeof rpc[key].clear === 'function') {
       rpc[key].clear();
     }
   });
 };
-
-export default priotization;

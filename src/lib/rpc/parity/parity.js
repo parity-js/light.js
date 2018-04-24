@@ -11,8 +11,8 @@ import {
   distinctReplayRefCount,
   switchMapPromise
 } from '../../utils/operators';
-import { onAccountsChanged$ } from '../../priotization/on';
-import priotization from '../../priotization';
+import { getPriority } from '../../priorities';
+import { onAccountsChanged$ } from '../../priorities/on';
 
 /**
  * Get the name of the current chain.
@@ -23,7 +23,7 @@ import priotization from '../../priotization';
  * current chain.
  */
 export const chainName$ = () =>
-  priotization.chainName$.pipe(
+  getPriority('chainName$').pipe(
     switchMapPromise(() => api().parity.netChain()),
     distinctReplayRefCount(),
     addToOverview('chainName$')
@@ -38,7 +38,7 @@ chainName$.metadata = { calls: ['parity_netChain'] };
  * @return {Observable<String>} - An Observable containing the status.
  */
 export const chainStatus$ = () =>
-  priotization.chainStatus$.pipe(
+  getPriority('chainStatus$').pipe(
     switchMapPromise(() => api().parity.chainStatus()),
     distinctReplayRefCount(),
     addToOverview('chainStatus$')
@@ -53,7 +53,7 @@ chainStatus$.metadata = { calls: ['parity_chainStatus'] };
  * @return {Observable<Object>} - An Observable containing the health.
  */
 export const nodeHealth$ = () =>
-  priotization.nodeHealth$.pipe(
+  getPriority('nodeHealth$').pipe(
     switchMapPromise(() => api().parity.nodeHealth()),
     distinctReplayRefCount(),
     addToOverview('nodeHealth$')

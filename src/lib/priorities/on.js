@@ -3,10 +3,10 @@
 
 // SPDX-License-Identifier: MIT
 
-import { filter, startWith } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { filter } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { timer } from 'rxjs/observable/timer';
 
 import api from '../api';
@@ -33,7 +33,7 @@ export const onEveryBlock$ = Observable.create(observer => {
     subscription.then(subscriptionId =>
       api().pubsub.unsubscribe(subscriptionId)
     );
-}).pipe(startWith(0), distinctReplayRefCount());
+}).pipe(distinctReplayRefCount());
 onEveryBlock$.metadata = { name: 'onEveryBlock$' };
 
 /**
@@ -67,5 +67,5 @@ onEvery2Seconds$.metadata = { name: 'onEvery2Seconds$' };
 /**
  * Observable that emits only once.
  */
-export const onlyAtStartup$ = of(0);
-onlyAtStartup$.metadata = { name: 'onlyAtStartup$' };
+export const onStartup$ = of(0);
+onStartup$.metadata = { name: 'onStartup$' };
