@@ -3,6 +3,5 @@
 
 // SPDX-License-Identifier: MIT
 
-export * from './getPriority';
 export * from './on';
 export * from './priorityMixins';

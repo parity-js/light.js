@@ -9,7 +9,7 @@ import light from '../../../hoc';
 import { balanceOf$, defaultAccount$, nodeHealth$ } from '../../../lib'; // from '@parity/light'
 
 @light({
-  balanceOf: balanceOf$('0x00Ae02834e91810B223E54ce3f9B7875258a1747'),
+  balanceOf: ownProps => balanceOf$(ownProps.address),
   defaultAccount: defaultAccount$
   // nodeHealth: nodeHealth$,
   // nodeHealth2: nodeHealth$

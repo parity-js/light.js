@@ -32,11 +32,7 @@ class Balance extends Component {
   }
 
   handleChange = ({ target: { value } }) => {
-    setDefaultAccount$(value).subscribe(
-      console.log,
-      () => console.log('error'),
-      () => console.log('completed')
-    );
+    setDefaultAccount$(value).subscribe();
   };
 
   handleSend = () => {
@@ -69,7 +65,7 @@ class Balance extends Component {
         <p>My Balance: {balance}.</p>
         <button onClick={this.handleSend}>Send 0.01ETH to myself</button>
         {tx && <TxProgress tx={tx} />}
-        {visible && <Bal />}
+        {visible && <Bal address={defaultAccount} />}
       </div>
     );
   }

@@ -5,15 +5,15 @@
 
 import { Observable } from 'rxjs/Observable';
 
-import api from '../../api';
 import {
   addToOverview,
   distinctReplayRefCount,
   switchMapPromise
 } from '../../utils/operators';
+import api from '../../api';
 import createRpc$ from '../../utils/createRpc';
+import { getPriority } from '../../priorities/getPriority';
 import {
-  getPriority,
   onAccountsChanged$,
   onEveryBlock$,
   onEvery2Seconds$,

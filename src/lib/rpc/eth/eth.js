@@ -6,15 +6,15 @@
 import Api from '@parity/api';
 import { map } from 'rxjs/operators';
 
-import api from '../../api';
 import {
   addToOverview,
   distinctReplayRefCount,
   switchMapPromise
 } from '../../utils/operators';
+import api from '../../api';
 import createRpc$ from '../../utils/createRpc';
+import { getPriority } from '../../priorities/getPriority';
 import {
-  getPriority,
   onAccountsChanged$,
   onEvery2Blocks$,
   onEveryBlock$,
