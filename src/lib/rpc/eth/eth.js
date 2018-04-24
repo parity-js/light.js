@@ -13,7 +13,14 @@ import {
   distinctReplayRefCount,
   switchMapPromise
 } from '../../utils/operators';
-import { getPriority } from '../../priorities';
+import createRpc$ from '../../utils/createRpc';
+import {
+  getPriority,
+  onAccountsChanged$,
+  onEvery2Blocks$,
+  onEveryBlock$,
+  onStartup$
+} from '../../priorities';
 
 /**
  * Observable which contains the array of all accounts managed by the light
@@ -23,15 +30,19 @@ import { getPriority } from '../../priorities';
  *
  * @return {Observable<Array<String>>} - An Observable containing the list of accounts.
  */
-export const accounts$ = memoize(() =>
-  getPriority('accounts$').pipe(
-    switchMapPromise(() => api().eth.accounts()),
-    map(accounts => accounts.map(Api.util.toChecksumAddress)),
-    distinctReplayRefCount(),
-    addToOverview('accounts$')
+export const accounts$ = createRpc$({
+  calls: ['eth_accounts'],
+  priority: [onAccountsChanged$]
+})(
+  memoize(() =>
+    getPriority(accounts$).pipe(
+      switchMapPromise(() => api().eth.accounts()),
+      map(accounts => accounts.map(Api.util.toChecksumAddress)),
+      distinctReplayRefCount(),
+      addToOverview('accounts$')
+    )
   )
 );
-accounts$.metadata = { calls: ['eth_accounts'] };
 
 /**
  * Get the balance of a given account.
@@ -41,25 +52,31 @@ accounts$.metadata = { calls: ['eth_accounts'] };
  * @param {String} address - The account address to query the balance.
  * @return {Observable<Number>} - An Observable containing the balance.
  */
-export const balanceOf$ = memoize(address =>
-  getPriority('balanceOf$').pipe(
-    switchMapPromise(() => api().eth.getBalance(address)),
-    map(_ => +_), // Return number instead of BigNumber
-    distinctReplayRefCount(),
-    addToOverview('balanceOf$')
+export const balanceOf$ = createRpc$({
+  calls: ['eth_getBalance'],
+  priority: [onEvery2Blocks$, onStartup$]
+})(
+  memoize(address =>
+    getPriority(balanceOf$).pipe(
+      switchMapPromise(() => api().eth.getBalance(address)),
+      map(_ => +_), // Return number instead of BigNumber
+      distinctReplayRefCount(),
+      addToOverview('balanceOf$')
+    )
   )
 );
-balanceOf$.metadata = { calls: ['eth_getBalance'] };
 
 /**
  * Get the default account managed by the light client.
  *
  * Fetches the first account in {@link accounts$}.
  */
-export const defaultAccount$ = memoize(() =>
-  accounts$().pipe(
-    map(accounts => accounts[0]),
-    addToOverview('defaultAccount$')
+export const defaultAccount$ = createRpc$()(
+  memoize(() =>
+    accounts$().pipe(
+      map(accounts => accounts[0]),
+      addToOverview('defaultAccount$')
+    )
   )
 );
 
@@ -70,18 +87,20 @@ export const defaultAccount$ = memoize(() =>
  *
  * @return {Observable<Number>} - An Observable containing the block height
  */
-export const height$ = memoize(() =>
-  getPriority('height$').pipe(addToOverview('height$'))
+export const height$ = createRpc$({ priority: [onEveryBlock$] })(
+  memoize(() => getPriority(height$).pipe(addToOverview('height$')))
 );
 
 /**
  * Alias for {@link height$}
  */
-export const blockNumber$ = memoize(() =>
-  height$.pipe(addToOverview('blockNumber'))
+export const blockNumber$ = createRpc$()(
+  memoize(() => height$.pipe(addToOverview('blockNumber')))
 );
 
 /**
  * Alias for {@link defaultAccount$}
  */
-export const me$ = memoize(() => defaultAccount$.pipe(addToOverview('me$')));
+export const me$ = createRpc$()(
+  memoize(() => defaultAccount$.pipe(addToOverview('me$')))
+);

@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import { Observable } from 'rxjs/Observable';
+import memoize from 'memoizee';
 
 import api from '../../api';
 import {
@@ -11,8 +12,14 @@ import {
   distinctReplayRefCount,
   switchMapPromise
 } from '../../utils/operators';
-import { getPriority } from '../../priorities';
-import { onAccountsChanged$ } from '../../priorities/on';
+import createRpc$ from '../../utils/createRpc';
+import {
+  getPriority,
+  onAccountsChanged$,
+  onEveryBlock$,
+  onEvery2Seconds$,
+  onStartup$
+} from '../../priorities';
 
 /**
  * Get the name of the current chain.
@@ -22,13 +29,18 @@ import { onAccountsChanged$ } from '../../priorities/on';
  * @return {Observable<String>} - An Observable containing the name of the
  * current chain.
  */
-export const chainName$ = () =>
-  getPriority('chainName$').pipe(
-    switchMapPromise(() => api().parity.netChain()),
-    distinctReplayRefCount(),
-    addToOverview('chainName$')
-  );
-chainName$.metadata = { calls: ['parity_netChain'] };
+export const chainName$ = createRpc$({
+  calls: ['parity_netChain'],
+  priority: [onStartup$]
+})(
+  memoize(() =>
+    getPriority(chainName$).pipe(
+      switchMapPromise(() => api().parity.netChain()),
+      distinctReplayRefCount(),
+      addToOverview('chainName$')
+    )
+  )
+);
 
 /**
  * Get the status of the current chain.
@@ -37,13 +49,18 @@ chainName$.metadata = { calls: ['parity_netChain'] };
  *
  * @return {Observable<String>} - An Observable containing the status.
  */
-export const chainStatus$ = () =>
-  getPriority('chainStatus$').pipe(
-    switchMapPromise(() => api().parity.chainStatus()),
-    distinctReplayRefCount(),
-    addToOverview('chainStatus$')
-  );
-chainStatus$.metadata = { calls: ['parity_chainStatus'] };
+export const chainStatus$ = createRpc$({
+  calls: ['parity_chainStatus'],
+  priority: [onEveryBlock$]
+})(
+  memoize(() =>
+    getPriority(chainStatus$).pipe(
+      switchMapPromise(() => api().parity.chainStatus()),
+      distinctReplayRefCount(),
+      addToOverview('chainStatus$')
+    )
+  )
+);
 
 /**
  * Get the node's health.
@@ -52,13 +69,18 @@ chainStatus$.metadata = { calls: ['parity_chainStatus'] };
  *
  * @return {Observable<Object>} - An Observable containing the health.
  */
-export const nodeHealth$ = () =>
-  getPriority('nodeHealth$').pipe(
-    switchMapPromise(() => api().parity.nodeHealth()),
-    distinctReplayRefCount(),
-    addToOverview('nodeHealth$')
-  );
-nodeHealth$.metadata = { calls: ['parity_nodeHealth'] };
+export const nodeHealth$ = createRpc$({
+  calls: ['parity_nodeHealth'],
+  priority: [onEvery2Seconds$]
+})(
+  memoize(() =>
+    getPriority(nodeHealth$).pipe(
+      switchMapPromise(() => api().parity.nodeHealth()),
+      distinctReplayRefCount(),
+      addToOverview('nodeHealth$')
+    )
+  )
+);
 
 /**
  * Post a transaction to the network.

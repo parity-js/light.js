@@ -6,8 +6,13 @@
 import React, { Component } from 'react';
 
 import Balance from './Balance';
+import { defaultAccount$ } from '../lib'; // from '@parity/light';
+import light from '../hoc';
 
-class Accounts extends Component {
+@light({
+  defaultAccount: defaultAccount$
+})
+class Tokens extends Component {
   state = {
     visible: true
   };
@@ -18,10 +23,11 @@ class Accounts extends Component {
   };
 
   render() {
+    const { defaultAccount } = this.props;
     return (
       <div>
-        This is the tokens page.{this.state.visible ? (
-          <Balance address="0x00Ae02834e91810B223E54ce3f9B7875258a1747" />
+        This is the tokens page.{this.state.visible && defaultAccount ? (
+          <Balance address={defaultAccount} />
         ) : (
           <button onClick={this.handleClick}>Show details</button>
         )}
@@ -30,4 +36,4 @@ class Accounts extends Component {
   }
 }
 
-export default Accounts;
+export default Tokens;
