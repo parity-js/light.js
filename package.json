@@ -1,5 +1,5 @@
 {
-  "name": "@parity/api",
+  "name": "@parity/light.js",
   "description": "A high-level JS library optimized for light clients",
   "version": "1.0.0",
   "main": "lib/index.js",
@@ -9,10 +9,10 @@
     "Amaury Martiny"
   ],
   "contributors": [],
-  "license": "GPL-3.0",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/parity-js/light.git"
+    "url": "git+https://github.com/parity-js/light.js.git"
   },
   "keywords": [
     "Ethereum",
