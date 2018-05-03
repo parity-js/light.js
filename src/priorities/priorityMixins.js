@@ -13,7 +13,7 @@ export const priorityMixins = {
    * setPriority({balanceOf$: onEverySecond$}); // Will fetch balance every
    * second.
    */
-  setPriority(priority) {
+  setPriority (priority) {
     // TODO Check that priority is well-formed
 
     this.metadata.priority = priority;

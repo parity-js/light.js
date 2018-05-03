@@ -25,7 +25,6 @@
   "scripts": {
     "build": "rimraf lib && babel src --out-dir lib",
     "lint": "semistandard 'src/**/*.js' --parser babel-eslint",
-    "postinstall": "npm run build",
     "test": "echo Skipped."
   },
   "dependencies": {

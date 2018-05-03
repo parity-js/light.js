@@ -25,7 +25,7 @@ export const setSubscribersCount = (key, count) => {
 if (typeof window !== 'undefined') {
   window.parity = {
     ...window.parity,
-    rpcOverview() {
+    rpcOverview () {
       const overview = {};
       Object.keys(rpc).forEach(key => {
         const count = subscribersCount[key];
