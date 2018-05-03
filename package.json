@@ -1,6 +1,6 @@
 {
   "name": "@parity/light.js",
-  "description": "A high-level JS library optimized for light clients",
+  "description": "A high-level reactive JS library optimized for light clients",
   "version": "1.0.0",
   "main": "lib/index.js",
   "author": "Parity Team <admin@parity.io>",
@@ -20,32 +20,26 @@
     "Light",
     "Light Client",
     "Parity",
-    "Promise"
+    "Observable"
   ],
   "scripts": {
-    "build": "react-app-rewired build",
-    "lint": "semistandard src/**/*.js --parser babel-eslint",
-    "start": "react-app-rewired start",
+    "build": "rimraf lib && babel src --out-dir lib",
+    "lint": "semistandard 'src/**/*.js' --parser babel-eslint",
     "test": "echo Skipped."
   },
   "dependencies": {
-    "@parity/api": "^2.1.20",
+    "@parity/api": "^2.1.22",
     "memoizee": "^0.4.12",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.1.4",
-    "rxjs": "^5.5.9"
+    "rxjs": "^6.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.44",
-    "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/cli": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/preset-es2015": "^7.0.0-beta.46",
+    "@babel/preset-stage-0": "^7.0.0-beta.46",
     "babel-eslint": "^8.2.3",
-    "babel-loader": "^8.0.0-beta",
-    "react-app-rewire-mobx": "^1.0.8",
-    "react-app-rewired": "^1.5.0",
-    "semistandard": "^12.0.1",
-    "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13"
+    "rimraf": "^2.6.2",
+    "semistandard": "^12.0.1"
   }
 }
