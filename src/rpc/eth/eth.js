@@ -88,12 +88,12 @@ export const height$ = createRpc$({ priority: [onEveryBlock$] })(() =>
  * Alias for {@link height$}
  */
 export const blockNumber$ = createRpc$()(() =>
-  height$.pipe(addToOverview('blockNumber'))
+  height$().pipe(addToOverview('blockNumber'))
 );
 
 /**
  * Alias for {@link defaultAccount$}
  */
 export const me$ = createRpc$()(() =>
-  defaultAccount$.pipe(addToOverview('me$'))
+  defaultAccount$().pipe(addToOverview('me$'))
 );
