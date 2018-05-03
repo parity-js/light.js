@@ -14,7 +14,7 @@ import {
   defaultAccount$,
   height$,
   setDefaultAccount$
-} from '../../lib'; // from '@parity/light'
+} from '../../light.js';
 import TxProgress from './TxProgress';
 
 @light({

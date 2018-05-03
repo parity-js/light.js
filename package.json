@@ -30,7 +30,8 @@
   "dependencies": {
     "@parity/api": "^2.1.22",
     "memoizee": "^0.4.12",
-    "rxjs": "^6.0.0"
+    "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.46",

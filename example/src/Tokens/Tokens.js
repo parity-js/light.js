@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 
 import Balance from './Balance';
-import { defaultAccount$ } from '../lib'; // from '@parity/light';
+import { defaultAccount$ } from '../light.js';
 import light from '../hoc';
 
 @light({

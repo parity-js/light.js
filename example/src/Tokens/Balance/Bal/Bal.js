@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 
 import light from '../../../hoc';
-import { balanceOf$, defaultAccount$, nodeHealth$ } from '../../../lib'; // from '@parity/light'
+import { balanceOf$, defaultAccount$, nodeHealth$ } from '../../../light.js';
 
 @light({
   balanceOf: ownProps => balanceOf$(ownProps.address),

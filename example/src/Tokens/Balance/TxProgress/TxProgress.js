@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 
 import light from '../../../hoc';
-import { post$ } from '../../../lib'; // from '@parity/light'
+import { post$ } from '../../../light.js';
 
 @light({
   txProgress: ownProps => post$(ownProps.tx)
