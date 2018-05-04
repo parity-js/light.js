@@ -3,6 +3,7 @@
 
 // SPDX-License-Identifier: MIT
 
+import { empty } from 'rxjs';
 import { merge } from 'rxjs/operators';
 
 /**
@@ -12,4 +13,5 @@ import { merge } from 'rxjs/operators';
  * @param {String} rpc$ - The RPC Observable.
  * @return {Observable} - An Observable that represents the priority.
  */
-export const getPriority = rpc$ => merge(...rpc$.metadata.priority);
+export const getPriority = rpc$ =>
+  empty().pipe(merge(...rpc$.metadata.priority));

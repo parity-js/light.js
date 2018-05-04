@@ -4,11 +4,11 @@
 // SPDX-License-Identifier: MIT
 
 import { catchError, switchMap } from 'rxjs/operators';
-import { empty, fromPromise } from 'rxjs';
+import { empty, from } from 'rxjs';
 
 /**
- * SwitchMap to an Observable.fromPromise that catches errors and returns an
+ * SwitchMap to an Observable.from that catches errors and returns an
  * empty Observable. Will log an error in the console.
  */
 export const switchMapPromise = promise =>
-  switchMap(() => fromPromise(promise()).pipe(catchError(() => empty())));
+  switchMap(() => from(promise()).pipe(catchError(() => empty())));
