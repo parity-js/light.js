@@ -1,7 +1,3 @@
 {
-  "presets": [
-    "@babel/preset-env",
-    "@babel/preset-es2015",
-    ["@babel/preset-stage-0", { "decoratorsLegacy": true }]
-  ]
+  "presets": ["@babel/preset-env"]
 }

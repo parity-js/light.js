@@ -3,11 +3,8 @@
 
 // SPDX-License-Identifier: MIT
 
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject, Observable, of, timer } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import { timer } from 'rxjs/observable/timer';
 
 import api from '../api';
 import { distinctReplayRefCount } from '../utils/operators/distinctReplayRefCount';

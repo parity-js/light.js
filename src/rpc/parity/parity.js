@@ -3,7 +3,7 @@
 
 // SPDX-License-Identifier: MIT
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import {
   addToOverview,

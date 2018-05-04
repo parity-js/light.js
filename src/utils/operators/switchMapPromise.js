@@ -4,8 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import { catchError, switchMap } from 'rxjs/operators';
-import { empty } from 'rxjs/observable/empty';
-import { fromPromise } from 'rxjs/observable/fromPromise';
+import { empty, fromPromise } from 'rxjs';
 
 /**
  * SwitchMap to an Observable.fromPromise that catches errors and returns an

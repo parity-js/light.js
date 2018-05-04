@@ -30,15 +30,12 @@
   "dependencies": {
     "@parity/api": "^2.1.22",
     "memoizee": "^0.4.12",
-    "rxjs": "^6.0.0",
-    "rxjs-compat": "^6.0.0"
+    "rxjs": "^6.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.46",
     "@babel/core": "^7.0.0-beta.46",
     "@babel/preset-env": "^7.0.0-beta.46",
-    "@babel/preset-es2015": "^7.0.0-beta.46",
-    "@babel/preset-stage-0": "^7.0.0-beta.46",
     "babel-eslint": "^8.2.3",
     "rimraf": "^2.6.2",
     "semistandard": "^12.0.1"
