@@ -35,6 +35,19 @@ export const allAccountsInfo$ = createRpc$({
 })(() =>
   getPriority(allAccountsInfo$).pipe(
     switchMapPromise(() => api().parity.allAccountsInfo()),
+    map(allAccountsInfo => {
+      Object.keys(allAccountsInfo).forEach(address => {
+        if (!allAccountsInfo[address].uuid) {
+          // We remove the accounts that don't have uuid, they are not user
+          // accounts (maybe contracts etc)
+          delete allAccountsInfo[address];
+        } else {
+          // We add the address field
+          allAccountsInfo[address].address = address;
+        }
+      });
+      return allAccountsInfo;
+    }),
     distinctReplayRefCount(),
     addToOverview('allAccountsInfo$')
   )
