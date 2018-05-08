@@ -54,7 +54,7 @@ class Balance extends Component {
         <p>Block: {height}.</p>
         <p>My Account: {defaultAccount}.</p>
         {accounts && (
-          <select onChange={this.handleChange} value={accounts[0]}>
+          <select onChange={this.handleChange} value={defaultAccount}>
             {accounts.map((account, index) => (
               <option key={account} value={account}>
                 {account}

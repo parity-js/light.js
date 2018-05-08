@@ -22,26 +22,6 @@ import {
 } from '../../priorities';
 
 /**
- * Observable which contains the array of all accounts managed by the light
- * client.
- *
- * Calls eth_accounts.
- *
- * @return {Observable<Array<String>>} - An Observable containing the list of accounts.
- */
-export const accounts$ = createRpc$({
-  calls: ['eth_accounts'],
-  priority: [onAccountsChanged$]
-})(() =>
-  getPriority(accounts$).pipe(
-    switchMapPromise(() => api().eth.accounts()),
-    map(accounts => accounts.map(Api.util.toChecksumAddress)),
-    distinctReplayRefCount(),
-    addToOverview('accounts$')
-  )
-);
-
-/**
  * Get the balance of a given account.
  *
  * Calls eth_getBalance.
@@ -62,18 +42,6 @@ export const balanceOf$ = createRpc$({
 );
 
 /**
- * Get the default account managed by the light client.
- *
- * Fetches the first account in {@link accounts$}.
- */
-export const defaultAccount$ = createRpc$()(() =>
-  accounts$().pipe(
-    map(accounts => accounts[0]),
-    addToOverview('defaultAccount$')
-  )
-);
-
-/**
  * Get the current block height.
  *
  * Calls parity_subscribe('eth_blockNumber').
@@ -89,11 +57,4 @@ export const height$ = createRpc$({ priority: [onEveryBlock$] })(() =>
  */
 export const blockNumber$ = createRpc$()(() =>
   height$().pipe(addToOverview('blockNumber'))
-);
-
-/**
- * Alias for {@link defaultAccount$}
- */
-export const me$ = createRpc$()(() =>
-  defaultAccount$().pipe(addToOverview('me$'))
 );

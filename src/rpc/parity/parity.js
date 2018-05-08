@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import {
   addToOverview,
@@ -19,6 +20,38 @@ import {
   onEvery2Seconds$,
   onStartup$
 } from '../../priorities';
+
+/**
+ * Get all accounts info.
+ *
+ * Calls parity_allAccountsInfo.
+ *
+ * @return {Observable<String>} - An Observable containing the name of the
+ * current chain.
+ */
+export const allAccountsInfo$ = createRpc$({
+  calls: ['parity_allAccountsInfo'],
+  priority: [onAccountsChanged$]
+})(() =>
+  getPriority(allAccountsInfo$).pipe(
+    switchMapPromise(() => api().parity.allAccountsInfo()),
+    distinctReplayRefCount(),
+    addToOverview('allAccountsInfo$')
+  )
+);
+
+/**
+ * Observable which contains the array of all addresses managed by the light
+ * client.
+ *
+ * Calls eth_accounts.
+ *
+ * @return {Observable<Array<String>>} - An Observable containing the list of
+ * public addresses.
+ */
+export const accounts$ = createRpc$()(() =>
+  allAccountsInfo$().pipe(map(info => Object.keys(info)))
+);
 
 /**
  * Get the name of the current chain.
@@ -55,6 +88,29 @@ export const chainStatus$ = createRpc$({
     distinctReplayRefCount(),
     addToOverview('chainStatus$')
   )
+);
+
+/**
+ * Get the default account managed by the light client.
+ *
+ * Calls parity_getNewDappsDefaultAddress
+ */
+export const defaultAccount$ = createRpc$({
+  calls: ['parity_getNewDappsDefaultAddress'],
+  priority: [onAccountsChanged$]
+})(() =>
+  accounts$().pipe(
+    switchMapPromise(() => api().parity.getNewDappsDefaultAddress()),
+    distinctReplayRefCount(),
+    addToOverview('defaultAccount$')
+  )
+);
+
+/**
+ * Alias for {@link defaultAccount$}
+ */
+export const me$ = createRpc$()(() =>
+  defaultAccount$().pipe(addToOverview('me$'))
 );
 
 /**

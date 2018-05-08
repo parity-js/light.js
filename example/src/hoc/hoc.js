@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import React, { Component } from 'react';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 const hoc = observables => InnerComponent =>
   class extends Component {
