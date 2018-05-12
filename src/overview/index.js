@@ -5,17 +5,19 @@
 
 import * as rpc from '../rpc';
 
+// We centrally store the number of subscribers each RPC Observable rpc$ has.
+// TODO If possible, it would be nice to store this inside each rpc$ itself.
 const subscribersCount = {};
 
 /**
  * Set the number of subscribers (i.e. refCount) an Observable currently has.
  *
- * @param {String} key - The Observable name inside the rpc/ folder.
+ * @param {String} rpc$ - The Observable name inside the rpc/ folder.
  * @param {Number} count - The number of subscribers the Observable currently
  * has.
  */
-export const setSubscribersCount = (key, count) => {
-  subscribersCount[key] = count;
+export const setSubscribersCount = (rpc$, count) => {
+  subscribersCount[rpc$] = count;
 };
 
 /**

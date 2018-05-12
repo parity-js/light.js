@@ -8,11 +8,11 @@ import ReactDOM from 'react-dom';
 import Api from '@parity/api';
 
 import App from './App';
-import light, { balanceOf$, onEvery2Seconds$ } from './light.js';
+import light, { balanceOf$, priorities } from './light.js';
 
 light.setApi(
   new Api(new Api.Provider.Ws('ws://127.0.0.1:8546', 'g8OzIgL6VXDv201E'))
 );
-balanceOf$.setPriority([onEvery2Seconds$]);
+balanceOf$.setPriority([priorities.onEvery2Seconds$]);
 
 ReactDOM.render(<App />, document.getElementById('root'));
