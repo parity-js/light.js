@@ -3,15 +3,17 @@
 //
 // SPDX-License-Identifier: MIT
 
+// Mixins (aka. interface in Java or trait in Rust) that are added into an rpc$
+// Observable.
 export const priorityMixins = {
   /**
    * Change the priority of a RPC Observable.
    *
-   * @param {Object} priority - An array of priority Observables.
+   * @param {Array<Observable>} priority - An array of priority Observables.
    * @return {Null}
    * @example
-   * setPriority({balanceOf$: onEverySecond$}); // Will fetch balance every
-   * second.
+   * balanceOf$.setPriority([onEverySecond$, onStartup$]); // Will fetch
+   * balance once on startup, and then every second.
    */
   setPriority (priority) {
     // TODO Check that priority is well-formed

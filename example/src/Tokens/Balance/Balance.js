@@ -51,6 +51,7 @@ class Balance extends Component {
     return (
       <div>
         <p>Chain: {chainName}.</p>
+
         <p>Block: {height}.</p>
         <p>My Account: {defaultAccount}.</p>
         {accounts && (

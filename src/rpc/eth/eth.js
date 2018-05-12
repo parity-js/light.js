@@ -13,7 +13,12 @@ import {
 import api from '../../api';
 import createRpc$ from '../../utils/createRpc';
 import { getPriority } from '../../priorities/getPriority';
-import { onEvery2Blocks$, onEveryBlock$, onStartup$ } from '../../priorities';
+import {
+  onEvery2Blocks$,
+  onEveryBlock$,
+  onEverySecond$,
+  onStartup$
+} from '../../priorities';
 
 /**
  * Get the balance of a given account.
@@ -51,4 +56,23 @@ export const height$ = createRpc$({ priority: [onEveryBlock$] })(() =>
  */
 export const blockNumber$ = createRpc$()(() =>
   height$().pipe(addToOverview('blockNumber'))
+);
+
+/**
+ * Get the syncing state.
+ *
+ * Calls eth_syncing.
+ *
+ * @param {String} address - The account address to query the balance.
+ * @return {Observable<Number>} - An Observable containing the balance.
+ */
+export const syncing$ = createRpc$({
+  calls: ['eth_syncing'],
+  priority: [onEverySecond$]
+})(() =>
+  getPriority(syncing$).pipe(
+    switchMapPromise(() => api().eth.syncing()),
+    distinctReplayRefCount(),
+    addToOverview('syncing$')
+  )
 );
