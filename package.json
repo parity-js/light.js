@@ -15,12 +15,13 @@
     "url": "git+https://github.com/parity-js/light.js.git"
   },
   "keywords": [
-    "Ethereum",
     "API",
+    "Ethereum",
     "Light",
     "Light Client",
+    "Observable",
     "Parity",
-    "Observable"
+    "Reactive"
   ],
   "scripts": {
     "build": "rimraf lib && babel src --out-dir lib",
