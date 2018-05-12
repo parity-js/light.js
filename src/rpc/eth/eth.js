@@ -1,9 +1,8 @@
 // Copyright 2015-2018 Parity Technologies (UK) Ltd.
 // This file is part of Parity.
-
+//
 // SPDX-License-Identifier: MIT
 
-import Api from '@parity/api';
 import { map } from 'rxjs/operators';
 
 import {
@@ -14,12 +13,7 @@ import {
 import api from '../../api';
 import createRpc$ from '../../utils/createRpc';
 import { getPriority } from '../../priorities/getPriority';
-import {
-  onAccountsChanged$,
-  onEvery2Blocks$,
-  onEveryBlock$,
-  onStartup$
-} from '../../priorities';
+import { onEvery2Blocks$, onEveryBlock$, onStartup$ } from '../../priorities';
 
 /**
  * Get the balance of a given account.
