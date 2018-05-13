@@ -3,17 +3,11 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { BehaviorSubject, Observable, of, timer } from 'rxjs';
+import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
-import api from '../api';
-import { distinctReplayRefCount } from '../utils/operators/distinctReplayRefCount';
-
-/**
- * Observable that emits each time accounts change.
- */
-export const onAccountsChanged$ = new BehaviorSubject(0);
-onAccountsChanged$.metadata = { name: 'onAccountsChanged$' };
+import api from '../../api';
+import { distinctReplayRefCount } from '../../utils/operators/distinctReplayRefCount';
 
 /**
  * Observable that emits on every new block.
@@ -48,21 +42,3 @@ export const onEvery4Blocks$ = onEveryBlock$.pipe(
   filter(n => n % 4 === 0) // Around ~1min on mainnet
 );
 onEvery4Blocks$.metadata = { name: 'onEvery4Blocks$' };
-
-/**
- * Observable that emits on every second.
- */
-export const onEverySecond$ = timer(0, 1000);
-onEverySecond$.metadata = { name: 'onEverySecond$' };
-
-/**
- * Observable that emits on every other second.
- */
-export const onEvery2Seconds$ = timer(0, 2000);
-onEvery2Seconds$.metadata = { name: 'onEvery2Seconds$' };
-
-/**
- * Observable that emits only once.
- */
-export const onStartup$ = of(0);
-onStartup$.metadata = { name: 'onStartup$' };

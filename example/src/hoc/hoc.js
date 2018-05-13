@@ -52,6 +52,7 @@ const hoc = observables => InnerComponent =>
       // - do nothing if another prop than publicAddress has changed
       Object.keys(observables)
         .filter(key => !observables[key].metadata) // Don't touch subscriptions to observables that are defined without ownProps => obs$(ownProps)
+        .filter(key => this.propsProxy.paramsByRpc[key]) // Filter out observables that don't use props
         .filter(
           key =>
             // Filter out the observables who aren't related to the props that have changed

@@ -5,7 +5,7 @@
 
 // Mixins (aka. interface in Java or trait in Rust) that are added into an rpc$
 // Observable.
-export const priorityMixins = {
+const priorityMixins = {
   /**
    * Change the priority of a RPC Observable.
    *
@@ -26,3 +26,5 @@ export const priorityMixins = {
     }
   }
 };
+
+export default priorityMixins;

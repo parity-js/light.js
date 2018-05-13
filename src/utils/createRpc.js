@@ -5,7 +5,7 @@
 
 import memoize from 'memoizee';
 
-import { priorityMixins } from '../priorities/priorityMixins';
+import priorityMixins from '../priorities/priorityMixins';
 
 /**
  * Add metadata to an rpc$ Observable.
