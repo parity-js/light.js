@@ -49,21 +49,22 @@ export const allAccountsInfo$ = createRpc$({
       return allAccountsInfo;
     }),
     distinctReplayRefCount(),
-    addToOverview('allAccountsInfo$')
+    addToOverview(allAccountsInfo$)
   )
 );
 
 /**
  * Observable which contains the array of all addresses managed by the light
  * client.
- *
- * Calls eth_accounts.
- *
+ * *
  * @return {Observable<Array<String>>} - An Observable containing the list of
  * public addresses.
  */
 export const accounts$ = createRpc$()(() =>
-  allAccountsInfo$().pipe(map(info => Object.keys(info)))
+  allAccountsInfo$().pipe(
+    map(info => Object.keys(info)),
+    addToOverview(accounts$)
+  )
 );
 
 /**
@@ -81,7 +82,7 @@ export const chainName$ = createRpc$({
   getPriority(chainName$).pipe(
     switchMapPromise(() => api().parity.netChain()),
     distinctReplayRefCount(),
-    addToOverview('chainName$')
+    addToOverview(chainName$)
   )
 );
 
@@ -99,7 +100,7 @@ export const chainStatus$ = createRpc$({
   getPriority(chainStatus$).pipe(
     switchMapPromise(() => api().parity.chainStatus()),
     distinctReplayRefCount(),
-    addToOverview('chainStatus$')
+    addToOverview(chainStatus$)
   )
 );
 
@@ -115,7 +116,7 @@ export const defaultAccount$ = createRpc$({
   accounts$().pipe(
     switchMapPromise(() => api().parity.getNewDappsDefaultAddress()),
     distinctReplayRefCount(),
-    addToOverview('defaultAccount$')
+    addToOverview(defaultAccount$)
   )
 );
 
@@ -123,7 +124,7 @@ export const defaultAccount$ = createRpc$({
  * Alias for {@link defaultAccount$}
  */
 export const me$ = createRpc$()(() =>
-  defaultAccount$().pipe(addToOverview('me$'))
+  defaultAccount$().pipe(addToOverview(me$))
 );
 
 /**
@@ -140,7 +141,7 @@ export const nodeHealth$ = createRpc$({
   getPriority(nodeHealth$).pipe(
     switchMapPromise(() => api().parity.nodeHealth()),
     distinctReplayRefCount(),
-    addToOverview('nodeHealth$')
+    addToOverview(nodeHealth$)
   )
 );
 
@@ -184,7 +185,7 @@ export const post$ = tx => {
       observer.next({ failed: error });
       observer.error(error);
     }
-  }).pipe(distinctReplayRefCount(), addToOverview('post$'));
+  }).pipe(distinctReplayRefCount(), addToOverview(post$));
 
   source$.subscribe(); // Run this Observable immediately;
   return source$;
@@ -214,7 +215,7 @@ export const setDefaultAccount$ = value => {
     } catch (error) {
       observer.error(error);
     }
-  }).pipe(distinctReplayRefCount(), addToOverview('setDefaultAccount$'));
+  }).pipe(distinctReplayRefCount(), addToOverview(setDefaultAccount$));
 
   source$.subscribe(); // Run this Observable immediately
   return source$;

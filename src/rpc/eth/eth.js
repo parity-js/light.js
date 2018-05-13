@@ -36,7 +36,7 @@ export const balanceOf$ = createRpc$({
     switchMapPromise(() => api().eth.getBalance(address)),
     map(_ => +_), // Return number instead of BigNumber
     distinctReplayRefCount(),
-    addToOverview('balanceOf$')
+    addToOverview(balanceOf$)
   )
 );
 
@@ -48,14 +48,14 @@ export const balanceOf$ = createRpc$({
  * @return {Observable<Number>} - An Observable containing the block height
  */
 export const height$ = createRpc$({ priority: [onEveryBlock$] })(() =>
-  getPriority(height$).pipe(addToOverview('height$'))
+  getPriority(height$).pipe(addToOverview(height$))
 );
 
 /**
  * Alias for {@link height$}
  */
 export const blockNumber$ = createRpc$()(() =>
-  height$().pipe(addToOverview('blockNumber'))
+  height$().pipe(addToOverview(blockNumber$))
 );
 
 /**
@@ -73,6 +73,6 @@ export const syncing$ = createRpc$({
   getPriority(syncing$).pipe(
     switchMapPromise(() => api().eth.syncing()),
     distinctReplayRefCount(),
-    addToOverview('syncing$')
+    addToOverview(syncing$)
   )
 );

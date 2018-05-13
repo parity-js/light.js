@@ -5,43 +5,55 @@
 
 import * as rpc from '../rpc';
 
-// We centrally store the number of subscribers each RPC Observable rpc$ has.
-// TODO If possible, it would be nice to store this inside each rpc$ itself.
-const subscribersCount = {};
-
-/**
- * Set the number of subscribers (i.e. refCount) an Observable currently has.
- *
- * @param {String} rpc$ - The Observable name inside the rpc/ folder.
- * @param {Number} count - The number of subscribers the Observable currently
- * has.
- */
-export const setSubscribersCount = (rpc$, count) => {
-  subscribersCount[rpc$] = count;
-};
-
 /**
  * Add a property on window, so that the subscribed object can be viewed in the
  * JS console via `window.parity.rpcOverview()`
  */
 if (typeof window !== 'undefined') {
-  window.parity = {
-    ...window.parity,
+  // == null means null or undefined
+  if (window.parity == null) {
+    window.parity = {};
+  }
+
+  Object.assign(window.parity, {
     rpcOverview () {
       const overview = {};
       Object.keys(rpc).forEach(key => {
-        const count = subscribersCount[key];
-        if (count > 0) {
-          overview[key] = {
-            calls: rpc[key].metadata.calls,
-            priority: (rpc[key].metadata.priority || []).map(
-              priority => priority.metadata.name
-            ),
-            subscribersCount: count
-          };
+        const rpc$ = rpc[key];
+        const { subscribersCount } = rpc$.metadata;
+
+        // If the current rpc$ doesn't have any subscribers, then it means that
+        // it isn't used in the current dapp. In this case, we don't show it in
+        // the overview.
+        if (!subscribersCount) {
+          return;
+        }
+
+        // If there are subscribers, then we add
+        overview[key] = { ...rpc$.metadata };
+
+        // We remove all the metadata keys that are null, empty or functions,
+        // for clarity while console.logging it.
+        Object.keys(overview[key]).forEach(innerKey => {
+          if (
+            !overview[key][innerKey] ||
+            (Array.isArray(overview[key][innerKey]) &&
+              !overview[key][innerKey].length) ||
+            typeof overview[key][innerKey] === 'function'
+          ) {
+            delete overview[key][innerKey];
+          }
+        });
+
+        // We make the `priority` field human-readable
+        if (overview[key].priority) {
+          overview[key].priority.forEach((value, index) => {
+            overview[key].priority[index] = value.metadata.name;
+          });
         }
       });
+
       return overview;
     }
-  };
+  });
 }

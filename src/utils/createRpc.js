@@ -15,8 +15,7 @@ import { priorityMixins } from '../priorities/priorityMixins';
  */
 const createRpc = (metadata = {}) => rpc$ => {
   const result$ = memoize(rpc$);
-  Object.assign(result$, priorityMixins);
-  result$.metadata = metadata;
+  Object.assign(result$, priorityMixins, { metadata });
   return result$;
 };
 

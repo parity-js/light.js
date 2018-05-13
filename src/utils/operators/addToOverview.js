@@ -5,8 +5,6 @@
 
 import { Observable } from 'rxjs';
 
-import { setSubscribersCount } from '../../overview';
-
 /**
  * Same as tap, but passing in addtion (refCount, prevRefCount) as callback
  * arguments.
@@ -45,10 +43,12 @@ export const tapRefCount = onChange => source$ => {
 };
 
 /**
- * Calls {@link setSubscribersCount} every time a new observer subscribes or
- * unsubscribed to the Observable, passing in the refCount.
+ * Updates the subscribersCount field in the rpc$ Observable's metadata object
+ * every time there's a new subscription or unsubscription.
  *
- * @param {String} rpc - See {@link setSubscribersCount}
+ * @param {String} rpc$ - The RPC Observable.
  */
-export const addToOverview = rpc =>
-  tapRefCount(refCount => setSubscribersCount(rpc, refCount));
+export const addToOverview = rpc$ =>
+  tapRefCount(refCount => {
+    Object.assign(rpc$.metadata, { subscribersCount: refCount });
+  });
