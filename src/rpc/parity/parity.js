@@ -115,7 +115,7 @@ export const defaultAccount$ = createRpc$({
   calls: ['parity_getNewDappsDefaultAddress'],
   priority: [onAccountsChanged$]
 })(() =>
-  accounts$().pipe(
+  getPriority(defaultAccount$).pipe(
     switchMapPromise(() => api().parity.getNewDappsDefaultAddress()),
     distinctReplayRefCount(),
     addToOverview(defaultAccount$)

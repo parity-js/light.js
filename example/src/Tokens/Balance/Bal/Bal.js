@@ -6,22 +6,22 @@
 import React, { Component } from 'react';
 
 import light from '../../../hoc';
-import { balanceOf$, defaultAccount$, nodeHealth$ } from '../../../light.js';
+import { balanceOf$, me$, nodeHealth$ } from '../../../light.js';
 
 @light({
   balanceOf: ownProps => balanceOf$(ownProps.address),
-  defaultAccount: defaultAccount$
+  me: me$
   // nodeHealth: nodeHealth$,
   // nodeHealth2: nodeHealth$
 })
 class Bal extends Component {
   render() {
-    const { balanceOf, defaultAccount, nodeHealth } = this.props;
+    const { balanceOf, me, nodeHealth } = this.props;
     return (
       <div>
         <p>balanceOf: {balanceOf}</p>
         <p>nodeHealth: {JSON.stringify(nodeHealth)}</p>
-        <p>defaultAccount: {defaultAccount}</p>
+        <p>defaultAccount: {me}</p>
       </div>
     );
   }
