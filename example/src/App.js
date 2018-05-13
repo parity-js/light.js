@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 
 import logo from './logo.svg';
-import Tokens from './Tokens';
+import Main from './Main';
 import './App.css';
 
 class App extends Component {
+  state = {
+    visible: true
+  };
+
+  handleToggleVisible = () => this.setState({ visible: !this.state.visible });
+
   render() {
+    const { visible } = this.state;
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Tokens />
+        <br />
+        <button onClick={this.handleToggleVisible}>
+          Show/Hide everything (notice the subscribes/unsubscribes)
+        </button>
+        <br />
+        <br />
+        {visible && <Main />}
       </div>
     );
   }

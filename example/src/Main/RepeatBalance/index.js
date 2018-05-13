@@ -3,6 +3,6 @@
 
 // SPDX-License-Identifier: MIT
 
-import Bal from './Bal';
+import RepeatBalance from './RepeatBalance';
 
-export default Bal;
+export default RepeatBalance;

@@ -3,6 +3,6 @@
 
 // SPDX-License-Identifier: MIT
 
-import Tokens from './Tokens';
+import Main from './Main';
 
-export default Tokens;
+export default Main;

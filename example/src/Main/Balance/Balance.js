@@ -5,8 +5,6 @@
 
 import React, { Component } from 'react';
 
-import Bal from './Bal';
-import light from '../../hoc';
 import {
   accounts$,
   balanceOf$,
@@ -15,7 +13,8 @@ import {
   height$,
   setDefaultAccount$
 } from '../../light.js';
-import TxProgress from './TxProgress';
+import light from '../../hoc';
+import './Balance.css';
 
 @light({
   accounts: accounts$,
@@ -25,35 +24,21 @@ import TxProgress from './TxProgress';
   height: height$
 })
 class Balance extends Component {
-  state = { visible: false };
-
-  componentDidMount() {
-    setTimeout(() => this.setState({ visible: true }), 3000);
-  }
+  state = { tx: null };
 
   handleChange = ({ target: { value } }) => {
     setDefaultAccount$(value).subscribe();
-  };
-
-  handleSend = () => {
-    this.setState({
-      tx: {
-        from: this.props.defaultAccount,
-        to: this.props.defaultAccount,
-        value: '0x2386f26fc10000' // 0.01ETH
-      }
-    });
   };
 
   render() {
     const { accounts, balance, chainName, defaultAccount, height } = this.props;
     const { tx, visible } = this.state;
     return (
-      <div>
-        <p>Chain: {chainName}.</p>
-
-        <p>Block: {height}.</p>
-        <p>My Account: {defaultAccount}.</p>
+      <div className="Balance-container">
+        <h3>This is the Balance component.</h3>
+        <p>
+          Chain: {chainName}. Block: {height}. My Account: {defaultAccount}.
+        </p>
         {accounts && (
           <select onChange={this.handleChange} value={defaultAccount}>
             {accounts.map((account, index) => (
@@ -63,10 +48,9 @@ class Balance extends Component {
             ))}
           </select>
         )}
-        <p>My Balance: {balance}.</p>
-        <button onClick={this.handleSend}>Send 0.01ETH to myself</button>
-        {tx && <TxProgress tx={tx} />}
-        {visible && <Bal address={defaultAccount} />}
+        <p>
+          My Balance: <strong>{balance}wei.</strong>
+        </p>
       </div>
     );
   }
