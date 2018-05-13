@@ -54,7 +54,7 @@ export const height$ = createRpc$({ priority: [onEveryBlock$] })(() =>
 /**
  * Alias for {@link height$}
  */
-export const blockNumber$ = createRpc$()(() =>
+export const blockNumber$ = createRpc$({ parent: 'height$' })(() =>
   height$().pipe(addToOverview(blockNumber$))
 );
 

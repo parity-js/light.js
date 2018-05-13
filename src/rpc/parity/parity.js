@@ -60,7 +60,9 @@ export const allAccountsInfo$ = createRpc$({
  * @return {Observable<Array<String>>} - An Observable containing the list of
  * public addresses.
  */
-export const accounts$ = createRpc$()(() =>
+export const accounts$ = createRpc$({
+  parent: 'allAccountsInfo$'
+})(() =>
   allAccountsInfo$().pipe(
     map(info => Object.keys(info)),
     addToOverview(accounts$)
@@ -123,9 +125,9 @@ export const defaultAccount$ = createRpc$({
 /**
  * Alias for {@link defaultAccount$}
  */
-export const me$ = createRpc$()(() =>
-  defaultAccount$().pipe(addToOverview(me$))
-);
+export const me$ = createRpc$({
+  parent: 'defaultAccount$'
+})(() => defaultAccount$().pipe(addToOverview(me$)));
 
 /**
  * Get the node's health.
