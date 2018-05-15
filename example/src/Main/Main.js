@@ -10,7 +10,6 @@ import { defaultAccount$ } from '../light.js';
 import light from '../hoc';
 import RepeatBalance from './RepeatBalance';
 import Send from './Send';
-import TxProgress from './TxProgress';
 
 @light({
   defaultAccount: defaultAccount$
