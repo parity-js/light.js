@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 import {
   addToOverview,
@@ -62,7 +62,7 @@ export const balanceOf$ = createRpc$({
  * of the default account.
  */
 export const defaultAccount$ = createRpc$({
-  parent: 'accounts$'
+  dependsOn: ['accounts$']
 })(() =>
   accounts$().pipe(map(accounts => accounts[0]), addToOverview(defaultAccount$))
 );
@@ -78,17 +78,31 @@ export const height$ = createRpc$({ priority: [onEveryBlock$] })(() =>
 
 /**
  * Alias for {@link height$}.
+ *
+ * @return {Observable<Number>} - An Observable containing the block height.
  */
-export const blockNumber$ = createRpc$({ parent: 'height$' })(() =>
+export const blockNumber$ = createRpc$({ dependsOn: ['height$'] })(() =>
   height$().pipe(addToOverview(blockNumber$))
 );
 
 /**
  * Alias for {@link defaultAccount$}.
+ *
+ * @return {Observable<Address>} - An Observable containing the public address
+ * of the default account.
  */
 export const me$ = createRpc$({
-  parent: 'defaultAccount$'
+  dependsOn: ['defaultAccount$']
 })(() => defaultAccount$().pipe(addToOverview(me$)));
+
+/**
+ * Shorthand for fetching the current account's balance.
+ */
+export const myBalance$ = createRpc$({
+  dependsOn: ['balanceOf$', 'defaultAccount$']
+})(() =>
+  defaultAccount$().pipe(switchMap(balanceOf$), addToOverview(myBalance$))
+);
 
 /**
  * Get the syncing state.

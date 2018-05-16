@@ -15,4 +15,4 @@ onAccountsChanged$.metadata = { name: 'onAccountsChanged$' };
  * Observable that emits each time the default account changes
  */
 export const onAccountsInfoChanged$ = createOnFromPubsub('parity_accountsInfo');
-onAccountsChanged$.metadata = { name: 'onAccountsInfoChanged$' };
+onAccountsInfoChanged$.metadata = { name: 'onAccountsInfoChanged$' };
