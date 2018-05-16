@@ -5,15 +5,22 @@
 
 import Api from '@parity/api';
 
-const options = {};
+import { name } from '../package.json';
+
+let api;
 
 /**
  * Sets an Api object.
  *
- * @param {Object} api - The Api object.
+ * @param {Object} newApi - The Api object.
  */
-export const setApi = api => {
-  options.api = api;
+export const setApi = newApi => {
+  api = newApi;
+  if (!api.isPubSub) {
+    console.warn(
+      `Current provider does not support pubsub. ${name} will poll every second to listen to changes.`
+    );
+  }
 };
 
 /**
@@ -21,7 +28,11 @@ export const setApi = api => {
  * (particularly the transport option) to be changed dynamically and the
  * data structure to be reused.
  */
-const api = () =>
-  options.api || new Api(new Api.Provider.Ws('ws://localhost:8546'));
+const getApi = () => {
+  if (!api) {
+    api = new Api(new Api.Provider.Ws('ws://localhost:8546'));
+  }
+  return api;
+};
 
-export default api;
+export default getApi;

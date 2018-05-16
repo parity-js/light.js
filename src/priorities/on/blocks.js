@@ -3,28 +3,16 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { Observable } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
-import api from '../../api';
-import { distinctReplayRefCount } from '../../utils/operators/distinctReplayRefCount';
+import createOnFromPubsub from '../../utils/createOnFromPubsub';
 
 /**
  * Observable that emits on every new block.
  */
-export const onEveryBlock$ = Observable.create(observer => {
-  const subscription = api().pubsub.eth.blockNumber((error, result) => {
-    if (error) {
-      observer.error(error);
-    } else {
-      observer.next(+result);
-    }
-  });
-  return () =>
-    subscription.then(subscriptionId =>
-      api().pubsub.unsubscribe(subscriptionId)
-    );
-}).pipe(distinctReplayRefCount());
+export const onEveryBlock$ = createOnFromPubsub('eth_blockNumber').pipe(
+  map(v => +v) // Return number instead of BigNumber
+);
 onEveryBlock$.metadata = { name: 'onEveryBlock$' };
 
 /**

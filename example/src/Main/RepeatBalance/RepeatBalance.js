@@ -6,13 +6,7 @@
 import React, { Component } from 'react';
 
 import light from '../../hoc';
-import {
-  balanceOf$,
-  chainName$,
-  height$,
-  me$,
-  nodeHealth$
-} from '../../light.js';
+import { balanceOf$, chainName$, height$, me$ } from '../../light.js';
 import './RepeatBalance.css';
 
 const FIXED_ADDRESS = '0x00Ae02834e91810B223E54ce3f9B7875258a1747';
@@ -25,7 +19,7 @@ const FIXED_ADDRESS = '0x00Ae02834e91810B223E54ce3f9B7875258a1747';
 })
 class RepeatBalance extends Component {
   render() {
-    const { balanceOf, chainName, height, me, nodeHealth } = this.props;
+    const { balanceOf, chainName, height, me } = this.props;
     return (
       <div className="RepeatBalance-container">
         <h3>This is RepeatBalance component.</h3>

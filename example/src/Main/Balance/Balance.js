@@ -10,9 +10,9 @@ import {
   balanceOf$,
   chainName$,
   defaultAccount$,
-  height$,
-  setDefaultAccount$
+  height$
 } from '../../light.js';
+import api from '../../api';
 import light from '../../hoc';
 import './Balance.css';
 
@@ -24,15 +24,12 @@ import './Balance.css';
   height: height$
 })
 class Balance extends Component {
-  state = { tx: null };
-
   handleChange = ({ target: { value } }) => {
-    setDefaultAccount$(value).subscribe();
+    api.parity.setNewDappsDefaultAddress(value);
   };
 
   render() {
     const { accounts, balance, chainName, defaultAccount, height } = this.props;
-    const { tx, visible } = this.state;
     return (
       <div className="Balance-container">
         <h3>This is the Balance component.</h3>

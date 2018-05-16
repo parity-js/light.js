@@ -15,7 +15,7 @@ import api from '../../api';
 import createRpc$ from '../../utils/createRpc';
 import { getPriority } from '../../priorities/getPriority';
 import {
-  onAccountsChanged$,
+  onAccountsInfoChanged$,
   onEveryBlock$,
   onEvery2Seconds$,
   onStartup$
@@ -24,48 +24,32 @@ import {
 /**
  * Get all accounts info.
  *
- * Calls parity_allAccountsInfo.
+ * Calls parity_accountsInfo.
  *
  * @return {Observable<String>} - An Observable containing the name of the
  * current chain.
  */
-export const allAccountsInfo$ = createRpc$({
-  calls: ['parity_allAccountsInfo'],
-  priority: [onAccountsChanged$]
+export const accountsInfo$ = createRpc$({
+  calls: ['parity_accountsInfo'],
+  priority: [onAccountsInfoChanged$]
 })(() =>
-  getPriority(allAccountsInfo$).pipe(
-    switchMapPromise(() => api().parity.allAccountsInfo()),
-    map(allAccountsInfo => {
-      Object.keys(allAccountsInfo).forEach(address => {
-        if (!allAccountsInfo[address].uuid) {
+  getPriority(accountsInfo$).pipe(
+    switchMapPromise(() => api().parity.accountsInfo()),
+    map(accountsInfo => {
+      Object.keys(accountsInfo).forEach(address => {
+        if (!accountsInfo[address].uuid) {
           // We remove the accounts that don't have uuid, they are not user
           // accounts (maybe contracts etc)
-          delete allAccountsInfo[address];
+          delete accountsInfo[address];
         } else {
           // We add the address field
-          allAccountsInfo[address].address = address;
+          accountsInfo[address].address = address;
         }
       });
-      return allAccountsInfo;
+      return accountsInfo;
     }),
     distinctReplayRefCount(),
-    addToOverview(allAccountsInfo$)
-  )
-);
-
-/**
- * Observable which contains the array of all addresses managed by the light
- * client.
- * *
- * @return {Observable<Array<String>>} - An Observable containing the list of
- * public addresses.
- */
-export const accounts$ = createRpc$({
-  parent: 'allAccountsInfo$'
-})(() =>
-  allAccountsInfo$().pipe(
-    map(info => Object.keys(info)),
-    addToOverview(accounts$)
+    addToOverview(accountsInfo$)
   )
 );
 
@@ -87,47 +71,6 @@ export const chainName$ = createRpc$({
     addToOverview(chainName$)
   )
 );
-
-/**
- * Get the status of the current chain.
- *
- * Calls parity_chainStatus.
- *
- * @return {Observable<String>} - An Observable containing the status.
- */
-export const chainStatus$ = createRpc$({
-  calls: ['parity_chainStatus'],
-  priority: [onEveryBlock$]
-})(() =>
-  getPriority(chainStatus$).pipe(
-    switchMapPromise(() => api().parity.chainStatus()),
-    distinctReplayRefCount(),
-    addToOverview(chainStatus$)
-  )
-);
-
-/**
- * Get the default account managed by the light client.
- *
- * Calls parity_getNewDappsDefaultAddress
- */
-export const defaultAccount$ = createRpc$({
-  calls: ['parity_getNewDappsDefaultAddress'],
-  priority: [onAccountsChanged$]
-})(() =>
-  getPriority(defaultAccount$).pipe(
-    switchMapPromise(() => api().parity.getNewDappsDefaultAddress()),
-    distinctReplayRefCount(),
-    addToOverview(defaultAccount$)
-  )
-);
-
-/**
- * Alias for {@link defaultAccount$}
- */
-export const me$ = createRpc$({
-  parent: 'defaultAccount$'
-})(() => defaultAccount$().pipe(addToOverview(me$)));
 
 /**
  * Get the node's health.
@@ -200,26 +143,3 @@ post$.metadata = {
     'eth_getTransactionReceipt'
   ]
 };
-
-/**
- * Set a new default account for dapps.
- *
- * @param {String} value - The public address of the account to make default.
- * @return {Observable<Object>} - An empty Observable that completes when the
- * api calls succeeds.
- */
-export const setDefaultAccount$ = value => {
-  const source$ = Observable.create(async observer => {
-    try {
-      await api().parity.setNewDappsDefaultAddress(value);
-      onAccountsChanged$.next();
-      observer.complete();
-    } catch (error) {
-      observer.error(error);
-    }
-  }).pipe(distinctReplayRefCount(), addToOverview(setDefaultAccount$));
-
-  source$.subscribe(); // Run this Observable immediately
-  return source$;
-};
-setDefaultAccount$.metadata = { calls: ['parity_setNewDappsDefaultAddress'] };

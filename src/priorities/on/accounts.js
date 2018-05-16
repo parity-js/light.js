@@ -2,11 +2,17 @@
 // This file is part of Parity.
 //
 // SPDX-License-Identifier: MIT
-
-import { BehaviorSubject } from 'rxjs';
+import { timer } from 'rxjs';
+import createOnFromPubsub from '../../utils/createOnFromPubsub';
 
 /**
- * Observable that emits each time accounts change.
+ * Observable that emits each time the default account changes
  */
-export const onAccountsChanged$ = new BehaviorSubject(0);
+export const onAccountsChanged$ = createOnFromPubsub('eth_accounts');
 onAccountsChanged$.metadata = { name: 'onAccountsChanged$' };
+
+/**
+ * Observable that emits each time the default account changes
+ */
+export const onAccountsInfoChanged$ = createOnFromPubsub('parity_accountsInfo');
+onAccountsChanged$.metadata = { name: 'onAccountsInfoChanged$' };

@@ -12,4 +12,24 @@ import { empty, from } from 'rxjs';
  * on error.
  */
 export const switchMapPromise = promise =>
-  switchMap(() => from(promise()).pipe(catchError(() => empty())));
+  switchMap(() =>
+    from(
+      promise().then(result => {
+        // The result can sometimes be {id: 2, jsonrpc: "2.0", error: {...}}
+        if (result.error) {
+          return Promise.reject(result);
+        }
+        return result;
+      })
+    ).pipe(
+      catchError(err => {
+        console.error({ call: promise.toString(), err });
+        console.error(
+          new Error(
+            'Error while executing API call, see error log above for more information.'
+          )
+        );
+        return empty();
+      })
+    )
+  );
