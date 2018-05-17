@@ -19,7 +19,7 @@ const createOnFromPubsub = pubsub => {
   // There's a chance the provider doesn't support pubsub, for example
   // MetaMaskProvider. In this case, as suggested on their Github, the best
   // solution for now is to poll.
-  if (!api().isPubsub) {
+  if (!api().isPubSub) {
     return timer(0, 1000).pipe(switchMap(() => api()[namespace][method]()));
   }
 
