@@ -4,7 +4,6 @@
 // SPDX-License-Identifier: MIT
 
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 import {
   addToOverview,
@@ -34,19 +33,6 @@ export const accountsInfo$ = createRpc$({
 })(() =>
   getPriority(accountsInfo$).pipe(
     switchMapPromise(() => api().parity.accountsInfo()),
-    map(accountsInfo => {
-      Object.keys(accountsInfo).forEach(address => {
-        if (!accountsInfo[address].uuid) {
-          // We remove the accounts that don't have uuid, they are not user
-          // accounts (maybe contracts etc)
-          delete accountsInfo[address];
-        } else {
-          // We add the address field
-          accountsInfo[address].address = address;
-        }
-      });
-      return accountsInfo;
-    }),
     distinctReplayRefCount(),
     addToOverview(accountsInfo$)
   )
