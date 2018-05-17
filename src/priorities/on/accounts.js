@@ -2,7 +2,7 @@
 // This file is part of Parity.
 //
 // SPDX-License-Identifier: MIT
-import { timer } from 'rxjs';
+
 import createOnFromPubsub from '../../utils/createOnFromPubsub';
 
 /**

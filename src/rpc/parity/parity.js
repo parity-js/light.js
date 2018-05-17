@@ -16,7 +16,6 @@ import createRpc$ from '../../utils/createRpc';
 import { getPriority } from '../../priorities/getPriority';
 import {
   onAccountsInfoChanged$,
-  onEveryBlock$,
   onEvery2Seconds$,
   onStartup$
 } from '../../priorities';
