@@ -3,8 +3,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { Observable } from 'rxjs';
-
 import {
   addToOverview,
   distinctReplayRefCount,

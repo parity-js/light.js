@@ -17,7 +17,6 @@ import {
   onAccountsChanged$,
   onEvery2Blocks$,
   onEveryBlock$,
-  onEverySecond$,
   onStartup$,
   onSyncingChanged$
 } from '../../priorities';
@@ -108,10 +107,8 @@ export const myBalance$ = createRpc$({
 /**
  * Get the syncing state.
  *
- * Calls eth_syncing.
- *
- * @param {String} address - The account address to query the balance.
- * @return {Observable<Number>} - An Observable containing the balance.
+ * @return {Observable<Object | Boolean>} - An Observable containing the
+ * syncing state object, or false.
  */
 export const syncing$ = createRpc$({
   priority: [onSyncingChanged$]

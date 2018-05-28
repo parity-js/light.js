@@ -3,8 +3,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { filter, map } from 'rxjs/operators';
-
 import createOnFromPubsub from '../../utils/createOnFromPubsub';
 
 /**

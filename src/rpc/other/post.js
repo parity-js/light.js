@@ -5,19 +5,8 @@
 
 import { Observable } from 'rxjs';
 
-import {
-  addToOverview,
-  distinctReplayRefCount,
-  switchMapPromise
-} from '../../utils/operators';
+import { addToOverview, distinctReplayRefCount } from '../../utils/operators';
 import api from '../../api';
-import createRpc$ from '../../utils/createRpc';
-import { getPriority } from '../../priorities/getPriority';
-import {
-  onAccountsInfoChanged$,
-  onEvery2Seconds$,
-  onStartup$
-} from '../../priorities';
 
 /**
  * Post a transaction to the network.

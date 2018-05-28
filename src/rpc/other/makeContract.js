@@ -4,7 +4,6 @@
 // SPDX-License-Identifier: MIT
 
 import Abi from '@parity/abi';
-import { Observable } from 'rxjs';
 
 import {
   addToOverview,
@@ -12,13 +11,8 @@ import {
   switchMapPromise
 } from '../../utils/operators';
 import api from '../../api';
-import createRpc$ from '../../utils/createRpc';
 import { getPriority } from '../../priorities/getPriority';
-import {
-  onAccountsInfoChanged$,
-  onEvery2Seconds$,
-  onStartup$
-} from '../../priorities';
+import { onEvery2Seconds$ } from '../../priorities';
 
 /**
  * Create a contract.
@@ -36,8 +30,8 @@ export const makeContract$ = (address, abi) => {
     .forEach(({ inputs, name }) => {
       const f = (...args) => {
         // Last argument can be optional options
-        const options = args.length === i.inputs.length + 1 ? args.pop() : {};
-        if (args.length != inputs.length) {
+        // const options = args.length === i.inputs.length + 1 ? args.pop() : {};
+        if (args.length !== inputs.length) {
           throw new Error(
             `Invalid number of arguments to ${name}. Expected ${inputs.length}, got ${args.length}.`
           );
