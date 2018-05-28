@@ -18,7 +18,8 @@ import {
   onEvery2Blocks$,
   onEveryBlock$,
   onEverySecond$,
-  onStartup$
+  onStartup$,
+  onSyncingChanged$
 } from '../../priorities';
 
 /**
@@ -113,12 +114,7 @@ export const myBalance$ = createRpc$({
  * @return {Observable<Number>} - An Observable containing the balance.
  */
 export const syncing$ = createRpc$({
-  calls: ['eth_syncing'],
-  priority: [onEverySecond$]
+  priority: [onSyncingChanged$]
 })(() =>
-  getPriority(syncing$).pipe(
-    switchMapPromise(() => api().eth.syncing()),
-    distinctReplayRefCount(),
-    addToOverview(syncing$)
-  )
+  getPriority(syncing$).pipe(distinctReplayRefCount(), addToOverview(syncing$))
 );

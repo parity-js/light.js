@@ -6,4 +6,5 @@
 export * from './accounts';
 export * from './blocks';
 export * from './other';
+export * from './syncing';
 export * from './time';
