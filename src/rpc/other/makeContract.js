@@ -27,7 +27,7 @@ import { onEveryBlock$ } from '../../priorities';
  */
 const getContract = memoizee(
   (address, abiJson) => api().newContract(abiJson, address),
-  { length: 1 } // Only memoize from address
+  { length: 1 } // Only memoize by address
 );
 
 /**
@@ -39,31 +39,34 @@ const getContract = memoizee(
  * contract, and each function return an Observable which will fire when the
  * function resolves.
  */
-export const makeContract$ = (address, abiJson) => {
-  const abi = new Abi(abiJson);
-  // Variable result will hold the final object to return
-  const result = { abi: abi, address: address };
+export const makeContract$ = memoizee(
+  (address, abiJson) => {
+    const abi = new Abi(abiJson);
+    // Variable result will hold the final object to return
+    const result = { abi: abi, address: address };
 
-  // We then copy every key inside contract.instance into our `result` object,
-  // replacing each the value by an Observable instead of a Promise.
-  abi.functions.forEach(({ name }) => {
-    result[name] = (...args) => {
-      const contract = getContract(address, abiJson);
-      return getPriority(makeContract$).pipe(
-        switchMapPromise(
-          () =>
-            contract.instance[name].constant
-              ? contract.instance[name].call({}, args)
-              : contract.instance[name].postTransaction({}, args)
-        ),
-        distinctReplayRefCount(),
-        addToOverview(makeContract$)
-      );
-    };
-  });
+    // We then copy every key inside contract.instance into our `result` object,
+    // replacing each the value by an Observable instead of a Promise.
+    abi.functions.forEach(({ name }) => {
+      result[name] = (...args) => {
+        const contract = getContract(address, abiJson);
+        return getPriority(makeContract$).pipe(
+          switchMapPromise(
+            () =>
+              contract.instance[name].constant
+                ? contract.instance[name].call({}, args)
+                : contract.instance[name].postTransaction({}, args)
+          ),
+          distinctReplayRefCount(),
+          addToOverview(makeContract$)
+        );
+      };
+    });
 
-  return result;
-};
+    return result;
+  },
+  { length: 1 } // Only memoize by address
+);
 makeContract$.metadata = {
   calls: [],
   priority: [onEveryBlock$]
