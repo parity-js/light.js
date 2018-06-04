@@ -48,7 +48,7 @@ export const makeContract$ = memoizee(
     // We then copy every key inside contract.instance into our `result` object,
     // replacing each the value by an Observable instead of a Promise.
     abi.functions.forEach(({ name }) => {
-      result[name] = (...args) => {
+      result[`${name}$`] = (...args) => {
         const contract = getContract(address, abiJson);
         return getPriority(makeContract$).pipe(
           switchMapPromise(

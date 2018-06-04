@@ -29,7 +29,7 @@ import './Balance.css';
   gavBalance: () =>
     combineLatest(chainName$(), defaultAccount$()).pipe(
       switchMap(([chainName, defaultAccount]) =>
-        makeContract$(gavCoinAddress(chainName), gavCoinAbi).balanceOf(
+        makeContract$(gavCoinAddress(chainName), gavCoinAbi).balanceOf$(
           defaultAccount
         )
       ),
