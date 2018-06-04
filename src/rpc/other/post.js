@@ -11,9 +11,9 @@ import api from '../../api';
 /**
  * Post a transaction to the network.
  *
- * Calls, in this order, eth_estimateGas, parity_postTransaction,
- * parity_checkRequest and eth_getTransactionReceipt to get the status of the
- * transaction.
+ * Calls, in this order, `eth_estimateGas`, `parity_postTransaction`,
+ * `parity_checkRequest` and `eth_getTransactionReceipt` to get the status of
+ * the transaction.
  *
  * @param {Object} tx - A transaction object.
  * @return {Observable<Object>} - The status of the transaction.
@@ -48,7 +48,10 @@ export const post$ = tx => {
       observer.next({ failed: error });
       observer.error(error);
     }
-  }).pipe(distinctReplayRefCount(), addToOverview(post$));
+  }).pipe(
+    distinctReplayRefCount(),
+    addToOverview(post$)
+  );
 
   source$.subscribe(); // Run this Observable immediately;
   return source$;

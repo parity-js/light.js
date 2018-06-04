@@ -5,6 +5,11 @@
 
 import { Observable } from 'rxjs';
 
+/**
+ * @ignore
+ * @param {Any} source$ - The Observable to test.
+ * @return {Boolean} - Returns true if it's an Observable.
+ */
 const isObservable = source$ => {
   return source$ instanceof Observable;
 };

@@ -12,6 +12,7 @@ import { merge } from 'rxjs/operators';
  * with an array of Observables, the priority Observable is constructed by
  * merging (as in Observable.merge) these Observables.
  *
+ * @ignore
  * @param {String} rpc$ - The RPC Observable.
  * @return {Observable} - An Observable that represents the priority.
  */

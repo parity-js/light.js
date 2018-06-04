@@ -10,6 +10,7 @@ import priorityMixins from '../priorities/priorityMixins';
 /**
  * Add metadata to an rpc$ Observable.
  *
+ * @ignore
  * @param {Object} metadata - The metadata to add.
  * @return {Observable} - The original rpc$ Observable with patched metadata.
  */

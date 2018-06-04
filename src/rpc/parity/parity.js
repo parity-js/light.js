@@ -18,12 +18,12 @@ import {
 } from '../../priorities';
 
 /**
- * Get all accounts info.
+ * Get accounts info.
  *
  * Calls parity_accountsInfo.
  *
- * @return {Observable<String>} - An Observable containing the name of the
- * current chain.
+ * @return {Observable<Object>} - An Observable containing all info that can be
+ * accessed by user concerning accounts.
  */
 export const accountsInfo$ = createRpc$({
   calls: ['parity_accountsInfo'],

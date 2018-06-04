@@ -10,6 +10,8 @@ import { empty, from } from 'rxjs';
  * SwitchMap to an Observable.from. The Observable.from will return an empty
  * Observable if the Promise throws an error, will log an error in the console
  * on error.
+ *
+ * @ignore
  */
 export const switchMapPromise = promise =>
   switchMap(() =>

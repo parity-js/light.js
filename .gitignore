@@ -6,6 +6,9 @@ node_modules
 # testing
 /coverage
 
+# docs
+/docs
+
 # production
 build
 dist

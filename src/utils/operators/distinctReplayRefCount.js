@@ -7,6 +7,12 @@ import { distinctUntilChanged, publishReplay, refCount } from 'rxjs/operators';
 
 /**
  * Shorthand for distinctUntilChanged(), publishReplay(1) and refCount().
+ *
+ * @ignore
  */
 export const distinctReplayRefCount = () => source$ =>
-  source$.pipe(distinctUntilChanged(), publishReplay(1), refCount());
+  source$.pipe(
+    distinctUntilChanged(),
+    publishReplay(1),
+    refCount()
+  );

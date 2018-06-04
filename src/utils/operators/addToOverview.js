@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
  * Same as tap, but passing in addtion (refCount, prevRefCount) as callback
  * arguments.
  *
+ * @ignore
  * @param {Function} onChange - The function to call every time the source
  * Observable's refCount changes (i.e. on subscribe or unsubscribe).
  * @see https://stackoverflow.com/questions/49976825/check-if-publishreplay-refcount-has-observers-or-not/49980784#49980784
@@ -46,6 +47,7 @@ export const tapRefCount = onChange => source$ => {
  * Updates the subscribersCount field in the rpc$ Observable's metadata object
  * every time there's a new subscription or unsubscription.
  *
+ * @ignore
  * @param {String} rpc$ - The RPC Observable.
  */
 export const addToOverview = rpc$ =>
