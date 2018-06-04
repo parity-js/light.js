@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import React, { Component } from 'react';
+import { map } from 'rxjs/operators';
 
 import light from '../../hoc';
 import { balanceOf$, chainName$, height$, me$ } from '../../light.js';
@@ -12,7 +13,7 @@ import './RepeatBalance.css';
 const FIXED_ADDRESS = '0x00Ae02834e91810B223E54ce3f9B7875258a1747';
 
 @light({
-  balanceOf: () => balanceOf$(FIXED_ADDRESS),
+  balanceOf: () => balanceOf$(FIXED_ADDRESS).pipe(map(_ => +_)),
   chainName: chainName$,
   height: height$,
   me: me$
