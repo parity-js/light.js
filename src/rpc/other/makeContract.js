@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import Abi from '@parity/abi';
+import memoizee from 'memoizee';
 
 import {
   addToOverview,
@@ -12,45 +13,58 @@ import {
 } from '../../utils/operators';
 import api from '../../api';
 import { getPriority } from '../../priorities/getPriority';
-import { onEvery2Seconds$ } from '../../priorities';
+import { onEveryBlock$ } from '../../priorities';
+
+/**
+ * Cache contracts, so that they are:
+ * - only created after the first call/transaction to a contract has been made
+ * - further calls/transactions to the same contract doesn't recreate the
+ *   contract
+ *
+ * @param {String} address - The contract address.
+ * @param {Array<Object>} - The contract abi.
+ * @return {Object} - The contract object as defined in @parity/api.
+ */
+const getContract = memoizee(
+  (address, abiJson) => api().newContract(abiJson, address),
+  { length: 1 } // Only memoize from address
+);
 
 /**
  * Create a contract.
  *
- * @param {Object} tx - A transaction object.
- * @return {Observable<Object>} - The status of the transaction.
+ * @param {Object} address - The contract address.
+ * @param {Array<Object>} - The contract abi.
+ * @return {Object} - An object whose keys are all the functions of the
+ * contract, and each function return an Observable which will fire when the
+ * function resolves.
  */
-export const makeContract$ = (address, abi) => {
-  console.log(new Abi(abi));
+export const makeContract$ = (address, abiJson) => {
+  const abi = new Abi(abiJson);
   // Variable result will hold the final object to return
-  const result = { address };
-  // Constant functions
-  abi
-    .filter(({ constant, type }) => constant === true && type === 'function')
-    .forEach(({ inputs, name }) => {
-      const f = (...args) => {
-        // Last argument can be optional options
-        // const options = args.length === i.inputs.length + 1 ? args.pop() : {};
-        if (args.length !== inputs.length) {
-          throw new Error(
-            `Invalid number of arguments to ${name}. Expected ${inputs.length}, got ${args.length}.`
-          );
-        }
-        return api().eth.call(address);
-      };
-      result[name] = getPriority(makeContract$).pipe(
-        switchMapPromise(f),
+  const result = { abi: abi, address: address };
+
+  // We then copy every key inside contract.instance into our `result` object,
+  // replacing each the value by an Observable instead of a Promise.
+  abi.functions.forEach(({ name }) => {
+    result[name] = (...args) => {
+      const contract = getContract(address, abiJson);
+      return getPriority(makeContract$).pipe(
+        switchMapPromise(
+          () =>
+            contract.instance[name].constant
+              ? contract.instance[name].call({}, args)
+              : contract.instance[name].postTransaction({}, args)
+        ),
         distinctReplayRefCount(),
         addToOverview(makeContract$)
       );
-    });
+    };
+  });
+
+  return result;
 };
 makeContract$.metadata = {
-  calls: [
-    'eth_estimateGas',
-    'parity_postTransaction',
-    'parity_checkRequest',
-    'eth_getTransactionReceipt'
-  ],
-  priority: [onEvery2Seconds$]
+  calls: [],
+  priority: [onEveryBlock$]
 };

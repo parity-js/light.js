@@ -49,7 +49,6 @@ export const balanceOf$ = createRpc$({
 })(address =>
   getPriority(balanceOf$).pipe(
     switchMapPromise(() => api().eth.getBalance(address)),
-    map(_ => +_), // Return number instead of BigNumber
     distinctReplayRefCount(),
     addToOverview(balanceOf$)
   )
@@ -64,7 +63,10 @@ export const balanceOf$ = createRpc$({
 export const defaultAccount$ = createRpc$({
   dependsOn: ['accounts$']
 })(() =>
-  accounts$().pipe(map(accounts => accounts[0]), addToOverview(defaultAccount$))
+  accounts$().pipe(
+    map(accounts => accounts[0]),
+    addToOverview(defaultAccount$)
+  )
 );
 
 /**
@@ -101,7 +103,10 @@ export const me$ = createRpc$({
 export const myBalance$ = createRpc$({
   dependsOn: ['balanceOf$', 'defaultAccount$']
 })(() =>
-  defaultAccount$().pipe(switchMap(balanceOf$), addToOverview(myBalance$))
+  defaultAccount$().pipe(
+    switchMap(balanceOf$),
+    addToOverview(myBalance$)
+  )
 );
 
 /**
@@ -113,5 +118,8 @@ export const myBalance$ = createRpc$({
 export const syncing$ = createRpc$({
   priority: [onSyncingChanged$]
 })(() =>
-  getPriority(syncing$).pipe(distinctReplayRefCount(), addToOverview(syncing$))
+  getPriority(syncing$).pipe(
+    distinctReplayRefCount(),
+    addToOverview(syncing$)
+  )
 );
