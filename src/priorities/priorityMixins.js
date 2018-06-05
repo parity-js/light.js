@@ -20,7 +20,7 @@ const priorityMixins = {
    * balanceOf$.setPriority([onEverySecond$, onStartup$]); // Will fetch
    * balance once on startup, and then every second.
    */
-  setPriority(priority) {
+  setPriority (priority) {
     // TODO Check that priority is well-formed
 
     this.metadata.priority = priority;
