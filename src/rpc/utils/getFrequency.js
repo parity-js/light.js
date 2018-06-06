@@ -7,15 +7,15 @@ import { empty } from 'rxjs';
 import { merge } from 'rxjs/operators';
 
 /**
- * Get the priority Observable of a RPC Observable, which represents how often
+ * Get the frequency Observable of a RPC Observable, which represents how often
  * this RPC Observable gets updated. Each RPC Observable has a metadata field
- * with an array of Observables, the priority Observable is constructed by
+ * with an array of Observables, the frequency Observable is constructed by
  * merging (as in Observable.merge) these Observables.
  *
  * @ignore
  * @param {String} rpc$ - The RPC Observable.
- * @return {Observable} - An Observable that represents the priority.
+ * @return {Observable} - An Observable that represents the frequency.
  */
-const getPriority = rpc$ => empty().pipe(merge(...rpc$.metadata.priority));
+const getFrequency = rpc$ => empty().pipe(merge(...rpc$.metadata.frequency));
 
-export default getPriority;
+export default getFrequency;

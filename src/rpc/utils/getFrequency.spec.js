@@ -3,10 +3,10 @@
 //
 // SPDX-License-Identifier: MIT
 
-import getPriority from './getPriority';
+import getFrequency from './getFrequency';
 import isObservable from '../../utils/isObservable';
 import mockRpc$ from '../../utils/testHelpers/mockRpc';
 
-it('should return the correct priority', () => {
-  expect(isObservable(getPriority(mockRpc$))).toBe(true);
+it('should return the correct frequency', () => {
+  expect(isObservable(getFrequency(mockRpc$))).toBe(true);
 });

@@ -45,10 +45,10 @@ if (typeof window !== 'undefined') {
           }
         });
 
-        // We make the `priority` field human-readable
-        if (overview[key].priority) {
-          overview[key].priority.forEach((value, index) => {
-            overview[key].priority[index] = value.metadata.name;
+        // We make the `frequency` field human-readable
+        if (overview[key].frequency) {
+          overview[key].frequency.forEach((value, index) => {
+            overview[key].frequency[index] = value.metadata.name;
           });
         }
       });

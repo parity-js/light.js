@@ -11,20 +11,20 @@ import memoizee from 'memoizee';
  *
  * @ignore
  */
-const priorityMixins = {
+const frequencyMixins = {
   /**
-   * Change the priority of a RPC Observable.
+   * Change the frequency of a RPC Observable.
    *
-   * @param {Array<Observable>} priority - An array of priority Observables.
+   * @param {Array<Observable>} frequency - An array of frequency Observables.
    * @return {Null}
    * @example
-   * balanceOf$.setPriority([onEverySecond$, onStartup$]); // Will fetch
+   * balanceOf$.setFrequency([onEverySecond$, onStartup$]); // Will fetch
    * balance once on startup, and then every second.
    */
-  setPriority (priority) {
-    // TODO Check that priority is well-formed
+  setFrequency (frequency) {
+    // TODO Check that frequency is well-formed
 
-    this.metadata.priority = priority;
+    this.metadata.frequency = frequency;
 
     // If necessary, we clear the memoize cache
     if (typeof this.clear === 'function') {
@@ -42,7 +42,7 @@ const priorityMixins = {
  */
 const createRpc = (metadata = {}) => rpc$ => {
   const result$ = memoizee(rpc$);
-  Object.assign(result$, priorityMixins, { metadata });
+  Object.assign(result$, frequencyMixins, { metadata });
   return result$;
 };
 

@@ -10,7 +10,7 @@ import {
 } from '../../utils/operators';
 import api from '../../api';
 import createRpc$ from '../utils/createRpc';
-import getPriority from '../utils/getPriority';
+import getFrequency from '../utils/getFrequency';
 import {
   onAccountsInfoChanged$,
   onEvery2Seconds$,
@@ -25,9 +25,9 @@ import {
  */
 export const accountsInfo$ = createRpc$({
   calls: ['parity_accountsInfo'],
-  priority: [onAccountsInfoChanged$]
+  frequency: [onAccountsInfoChanged$]
 })(() =>
-  getPriority(accountsInfo$).pipe(
+  getFrequency(accountsInfo$).pipe(
     switchMapPromise(() => api().parity.accountsInfo()),
     distinctReplayRefCount(),
     addToOverview(accountsInfo$)
@@ -42,9 +42,9 @@ export const accountsInfo$ = createRpc$({
  */
 export const chainName$ = createRpc$({
   calls: ['parity_netChain'],
-  priority: [onStartup$]
+  frequency: [onStartup$]
 })(() =>
-  getPriority(chainName$).pipe(
+  getFrequency(chainName$).pipe(
     switchMapPromise(() => api().parity.netChain()),
     distinctReplayRefCount(),
     addToOverview(chainName$)
@@ -58,9 +58,9 @@ export const chainName$ = createRpc$({
  */
 export const nodeHealth$ = createRpc$({
   calls: ['parity_nodeHealth'],
-  priority: [onEvery2Seconds$]
+  frequency: [onEvery2Seconds$]
 })(() =>
-  getPriority(nodeHealth$).pipe(
+  getFrequency(nodeHealth$).pipe(
     switchMapPromise(() => api().parity.nodeHealth()),
     distinctReplayRefCount(),
     addToOverview(nodeHealth$)

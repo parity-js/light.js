@@ -12,7 +12,7 @@ import {
 } from '../../utils/operators';
 import api from '../../api';
 import createRpc$ from '../utils/createRpc';
-import getPriority from '../utils/getPriority';
+import getFrequency from '../utils/getFrequency';
 import {
   onAccountsChanged$,
   onEvery2Blocks$,
@@ -32,8 +32,8 @@ import {
  */
 export const accounts$ = createRpc$({
   calls: ['eth_accounts'],
-  priority: [onAccountsChanged$]
-})(() => getPriority(accounts$).pipe(addToOverview(accounts$)));
+  frequency: [onAccountsChanged$]
+})(() => getFrequency(accounts$).pipe(addToOverview(accounts$)));
 
 /**
  * Get the balance of a given account. Calls `eth_getBalance`.
@@ -43,9 +43,9 @@ export const accounts$ = createRpc$({
  */
 export const balanceOf$ = createRpc$({
   calls: ['eth_getBalance'],
-  priority: [onEvery2Blocks$, onStartup$]
+  frequency: [onEvery2Blocks$, onStartup$]
 })(address =>
-  getPriority(balanceOf$).pipe(
+  getFrequency(balanceOf$).pipe(
     switchMapPromise(() => api().eth.getBalance(address)),
     distinctReplayRefCount(),
     addToOverview(balanceOf$)
@@ -72,8 +72,8 @@ export const defaultAccount$ = createRpc$({
  *
  * @return {Observable<Number>} - An Observable containing the block height.
  */
-export const height$ = createRpc$({ priority: [onEveryBlock$] })(() =>
-  getPriority(height$).pipe(addToOverview(height$))
+export const height$ = createRpc$({ frequency: [onEveryBlock$] })(() =>
+  getFrequency(height$).pipe(addToOverview(height$))
 );
 
 /**
@@ -114,9 +114,9 @@ export const myBalance$ = createRpc$({
  * syncing state object, or false.
  */
 export const syncing$ = createRpc$({
-  priority: [onSyncingChanged$]
+  frequency: [onSyncingChanged$]
 })(() =>
-  getPriority(syncing$).pipe(
+  getFrequency(syncing$).pipe(
     distinctReplayRefCount(),
     addToOverview(syncing$)
   )

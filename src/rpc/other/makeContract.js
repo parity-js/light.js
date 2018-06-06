@@ -12,7 +12,7 @@ import {
   switchMapPromise
 } from '../../utils/operators';
 import api from '../../api';
-import getPriority from '../utils/getPriority';
+import getFrequency from '../utils/getFrequency';
 import { onEveryBlock$ } from '../../frequency';
 
 /**
@@ -50,7 +50,7 @@ export const makeContract$ = memoizee(
     abi.functions.forEach(({ name }) => {
       result[`${name}$`] = (...args) => {
         const contract = getContract(address, abiJson);
-        return getPriority(makeContract$).pipe(
+        return getFrequency(makeContract$).pipe(
           switchMapPromise(
             () =>
               contract.instance[name].constant
@@ -69,5 +69,5 @@ export const makeContract$ = memoizee(
 );
 makeContract$.metadata = {
   calls: [],
-  priority: [onEveryBlock$]
+  frequency: [onEveryBlock$]
 };

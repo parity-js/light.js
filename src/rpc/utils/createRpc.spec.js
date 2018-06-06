@@ -3,15 +3,13 @@
 //
 // SPDX-License-Identifier: MIT
 
+import { timer } from 'rxjs';
+
 import createRpc from './createRpc';
 import mockRpc$ from '../../utils/testHelpers/mockRpc';
 
 it('should return a function', () => {
   expect(typeof createRpc()).toBe('function');
-});
-
-it('should contain priorityMixins', () => {
-  expect(typeof createRpc()(mockRpc$).setPriority).toBe('function');
 });
 
 it('should add empty metadata by default', () => {
@@ -20,4 +18,15 @@ it('should add empty metadata by default', () => {
 
 it('should append input metadata', () => {
   expect(createRpc({ foo: 'bar' })(mockRpc$).metadata).toEqual({ foo: 'bar' });
+});
+
+it('should contain frequencyMixins', () => {
+  expect(typeof createRpc()(mockRpc$).setFrequency).toBe('function');
+});
+
+it('should set correct frequency', () => {
+  const frequency = timer(0, 1000);
+  const rpc$ = createRpc()(mockRpc$);
+  rpc$.setFrequency([frequency]);
+  expect(rpc$.metadata.frequency).toEqual([frequency]);
 });
