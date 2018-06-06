@@ -12,8 +12,8 @@ import {
   switchMapPromise
 } from '../../utils/operators';
 import api from '../../api';
-import { getPriority } from '../../priorities/getPriority';
-import { onEveryBlock$ } from '../../priorities';
+import getPriority from '../utils/getPriority';
+import { onEveryBlock$ } from '../../frequency';
 
 /**
  * Cache contracts, so that they are:

@@ -4,8 +4,8 @@
 // SPDX-License-Identifier: MIT
 
 import createOnFromPubsub from './createOnFromPubsub';
-import isObservable from './isObservable';
-import { rejectApi, resolveApi } from './testHelpers/mockApi';
+import isObservable from '../../utils/isObservable';
+import { rejectApi, resolveApi } from '../../utils/testHelpers/mockApi';
 
 it('should return an Observable', () => {
   expect(isObservable(createOnFromPubsub(resolveApi, 'fake_method'))).toBe(

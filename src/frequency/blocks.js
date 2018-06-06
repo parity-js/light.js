@@ -5,8 +5,8 @@
 
 import { filter, map } from 'rxjs/operators';
 
-import api from '../../api';
-import createOnFromPubsub from '../../utils/createOnFromPubsub';
+import api from '../api';
+import createOnFromPubsub from './utils/createOnFromPubsub';
 
 /**
  * Observable that emits on every new block.

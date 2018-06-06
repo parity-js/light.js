@@ -3,4 +3,5 @@
 //
 // SPDX-License-Identifier: MIT
 
+// Export for the user all utils in @parity/api
 export * from '@parity/api/lib/util';

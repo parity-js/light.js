@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import createRpc from './createRpc';
-import mockRpc$ from './testHelpers/mockRpc';
+import mockRpc$ from '../../utils/testHelpers/mockRpc';
 
 it('should return a function', () => {
   expect(typeof createRpc()).toBe('function');

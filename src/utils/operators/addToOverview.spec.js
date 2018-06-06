@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import { addToOverview, tapRefCount } from './addToOverview';
-import createRpc from '../createRpc';
+import createRpc from '../../rpc/utils/createRpc';
 import createMockRpc from '../testHelpers/mockRpc';
 
 describe('tapRefCount', () => {

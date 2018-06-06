@@ -3,8 +3,8 @@
 //
 // SPDX-License-Identifier: MIT
 
-import api from '../../api';
-import createOnFromPubsub from '../../utils/createOnFromPubsub';
+import api from '../api';
+import createOnFromPubsub from './utils/createOnFromPubsub';
 
 /**
  * Observable that emits when syncing status changes.

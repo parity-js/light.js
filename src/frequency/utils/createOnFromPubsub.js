@@ -6,7 +6,7 @@
 import { Observable, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import { distinctReplayRefCount } from './operators/distinctReplayRefCount';
+import { distinctReplayRefCount } from '../../utils/operators/distinctReplayRefCount';
 
 /**
  * Observable that emits on each pubsub event.

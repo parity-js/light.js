@@ -4,10 +4,10 @@
 // SPDX-License-Identifier: MIT
 
 import { setApi } from './api';
-import * as priorities from './priorities';
+import * as frequency from './frequency';
 import './overview';
 
 export * from './rpc';
 
-export { priorities, setApi };
+export { frequency, setApi };
 export default { setApi };

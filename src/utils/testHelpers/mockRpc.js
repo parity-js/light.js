@@ -3,8 +3,10 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { of } from 'rxjs';
+import { of, timer } from 'rxjs';
 
-const mockRpc$ = () => of('mockRpc');
+import createRpc from '../../rpc/utils/createRpc';
+
+const mockRpc$ = createRpc({ priority: [timer(0, 1000)] })(() => of('mockRpc'));
 
 export default mockRpc$;

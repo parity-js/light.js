@@ -11,15 +11,15 @@ import {
   switchMapPromise
 } from '../../utils/operators';
 import api from '../../api';
-import createRpc$ from '../../utils/createRpc';
-import { getPriority } from '../../priorities/getPriority';
+import createRpc$ from '../utils/createRpc';
+import getPriority from '../utils/getPriority';
 import {
   onAccountsChanged$,
   onEvery2Blocks$,
   onEveryBlock$,
   onStartup$,
   onSyncingChanged$
-} from '../../priorities';
+} from '../../frequency';
 
 /**
  * Observable which contains the array of all addresses managed by the light
@@ -36,12 +36,10 @@ export const accounts$ = createRpc$({
 })(() => getPriority(accounts$).pipe(addToOverview(accounts$)));
 
 /**
- * Get the balance of a given account.
- *
- * Calls eth_getBalance.
+ * Get the balance of a given account. Calls `eth_getBalance`.
  *
  * @param {String} address - The account address to query the balance.
- * @return {Observable<Number>} - An Observable containing the balance.
+ * @return {Observable<BigNumber>} - An Observable containing the balance.
  */
 export const balanceOf$ = createRpc$({
   calls: ['eth_getBalance'],

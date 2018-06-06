@@ -8,9 +8,9 @@ import ReactDOM from 'react-dom';
 
 import api from './api';
 import App from './App';
-import light, { balanceOf$, priorities } from './light.js';
+import light, { balanceOf$, frequency } from './light.js';
 
 light.setApi(api);
-balanceOf$.setPriority([priorities.onEvery2Seconds$]);
+balanceOf$.setPriority([frequency.onEvery2Seconds$]);
 
 ReactDOM.render(<App />, document.getElementById('root'));

@@ -9,18 +9,16 @@ import {
   switchMapPromise
 } from '../../utils/operators';
 import api from '../../api';
-import createRpc$ from '../../utils/createRpc';
-import { getPriority } from '../../priorities/getPriority';
+import createRpc$ from '../utils/createRpc';
+import getPriority from '../utils/getPriority';
 import {
   onAccountsInfoChanged$,
   onEvery2Seconds$,
   onStartup$
-} from '../../priorities';
+} from '../../frequency';
 
 /**
- * Get accounts info.
- *
- * Calls parity_accountsInfo.
+ * Get accounts info. Calls `parity_accountsInfo`.
  *
  * @return {Observable<Object>} - An Observable containing all info that can be
  * accessed by user concerning accounts.
@@ -37,9 +35,7 @@ export const accountsInfo$ = createRpc$({
 );
 
 /**
- * Get the name of the current chain.
- *
- * Calls parity_netChain.
+ * Get the name of the current chain. Calls `parity_netChain`.
  *
  * @return {Observable<String>} - An Observable containing the name of the
  * current chain.
@@ -56,9 +52,7 @@ export const chainName$ = createRpc$({
 );
 
 /**
- * Get the node's health.
- *
- * Calls parity_nodeHealth.
+ * Get the node's health. Calls `parity_nodeHealth`.
  *
  * @return {Observable<Object>} - An Observable containing the health.
  */
