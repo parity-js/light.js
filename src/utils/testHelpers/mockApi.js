@@ -6,17 +6,17 @@
 /**
  * A pubsub Api object that rejects.
  */
-export const rejectApi = (isPubSub = true) => ({
+export const rejectApi = (rejectWith = new Error('bar'), isPubSub = true) => ({
   fake: {
     method () {
-      return Promise.reject(new Error('bar'));
+      return Promise.reject(rejectWith);
     }
   },
   isPubSub,
   pubsub: {
     fake: {
       method (callback) {
-        callback(new Error('bar'), null);
+        callback(rejectWith, null);
         return Promise.resolve(1); // Resolves to subscriptionId
       }
     },
@@ -27,17 +27,17 @@ export const rejectApi = (isPubSub = true) => ({
 /**
  * A pubsub Api object that resolves.
  */
-export const resolveApi = (isPubSub = true) => ({
+export const resolveApi = (resolveWith = 'foo', isPubSub = true) => ({
   fake: {
     method () {
-      return Promise.resolve('foo');
+      return Promise.resolve(resolveWith);
     }
   },
   isPubSub,
   pubsub: {
     fake: {
       method (callback) {
-        callback(null, 'foo');
+        callback(null, resolveWith);
         return Promise.resolve(1); // Resolves to subscriptionId
       }
     },

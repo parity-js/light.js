@@ -22,24 +22,27 @@ it('should fire an event when pubsub publishes', done => {
 
 it('should fire an error when pubsub errors', done => {
   createOnFromPubsub(rejectApi, 'fake_method').subscribe(null, err => {
-    expect(err).toBe('bar');
+    expect(err).toEqual(new Error('bar'));
     done();
   });
 });
 
 it('should fire an event when polling pubsub  publishes', done => {
-  createOnFromPubsub(() => resolveApi(false), 'fake_method').subscribe(data => {
+  createOnFromPubsub(
+    () => resolveApi(undefined, false),
+    'fake_method'
+  ).subscribe(data => {
     expect(data).toBe('foo');
     done();
   });
 });
 
 it('should fire an error when polling pubsub errors', done => {
-  createOnFromPubsub(() => rejectApi(false), 'fake_method').subscribe(
-    null,
-    err => {
-      expect(err).toBe('bar');
-      done();
-    }
-  );
+  createOnFromPubsub(
+    () => rejectApi(undefined, false),
+    'fake_method'
+  ).subscribe(null, err => {
+    expect(err).toEqual(new Error('bar'));
+    done();
+  });
 });

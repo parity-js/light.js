@@ -5,6 +5,6 @@
 
 import { of } from 'rxjs';
 
-const mockRpc$ = () => of(1);
+const mockRpc$ = () => of('mockRpc');
 
 export default mockRpc$;

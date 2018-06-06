@@ -16,12 +16,22 @@ it('should fire an event when the promise resolves', done => {
     });
 });
 
+it('should not error when the promise resolves with an error', done => {
+  mockRpc$()
+    .pipe(switchMapPromise(resolveApi({ error: 'bar' }).fake.method))
+    .subscribe();
+
+  // If after 0.1s, nothing has been called, then our Observable has not fired
+  // any event, which is what we want
+  setTimeout(done, 100);
+});
+
 it('should not error when the promise rejects', done => {
   mockRpc$()
     .pipe(switchMapPromise(rejectApi().fake.method))
     .subscribe();
 
-  // If after 0.5s, nothing has been called, then our Observable has not fired
+  // If after 0.1s, nothing has been called, then our Observable has not fired
   // any event, which is what we want
-  setTimeout(done, 500);
+  setTimeout(done, 100);
 });
