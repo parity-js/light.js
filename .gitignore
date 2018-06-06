@@ -13,6 +13,8 @@ node_modules
 build
 dist
 # /lib # TODO Don't commit lib when we publish to npm
+/lib/**/*.spec.js
+/lib/utils/testHelpers
 
 # logs
 *.log*
