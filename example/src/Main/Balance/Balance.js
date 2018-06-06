@@ -4,8 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import React, { Component } from 'react';
-import { combineLatest } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 import {
   accounts$,
@@ -13,11 +12,9 @@ import {
   chainName$,
   defaultAccount$,
   height$,
-  makeContract$,
   syncing$
 } from '../../light.js';
 import api from '../../api';
-import { gavCoinAbi, gavCoinAddress } from './gavcoin';
 import light from '../../hoc';
 import './Balance.css';
 
@@ -26,15 +23,15 @@ import './Balance.css';
   balance: ownProps => balanceOf$(ownProps.address).pipe(map(_ => +_)),
   chainName: chainName$,
   // Example of using RxJS operators for manipulating rpc$ observables
-  gavBalance: () =>
-    combineLatest(chainName$(), defaultAccount$()).pipe(
-      switchMap(([chainName, defaultAccount]) =>
-        makeContract$(gavCoinAddress(chainName), gavCoinAbi).balanceOf$(
-          defaultAccount
-        )
-      ),
-      map(_ => +_)
-    ),
+  // gavBalance: () =>
+  //   combineLatest(chainName$(), defaultAccount$()).pipe(
+  //     switchMap(([chainName, defaultAccount]) =>
+  //       makeContract$(gavCoinAddress(chainName), gavCoinAbi).balanceOf$(
+  //         defaultAccount
+  //       )
+  //     ),
+  //     map(_ => +_)
+  //   ),
   defaultAccount: defaultAccount$,
   height: height$,
   syncing: syncing$
@@ -50,7 +47,7 @@ class Balance extends Component {
       balance,
       chainName,
       defaultAccount,
-      gavBalance,
+
       height,
       syncing
     } = this.props;
@@ -72,9 +69,6 @@ class Balance extends Component {
         )}
         <p>
           My Balance: <strong>{balance}wei.</strong>
-        </p>
-        <p>
-          Gavcoin Balance: <strong>{gavBalance}GAV.</strong>
         </p>
       </div>
     );
