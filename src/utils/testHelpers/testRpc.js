@@ -5,6 +5,11 @@
 
 import isObservable from '../isObservable';
 
+/**
+ * Helper function to make basic tests for rpc$ observables.
+ *
+ * @ignore
+ */
 const testRpc = (name, rpc$) =>
   describe(`${name} rpc`, () => {
     it('should be a function', () => {
