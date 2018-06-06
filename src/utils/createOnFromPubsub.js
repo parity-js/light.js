@@ -6,7 +6,6 @@
 import { Observable, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import api from '../api';
 import { distinctReplayRefCount } from './operators/distinctReplayRefCount';
 
 /**
@@ -15,7 +14,7 @@ import { distinctReplayRefCount } from './operators/distinctReplayRefCount';
  * @ignore
  * @example onAccountsChanged$, onEveryBlock$...
  */
-const createOnFromPubsub = pubsub => {
+const createOnFromPubsub = (api, pubsub) => {
   const [namespace, method] = pubsub.split('_');
 
   // There's a chance the provider doesn't support pubsub, for example
