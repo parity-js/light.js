@@ -3,10 +3,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-/* eslint-env mocha */
-
-import { of } from 'rxjs';
-
 import mockRpc$ from '../testHelpers/mockRpc';
 import { rejectApi, resolveApi } from '../testHelpers/mockApi';
 import { switchMapPromise } from './switchMapPromise';

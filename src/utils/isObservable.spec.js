@@ -3,12 +3,9 @@
 //
 // SPDX-License-Identifier: MIT
 
-/* eslint-env mocha */
-
 import { of } from 'rxjs';
 
 import isObservable from './isObservable';
-import { isIterable } from 'core-js';
 
 /**
  * Helper function to test isObservable.

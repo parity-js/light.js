@@ -3,10 +3,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-/* eslint-env mocha */
-
-import { of } from 'rxjs';
-
 import createRpc from './createRpc';
 import mockRpc$ from './testHelpers/mockRpc';
 

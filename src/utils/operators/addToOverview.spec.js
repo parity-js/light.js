@@ -3,11 +3,8 @@
 //
 // SPDX-License-Identifier: MIT
 
-/* eslint-env mocha */
-
 import { addToOverview, tapRefCount } from './addToOverview';
 import createRpc from '../createRpc';
-import { distinctReplayRefCount } from './distinctReplayRefCount';
 import createMockRpc from '../testHelpers/mockRpc';
 
 describe('tapRefCount', () => {
@@ -42,14 +39,14 @@ describe('addToOverview', () => {
     expect(mockRpc$.metadata.subscribersCount).toBe(undefined);
   });
 
-  it('should have 1 subscriber after 1 subscribe', () => {
+  it('should have 1 subscriber after 1 subscribe', done => {
     mockRpc$().subscribe(() => {
       expect(mockRpc$.metadata.subscribersCount).toBe(1);
       done();
     });
   });
 
-  it('should have 2 subscriber after 2 subscribes', () => {
+  it('should have 2 subscriber after 2 subscribes', done => {
     mockRpc$().subscribe(() => {
       expect(mockRpc$.metadata.subscribersCount).toBe(2);
       done();

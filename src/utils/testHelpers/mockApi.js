@@ -9,14 +9,14 @@
 export const rejectApi = (isPubSub = true) => ({
   fake: {
     method () {
-      return Promise.reject('bar');
+      return Promise.reject(new Error('bar'));
     }
   },
   isPubSub,
   pubsub: {
     fake: {
       method (callback) {
-        callback('bar', null);
+        callback(new Error('bar'), null);
         return Promise.resolve(1); // Resolves to subscriptionId
       }
     },

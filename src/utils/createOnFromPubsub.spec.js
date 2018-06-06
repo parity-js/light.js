@@ -3,8 +3,6 @@
 //
 // SPDX-License-Identifier: MIT
 
-/* eslint-env mocha */
-
 import createOnFromPubsub from './createOnFromPubsub';
 import isObservable from './isObservable';
 import { rejectApi, resolveApi } from './testHelpers/mockApi';
