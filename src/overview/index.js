@@ -32,6 +32,13 @@ if (typeof window !== 'undefined') {
         // If there are subscribers, then we add
         overview[key] = { ...rpc$.metadata };
 
+        // We make the `frequency` field human-readable
+        if (rpc$.metadata.frequency) {
+          overview[key].frequency = rpc$.metadata.frequency.map(
+            frequency$ => frequency$.metadata.name
+          );
+        }
+
         // We remove all the metadata keys that are null, empty or functions,
         // for clarity while console.logging it.
         Object.keys(overview[key]).forEach(innerKey => {
@@ -44,13 +51,6 @@ if (typeof window !== 'undefined') {
             delete overview[key][innerKey];
           }
         });
-
-        // We make the `frequency` field human-readable
-        if (overview[key].frequency) {
-          overview[key].frequency.forEach((value, index) => {
-            overview[key].frequency[index] = value.metadata.name;
-          });
-        }
       });
 
       return overview;
