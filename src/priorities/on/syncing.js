@@ -3,10 +3,11 @@
 //
 // SPDX-License-Identifier: MIT
 
+import api from '../../api';
 import createOnFromPubsub from '../../utils/createOnFromPubsub';
 
 /**
  * Observable that emits when syncing status changes.
  */
-export const onSyncingChanged$ = createOnFromPubsub('eth_syncing');
+export const onSyncingChanged$ = createOnFromPubsub(api, 'eth_syncing');
 onSyncingChanged$.metadata = { name: 'onSyncingChanged$' };

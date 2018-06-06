@@ -5,12 +5,13 @@
 
 import { filter, map } from 'rxjs/operators';
 
+import api from '../../api';
 import createOnFromPubsub from '../../utils/createOnFromPubsub';
 
 /**
  * Observable that emits on every new block.
  */
-export const onEveryBlock$ = createOnFromPubsub('eth_blockNumber').pipe(
+export const onEveryBlock$ = createOnFromPubsub(api, 'eth_blockNumber').pipe(
   map(v => +v) // Return number instead of BigNumber
 );
 onEveryBlock$.metadata = { name: 'onEveryBlock$' };
