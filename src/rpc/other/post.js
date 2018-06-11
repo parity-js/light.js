@@ -18,12 +18,14 @@ import api from '../../api';
  * @param {Object} tx - A transaction object.
  * @return {Observable<Object>} - The status of the transaction.
  */
-export const post$ = tx => {
+export const post$ = (tx, options = {}) => {
   const source$ = Observable.create(async observer => {
     try {
-      observer.next({ estimating: null });
-      const gas = await api().eth.estimateGas(tx);
-      observer.next({ estimated: gas });
+      if (options.estimate) {
+        observer.next({ estimating: true });
+        const gas = await api().eth.estimateGas(tx);
+        observer.next({ estimated: gas });
+      }
       const signerRequestId = await api().parity.postTransaction(tx);
       observer.next({ requested: signerRequestId });
       const transactionHash = await api().pollMethod(
