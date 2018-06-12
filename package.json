@@ -24,22 +24,10 @@
     "Reactive",
     "RxJS"
   ],
-  "semistandard": {
-    "globals": [
-      "beforeAll",
-      "describe",
-      "expect",
-      "it",
-      "jest"
-    ],
-    "env": [
-      "mocha"
-    ]
-  },
   "scripts": {
     "build": "rimraf lib && babel src --out-dir lib",
     "docs": "esdoc",
-    "lint": "semistandard 'src/**/*.js' --parser babel-eslint",
+    "lint": "semistandard 'src/**/*.js' --parser babel-eslint --env jest",
     "test": "jest"
   },
   "dependencies": {
