@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import Abi from '@parity/abi';
+import { abiEncode } from '@parity/api/lib/util/encode';
 import memoizee from 'memoizee';
 
 import {
@@ -14,6 +15,7 @@ import {
 import api from '../../api';
 import getFrequency from '../utils/getFrequency';
 import { onEveryBlock$ } from '../../frequency';
+import { post$ } from './post';
 
 /**
  * Cache contracts, so that they are:
@@ -43,23 +45,45 @@ export const makeContract$ = memoizee(
   (address, abiJson) => {
     const abi = new Abi(abiJson);
     // Variable result will hold the final object to return
-    const result = { abi: abi, address: address };
+    const result = {
+      abi: abi,
+      address: address,
+      get contractObject () {
+        return getContract(address, abiJson);
+      }
+    };
 
     // We then copy every key inside contract.instance into our `result` object,
     // replacing each the value by an Observable instead of a Promise.
     abi.functions.forEach(({ name }) => {
       result[`${name}$`] = (...args) => {
+        // We only get the contract when the function is called for the 1st
+        // time. Note: getContract is memoized, won't create contract on each
+        // call.
         const contract = getContract(address, abiJson);
-        return getFrequency(makeContract$).pipe(
-          switchMapPromise(
-            () =>
-              contract.instance[name].constant
-                ? contract.instance[name].call({}, args)
-                : contract.instance[name].postTransaction({}, args)
-          ),
-          distinctReplayRefCount(),
-          addToOverview(makeContract$)
-        );
+        const method = contract.instance[name]; // Hold the method from the Abi
+
+        // The last arguments in args can be an options object
+        const options =
+          args.length === method.inputs.length + 1 ? args.pop() : {};
+
+        if (method.constant) {
+          return getFrequency(makeContract$).pipe(
+            switchMapPromise(() => contract.instance[name].call(options, args)),
+            distinctReplayRefCount(),
+            addToOverview(makeContract$)
+          );
+        } else {
+          return post$({
+            to: address,
+            data: abiEncode(
+              method.name,
+              method.inputs.map(({ kind: { type } }) => type),
+              args
+            ),
+            ...options
+          });
+        }
       };
     });
 
