@@ -4,6 +4,8 @@
 // SPDX-License-Identifier: MIT
 
 import memoizee from 'memoizee';
+import { ReplaySubject } from 'rxjs';
+import { addToOverview } from '../../../example/src/light.js/utils/operators/addToOverview';
 
 /**
  * Mixins (aka. interface in Java or trait in Rust) that are added into an rpc$
@@ -34,13 +36,22 @@ const frequencyMixins = {
 };
 
 /**
- * Add metadata to an rpc$ Observable.
+ * Add metadata to an rpc$ Observable, and transform it into a ReplaySubject(1).
  *
  * @ignore
  * @param {Object} metadata - The metadata to add.
  * @return {Observable} - The original rpc$ Observable with patched metadata.
  */
-const createRpc = (metadata = {}) => rpc$ => {
+const createRpc = (metadata = {}) => source$ => {
+  const rpc$ = (...args) => {
+    const subject$ = new ReplaySubject(1);
+    source$(...args)
+      .pipe(addToOverview(metadata))
+      .subscribe(subject$);
+
+    return subject$;
+  };
+
   const result$ = memoizee(rpc$);
   Object.assign(result$, frequencyMixins, { metadata });
   return result$;

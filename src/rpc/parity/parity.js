@@ -3,11 +3,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-import {
-  addToOverview,
-  distinctReplayRefCount,
-  switchMapPromise
-} from '../../utils/operators';
+import { switchMapPromise } from '../../utils/operators';
 import api from '../../api';
 import createRpc$ from '../utils/createRpc';
 import getFrequency from '../utils/getFrequency';
@@ -28,9 +24,7 @@ export const accountsInfo$ = createRpc$({
   frequency: [onAccountsInfoChanged$]
 })(() =>
   getFrequency(accountsInfo$).pipe(
-    switchMapPromise(() => api().parity.accountsInfo()),
-    distinctReplayRefCount(),
-    addToOverview(accountsInfo$)
+    switchMapPromise(() => api().parity.accountsInfo())
   )
 );
 
@@ -44,11 +38,7 @@ export const chainName$ = createRpc$({
   calls: ['parity_netChain'],
   frequency: [onStartup$]
 })(() =>
-  getFrequency(chainName$).pipe(
-    switchMapPromise(() => api().parity.netChain()),
-    distinctReplayRefCount(),
-    addToOverview(chainName$)
-  )
+  getFrequency(chainName$).pipe(switchMapPromise(() => api().parity.netChain()))
 );
 
 /**
@@ -61,8 +51,6 @@ export const nodeHealth$ = createRpc$({
   frequency: [onEvery2Seconds$]
 })(() =>
   getFrequency(nodeHealth$).pipe(
-    switchMapPromise(() => api().parity.nodeHealth()),
-    distinctReplayRefCount(),
-    addToOverview(nodeHealth$)
+    switchMapPromise(() => api().parity.nodeHealth())
   )
 );

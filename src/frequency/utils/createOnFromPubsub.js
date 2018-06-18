@@ -6,8 +6,6 @@
 import { Observable, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import { distinctReplayRefCount } from '../../utils/operators/distinctReplayRefCount';
-
 /**
  * Observable that emits on each pubsub event.
  *
@@ -36,7 +34,7 @@ const createOnFromPubsub = (api, pubsub) => {
       subscription.then(subscriptionId =>
         api().pubsub.unsubscribe(subscriptionId)
       );
-  }).pipe(distinctReplayRefCount());
+  });
 };
 
 export default createOnFromPubsub;

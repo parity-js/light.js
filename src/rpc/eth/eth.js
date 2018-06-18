@@ -5,11 +5,7 @@
 
 import { map, switchMap } from 'rxjs/operators';
 
-import {
-  addToOverview,
-  distinctReplayRefCount,
-  switchMapPromise
-} from '../../utils/operators';
+import { switchMapPromise } from '../../utils/operators';
 import api from '../../api';
 import createRpc$ from '../utils/createRpc';
 import getFrequency from '../utils/getFrequency';
@@ -33,7 +29,7 @@ import {
 export const accounts$ = createRpc$({
   calls: ['eth_accounts'],
   frequency: [onAccountsChanged$]
-})(() => getFrequency(accounts$).pipe(addToOverview(accounts$)));
+})(() => getFrequency(accounts$).pipe());
 
 /**
  * Get the balance of a given account. Calls `eth_getBalance`.
@@ -46,9 +42,7 @@ export const balanceOf$ = createRpc$({
   frequency: [onEvery2Blocks$, onStartup$]
 })(address =>
   getFrequency(balanceOf$).pipe(
-    switchMapPromise(() => api().eth.getBalance(address)),
-    distinctReplayRefCount(),
-    addToOverview(balanceOf$)
+    switchMapPromise(() => api().eth.getBalance(address))
   )
 );
 
@@ -60,12 +54,7 @@ export const balanceOf$ = createRpc$({
  */
 export const defaultAccount$ = createRpc$({
   dependsOn: ['accounts$']
-})(() =>
-  accounts$().pipe(
-    map(accounts => accounts[0]),
-    addToOverview(defaultAccount$)
-  )
-);
+})(() => accounts$().pipe(map(accounts => accounts[0])));
 
 /**
  * Get the current block height.
@@ -73,7 +62,7 @@ export const defaultAccount$ = createRpc$({
  * @return {Observable<Number>} - An Observable containing the block height.
  */
 export const height$ = createRpc$({ frequency: [onEveryBlock$] })(() =>
-  getFrequency(height$).pipe(addToOverview(height$))
+  getFrequency(height$)
 );
 
 /**
@@ -82,7 +71,7 @@ export const height$ = createRpc$({ frequency: [onEveryBlock$] })(() =>
  * @return {Observable<Number>} - An Observable containing the block height.
  */
 export const blockNumber$ = createRpc$({ dependsOn: ['height$'] })(() =>
-  height$().pipe(addToOverview(blockNumber$))
+  height$()
 );
 
 /**
@@ -93,19 +82,14 @@ export const blockNumber$ = createRpc$({ dependsOn: ['height$'] })(() =>
  */
 export const me$ = createRpc$({
   dependsOn: ['defaultAccount$']
-})(() => defaultAccount$().pipe(addToOverview(me$)));
+})(() => defaultAccount$());
 
 /**
  * Shorthand for fetching the current account's balance.
  */
 export const myBalance$ = createRpc$({
   dependsOn: ['balanceOf$', 'defaultAccount$']
-})(() =>
-  defaultAccount$().pipe(
-    switchMap(balanceOf$),
-    addToOverview(myBalance$)
-  )
-);
+})(() => defaultAccount$().pipe(switchMap(balanceOf$)));
 
 /**
  * Get the syncing state.
@@ -115,9 +99,4 @@ export const myBalance$ = createRpc$({
  */
 export const syncing$ = createRpc$({
   frequency: [onSyncingChanged$]
-})(() =>
-  getFrequency(syncing$).pipe(
-    distinctReplayRefCount(),
-    addToOverview(syncing$)
-  )
-);
+})(() => getFrequency(syncing$));

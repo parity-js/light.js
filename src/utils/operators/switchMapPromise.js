@@ -25,12 +25,14 @@ export const switchMapPromise = promise =>
       })
     ).pipe(
       catchError(err => {
+        console.group();
         console.error({ call: promise.toString(), err });
         console.error(
           new Error(
             'Error while executing API call, see error log above for more information.'
           )
         );
+        console.groupEnd();
         return empty();
       })
     )

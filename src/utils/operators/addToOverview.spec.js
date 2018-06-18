@@ -4,7 +4,6 @@
 // SPDX-License-Identifier: MIT
 
 import { addToOverview, tapRefCount } from './addToOverview';
-import createRpc from '../../rpc/utils/createRpc';
 import createMockRpc from '../testHelpers/mockRpc';
 
 describe('tapRefCount', () => {
@@ -29,29 +28,22 @@ describe('tapRefCount', () => {
 });
 
 describe('addToOverview', () => {
-  let mockRpc$;
-
-  beforeAll(() => {
-    mockRpc$ = createRpc()(() => createMockRpc().pipe(addToOverview(mockRpc$)));
-  });
+  const metadata = {};
+  const mockRpc$ = createMockRpc().pipe(addToOverview(metadata));
 
   it('should start with 0 subscriber', () => {
-    expect(mockRpc$.metadata.subscribersCount).toBe(undefined);
+    expect(metadata.subscribersCount).toBe(undefined);
   });
 
   // TODO Fix this test
-  it.skip('should have 1 subscriber after 1 subscribe', done => {
-    mockRpc$().subscribe(() => {
-      expect(mockRpc$.metadata.subscribersCount).toBe(1);
-      done();
-    });
+  it.skip('should increase subscribersCount on subscribe', () => {
+    mockRpc$.subscribe();
+    expect(metadata.subscribersCount).toBe(1);
   });
 
   // TODO Fix this test
-  it.skip('should have 2 subscriber after 2 subscribes', done => {
-    mockRpc$().subscribe(() => {
-      expect(mockRpc$.metadata.subscribersCount).toBe(2);
-      done();
-    });
+  it.skip('should increase subscribersCount on further subscribe', () => {
+    mockRpc$.subscribe();
+    expect(metadata.subscribersCount).toBe(2);
   });
 });

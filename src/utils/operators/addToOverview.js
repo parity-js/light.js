@@ -48,9 +48,9 @@ export const tapRefCount = onChange => source$ => {
  * every time there's a new subscription or unsubscription.
  *
  * @ignore
- * @param {String} rpc$ - The RPC Observable.
+ * @param {Object} metadata - The metadata Object to change.
  */
-export const addToOverview = rpc$ =>
+export const addToOverview = metadata =>
   tapRefCount(refCount => {
-    Object.assign(rpc$.metadata, { subscribersCount: refCount });
+    Object.assign(metadata, { subscribersCount: refCount });
   });
