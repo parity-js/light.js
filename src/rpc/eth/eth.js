@@ -3,12 +3,14 @@
 //
 // SPDX-License-Identifier: MIT
 
+import { of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
 import { switchMapPromise } from '../../utils/operators';
 import api from '../../api';
 import createRpc$ from '../utils/createRpc';
 import getFrequency from '../utils/getFrequency';
+import { isNullOrLoading, RPC_LOADING } from '../../utils/isLoading';
 import {
   onAccountsChanged$,
   onEvery2Blocks$,
@@ -89,7 +91,16 @@ export const me$ = createRpc$({
  */
 export const myBalance$ = createRpc$({
   dependsOn: ['balanceOf$', 'defaultAccount$']
-})(() => defaultAccount$().pipe(switchMap(balanceOf$)));
+})(() =>
+  defaultAccount$().pipe(source$ =>
+    switchMap(
+      defaultAccount =>
+        isNullOrLoading(defaultAccount)
+          ? of(RPC_LOADING)
+          : balanceOf$(defaultAccount)
+    )
+  )
+);
 
 /**
  * Get the syncing state.

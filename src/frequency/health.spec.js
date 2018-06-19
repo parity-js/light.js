@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-import * as syncing from './syncing';
+import * as health from './health';
 import testFrequency from '../utils/testHelpers/testFrequency';
 
-Object.keys(syncing).forEach(key => testFrequency(key, syncing[key]));
+Object.keys(health).forEach(key => testFrequency(key, health[key]));

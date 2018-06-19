@@ -5,6 +5,6 @@
 
 export * from './accounts';
 export * from './blocks';
+export * from './health';
 export * from './other';
-export * from './syncing';
 export * from './time';

@@ -5,7 +5,6 @@
 
 import memoizee from 'memoizee';
 import { ReplaySubject } from 'rxjs';
-import { addToOverview } from '../../../example/src/light.js/utils/operators/addToOverview';
 
 /**
  * Mixins (aka. interface in Java or trait in Rust) that are added into an rpc$
@@ -45,9 +44,7 @@ const frequencyMixins = {
 const createRpc = (metadata = {}) => source$ => {
   const rpc$ = (...args) => {
     const subject$ = new ReplaySubject(1);
-    source$(...args)
-      .pipe(addToOverview(metadata))
-      .subscribe(subject$);
+    source$(...args).subscribe(subject$);
 
     return subject$;
   };
