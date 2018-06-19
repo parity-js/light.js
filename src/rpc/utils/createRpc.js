@@ -59,9 +59,13 @@ const createRpc = (metadata = {}) => source$ => {
     if (options.withoutLoading === true) {
       pipes.push(withoutLoading());
     }
-    source$(...args)
-      .pipe(...pipes)
-      .subscribe(subject$);
+    if (pipes.length) {
+      source$(...args)
+        .pipe(...pipes)
+        .subscribe(subject$);
+    } else {
+      source$(...args).subscribe(subject$);
+    }
 
     // Add a field in the calledWith object, so that we know this function has
     // been called with these particular args in the app. See overview.js on

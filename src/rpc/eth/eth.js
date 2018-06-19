@@ -92,7 +92,7 @@ export const me$ = createRpc$({
 export const myBalance$ = createRpc$({
   dependsOn: ['balanceOf$', 'defaultAccount$']
 })(() =>
-  defaultAccount$().pipe(source$ =>
+  defaultAccount$().pipe(
     switchMap(
       defaultAccount =>
         isNullOrLoading(defaultAccount)

@@ -20,7 +20,8 @@ import './Balance.css';
 
 @light({
   accounts: accounts$,
-  balance: ownProps => balanceOf$(ownProps.address).pipe(map(_ => +_)),
+  balance: ownProps =>
+    balanceOf$(ownProps.address, { withoutLoading: true }).pipe(map(_ => +_)),
   chainName: chainName$,
   // Example of using RxJS operators for manipulating rpc$ observables
   // gavBalance: () =>

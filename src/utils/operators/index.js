@@ -3,6 +3,5 @@
 //
 // SPDX-License-Identifier: MIT
 
-export * from './addToOverview';
 export * from './distinctReplayRefCount';
 export * from './switchMapPromise';

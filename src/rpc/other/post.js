@@ -5,7 +5,7 @@
 
 import { Observable } from 'rxjs';
 
-import { addToOverview, distinctReplayRefCount } from '../../utils/operators';
+import { distinctReplayRefCount } from '../../utils/operators';
 import api from '../../api';
 
 /**
@@ -50,10 +50,7 @@ export const post$ = (tx, options = {}) => {
       observer.next({ failed: error });
       observer.error(error);
     }
-  }).pipe(
-    distinctReplayRefCount(),
-    addToOverview(post$)
-  );
+  }).pipe(distinctReplayRefCount());
 
   source$.subscribe(); // Run this Observable immediately;
   return source$;

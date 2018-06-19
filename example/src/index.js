@@ -11,6 +11,6 @@ import App from './App';
 import light, { balanceOf$, frequency } from './light.js';
 
 light.setApi(api);
-// balanceOf$.setFrequency([frequency.onEvery2Seconds$]);
+balanceOf$.setFrequency([frequency.onEvery2Seconds$]);
 
 ReactDOM.render(<App />, document.getElementById('root'));

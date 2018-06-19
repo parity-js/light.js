@@ -8,7 +8,6 @@ import { abiEncode } from '@parity/api/lib/util/encode';
 import memoizee from 'memoizee';
 
 import {
-  addToOverview,
   distinctReplayRefCount,
   switchMapPromise
 } from '../../utils/operators';
@@ -70,8 +69,7 @@ export const makeContract$ = memoizee(
         if (method.constant) {
           return getFrequency(makeContract$).pipe(
             switchMapPromise(() => contract.instance[name].call(options, args)),
-            distinctReplayRefCount(),
-            addToOverview(makeContract$)
+            distinctReplayRefCount()
           );
         } else {
           return post$({
