@@ -20,17 +20,20 @@ if (typeof window !== 'undefined') {
       const overview = {};
       Object.keys(rpc).forEach(key => {
         const rpc$ = rpc[key];
-        const { subscribersCount } = rpc$.metadata;
-
-        // If the current rpc$ doesn't have any subscribers, then it means that
-        // it isn't used in the current dapp. In this case, we don't show it in
-        // the overview.
-        if (!subscribersCount) {
-          return;
-        }
 
         // If there are subscribers, then we add
         overview[key] = { ...rpc$.metadata };
+
+        // We make the `calledWith` field human-readable
+        if (rpc$.metadata.calledWith) {
+          Object.keys(rpc$.metadata.calledWith).map(calledWithKey => {
+            const subject$ = rpc$.metadata.calledWith[calledWithKey];
+            overview[key].calledWith[calledWithKey] = {
+              currentValue: subject$._events && subject$._events[0],
+              subscribersCount: subject$.observers.length
+            };
+          });
+        }
 
         // We make the `frequency` field human-readable
         if (rpc$.metadata.frequency) {

@@ -33,6 +33,7 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.49",
     "@parity/api": "^2.1.23",
+    "json-prune": "^1.1.0",
     "memoizee": "^0.4.12"
   },
   "devDependencies": {

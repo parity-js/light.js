@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import memoizee from 'memoizee';
+import prune from 'json-prune';
 import { ReplaySubject } from 'rxjs';
 
 import { withoutLoading } from '../../utils/operators/withoutLoading';
@@ -61,6 +62,14 @@ const createRpc = (metadata = {}) => source$ => {
     source$(...args)
       .pipe(...pipes)
       .subscribe(subject$);
+
+    // Add a field in the calledWith object, so that we know this function has
+    // been called with these particular args in the app. See overview.js on
+    // how this is used.
+    if (!metadata.calledWith) {
+      metadata.calledWith = {};
+    }
+    metadata.calledWith[prune(args)] = subject$;
 
     return subject$;
   };
