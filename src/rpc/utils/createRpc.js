@@ -6,6 +6,8 @@
 import memoizee from 'memoizee';
 import { ReplaySubject } from 'rxjs';
 
+import { withoutLoading } from '../../utils/operators/withoutLoading';
+
 /**
  * Mixins (aka. interface in Java or trait in Rust) that are added into an rpc$
  * Observable.
@@ -43,8 +45,22 @@ const frequencyMixins = {
  */
 const createRpc = (metadata = {}) => source$ => {
   const rpc$ = (...args) => {
+    // The last arguments is an options, if it's an object
+    // TODO What if we pass a single object as argument, which is not options?
+    const options =
+      args && args.length && typeof args[args.length - 1] === 'object'
+        ? args.pop()
+        : {};
+
     const subject$ = new ReplaySubject(1);
-    source$(...args).subscribe(subject$);
+    // The pipes to add, from the options
+    const pipes = [];
+    if (options.withoutLoading === true) {
+      pipes.push(withoutLoading());
+    }
+    source$(...args)
+      .pipe(...pipes)
+      .subscribe(subject$);
 
     return subject$;
   };
