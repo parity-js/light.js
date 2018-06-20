@@ -8,7 +8,7 @@ import isObservable from '../../utils/isObservable';
 import { rejectApi, resolveApi } from '../../utils/testHelpers/mockApi';
 
 it('should return an Observable', () => {
-  expect(isObservable(createOnFromPubsub(resolveApi, 'fake_method'))).toBe(
+  expect(isObservable(createOnFromPubsub('fake_method', resolveApi))).toBe(
     true
   );
 });

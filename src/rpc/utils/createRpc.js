@@ -55,6 +55,7 @@ const createRpc = (metadata = {}) => source$ => {
         : {};
 
     const subject$ = new ReplaySubject(1);
+
     // The pipes to add, from the options
     const pipes = [multicast(() => subject$), refCount()];
     if (options.withoutLoading === true) {

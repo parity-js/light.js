@@ -4,7 +4,6 @@
 // SPDX-License-Identifier: MIT
 
 import { Observable, timer } from 'rxjs';
-import memoizee from 'memoizee';
 import { switchMap } from 'rxjs/operators';
 
 import { distinctReplayRefCount } from '../../utils/operators/distinctReplayRefCount';
@@ -40,4 +39,4 @@ const createOnFromPubsub = (pubsub, api) => {
   }).pipe(distinctReplayRefCount());
 };
 
-export default memoizee(createOnFromPubsub, { length: 1 });
+export default createOnFromPubsub;
