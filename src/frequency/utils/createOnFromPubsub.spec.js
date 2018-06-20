@@ -14,23 +14,22 @@ it('should return an Observable', () => {
 });
 
 it('should fire an event when pubsub publishes', done => {
-  createOnFromPubsub(resolveApi, 'fake_method').subscribe(data => {
+  createOnFromPubsub('fake_method', resolveApi).subscribe(data => {
     expect(data).toBe('foo');
     done();
   });
 });
 
 it('should fire an error when pubsub errors', done => {
-  createOnFromPubsub(rejectApi, 'fake_method').subscribe(null, err => {
+  createOnFromPubsub('fake_method', rejectApi).subscribe(null, err => {
     expect(err).toEqual(new Error('bar'));
     done();
   });
 });
 
 it('should fire an event when polling pubsub  publishes', done => {
-  createOnFromPubsub(
-    () => resolveApi(undefined, false),
-    'fake_method'
+  createOnFromPubsub('fake_method', () =>
+    resolveApi(undefined, false)
   ).subscribe(data => {
     expect(data).toBe('foo');
     done();
@@ -38,9 +37,8 @@ it('should fire an event when polling pubsub  publishes', done => {
 });
 
 it('should fire an error when polling pubsub errors', done => {
-  createOnFromPubsub(
-    () => rejectApi(undefined, false),
-    'fake_method'
+  createOnFromPubsub('fake_method', () =>
+    rejectApi(undefined, false)
   ).subscribe(null, err => {
     expect(err).toEqual(new Error('bar'));
     done();

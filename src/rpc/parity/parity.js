@@ -9,7 +9,7 @@ import createRpc$ from '../utils/createRpc';
 import getFrequency from '../utils/getFrequency';
 import {
   onAccountsInfoChanged$,
-  onEvery2Seconds$,
+  onNodeHealthChanged$,
   onStartup$
 } from '../../frequency';
 
@@ -22,11 +22,7 @@ import {
 export const accountsInfo$ = createRpc$({
   calls: ['parity_accountsInfo'],
   frequency: [onAccountsInfoChanged$]
-})(() =>
-  getFrequency(accountsInfo$).pipe(
-    switchMapPromise(() => api().parity.accountsInfo())
-  )
-);
+})(() => getFrequency(accountsInfo$));
 
 /**
  * Get the name of the current chain. Calls `parity_netChain`.
@@ -48,9 +44,5 @@ export const chainName$ = createRpc$({
  */
 export const nodeHealth$ = createRpc$({
   calls: ['parity_nodeHealth'],
-  frequency: [onEvery2Seconds$]
-})(() =>
-  getFrequency(nodeHealth$).pipe(
-    switchMapPromise(() => api().parity.nodeHealth())
-  )
-);
+  frequency: [onNodeHealthChanged$]
+})(() => getFrequency(nodeHealth$));

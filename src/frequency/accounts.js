@@ -9,14 +9,14 @@ import createOnFromPubsub from './utils/createOnFromPubsub';
 /**
  * Observable that emits each time the default account changes
  */
-export const onAccountsChanged$ = createOnFromPubsub(api, 'eth_accounts');
+export const onAccountsChanged$ = createOnFromPubsub('eth_accounts', api);
 onAccountsChanged$.metadata = { name: 'onAccountsChanged$' };
 
 /**
  * Observable that emits each time the default account changes
  */
 export const onAccountsInfoChanged$ = createOnFromPubsub(
-  api,
-  'parity_accountsInfo'
+  'parity_accountsInfo',
+  api
 );
 onAccountsInfoChanged$.metadata = { name: 'onAccountsInfoChanged$' };

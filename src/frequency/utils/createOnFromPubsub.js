@@ -4,7 +4,10 @@
 // SPDX-License-Identifier: MIT
 
 import { Observable, timer } from 'rxjs';
+import memoizee from 'memoizee';
 import { switchMap } from 'rxjs/operators';
+
+import { distinctReplayRefCount } from '../../utils/operators/distinctReplayRefCount';
 
 /**
  * Observable that emits on each pubsub event.
@@ -12,7 +15,7 @@ import { switchMap } from 'rxjs/operators';
  * @ignore
  * @example onAccountsChanged$, onEveryBlock$...
  */
-const createOnFromPubsub = (api, pubsub) => {
+const createOnFromPubsub = (pubsub, api) => {
   const [namespace, method] = pubsub.split('_');
 
   // There's a chance the provider doesn't support pubsub, for example
@@ -34,7 +37,7 @@ const createOnFromPubsub = (api, pubsub) => {
       subscription.then(subscriptionId =>
         api().pubsub.unsubscribe(subscriptionId)
       );
-  });
+  }).pipe(distinctReplayRefCount());
 };
 
-export default createOnFromPubsub;
+export default memoizee(createOnFromPubsub, { length: 1 });

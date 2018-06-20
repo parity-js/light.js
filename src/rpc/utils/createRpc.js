@@ -4,10 +4,11 @@
 // SPDX-License-Identifier: MIT
 
 import memoizee from 'memoizee';
+import { multicast, refCount } from 'rxjs/operators';
 import prune from 'json-prune';
 import { ReplaySubject } from 'rxjs';
 
-import { withoutLoading } from '../../utils/operators/withoutLoading';
+import { withoutLoading } from '../../utils/operators';
 
 /**
  * Mixins (aka. interface in Java or trait in Rust) that are added into an rpc$
@@ -55,16 +56,9 @@ const createRpc = (metadata = {}) => source$ => {
 
     const subject$ = new ReplaySubject(1);
     // The pipes to add, from the options
-    const pipes = [];
+    const pipes = [multicast(() => subject$), refCount()];
     if (options.withoutLoading === true) {
       pipes.push(withoutLoading());
-    }
-    if (pipes.length) {
-      source$(...args)
-        .pipe(...pipes)
-        .subscribe(subject$);
-    } else {
-      source$(...args).subscribe(subject$);
     }
 
     // Add a field in the calledWith object, so that we know this function has
@@ -75,10 +69,10 @@ const createRpc = (metadata = {}) => source$ => {
     }
     metadata.calledWith[prune(args)] = subject$;
 
-    return subject$;
+    return source$(...args).pipe(...pipes);
   };
 
-  const result$ = memoizee(rpc$);
+  const result$ = memoizee(rpc$, { length: false });
   Object.assign(result$, frequencyMixins, { metadata });
   return result$;
 };

@@ -11,7 +11,7 @@ import createOnFromPubsub from './utils/createOnFromPubsub';
 /**
  * Observable that emits on every new block.
  */
-export const onEveryBlock$ = createOnFromPubsub(api, 'eth_blockNumber').pipe(
+export const onEveryBlock$ = createOnFromPubsub('eth_blockNumber', api).pipe(
   map(v => +v) // Return number instead of BigNumber
 );
 onEveryBlock$.metadata = { name: 'onEveryBlock$' };
