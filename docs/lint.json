@@ -1,0 +1,59 @@
+[
+  {
+    "name": "post$",
+    "filePath": "src/rpc/other/post.js",
+    "lines": [
+      {
+        "lineNumber": 10,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 11,
+        "line": " * Post a transaction to the network."
+      },
+      {
+        "lineNumber": 12,
+        "line": " *"
+      },
+      {
+        "lineNumber": 13,
+        "line": " * Calls, in this order, `eth_estimateGas`, `parity_postTransaction`,"
+      },
+      {
+        "lineNumber": 14,
+        "line": " * `parity_checkRequest` and `eth_getTransactionReceipt` to get the status of"
+      },
+      {
+        "lineNumber": 15,
+        "line": " * the transaction."
+      },
+      {
+        "lineNumber": 16,
+        "line": " *"
+      },
+      {
+        "lineNumber": 17,
+        "line": " * @param {Object} tx - A transaction object."
+      },
+      {
+        "lineNumber": 18,
+        "line": " * @return {Observable<Object>} - The status of the transaction."
+      },
+      {
+        "lineNumber": 19,
+        "line": " */"
+      },
+      {
+        "lineNumber": 20,
+        "line": "export const post$ = (tx, options = {}) => {"
+      }
+    ],
+    "codeParams": [
+      "tx",
+      "options"
+    ],
+    "docParams": [
+      "tx"
+    ]
+  }
+]

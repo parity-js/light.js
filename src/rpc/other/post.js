@@ -15,7 +15,8 @@ import api from '../../api';
  * `parity_checkRequest` and `eth_getTransactionReceipt` to get the status of
  * the transaction.
  *
- * @param {Object} tx - A transaction object.
+ * @param {Object} tx! - A transaction object.
+ * @param {Object} options? - Options to pass.
  * @return {Observable<Object>} - The status of the transaction.
  */
 export const post$ = (tx, options = {}) => {

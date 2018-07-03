@@ -23,7 +23,7 @@ import { post$ } from './post';
  *   contract
  *
  * @param {String} address - The contract address.
- * @param {Array<Object>} - The contract abi.
+ * @param {Array<Object>} abiJson - The contract abi.
  * @return {Object} - The contract object as defined in @parity/api.
  */
 const getContract = memoizee(

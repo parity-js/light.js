@@ -1,0 +1,2184 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/api.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport Api from '@parity/api';\n\nimport { name } from '../package.json';\n\nlet api;\n\n/**\n * Sets an Api object.\n *\n * @param {Object} newApi - The Api object.\n * @return {Null}\n */\nexport const setApi = newApi => {\n  api = newApi;\n  if (!api.isPubSub) {\n    console.warn(\n      `Current provider does not support pubsub. ${name} will poll every second to listen to changes.`\n    );\n  }\n};\n\n/**\n * We only ever use api() at call-time of functions; this allows the options\n * (particularly the transport option) to be changed dynamically and the\n * data structure to be reused.\n *\n * @return {Object} - The current Api object.\n */\nexport const getApi = () => {\n  if (!api) {\n    api = new Api(new Api.Provider.Ws('ws://localhost:8546'));\n  }\n  return api;\n};\n\nexport default getApi;\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/api.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "function",
+    "name": "setApi",
+    "memberof": "src/api.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api.js~setApi",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/api.js",
+    "importStyle": "{setApi}",
+    "description": "Sets an Api object.",
+    "lineNumber": 18,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "newApi",
+        "description": "The Api object."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Null"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "function",
+    "name": "getApi",
+    "memberof": "src/api.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/api.js~getApi",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/api.js",
+    "importStyle": "{getApi}",
+    "description": "We only ever use api() at call-time of functions; this allows the options\n(particularly the transport option) to be changed dynamically and the\ndata structure to be reused.",
+    "lineNumber": 34,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "The current Api object."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 51,
+    "kind": "file",
+    "name": "src/api.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { getApi, setApi } from './api';\nimport { resolveApi } from './utils/testHelpers/mockApi';\n\nit('should return the default Api object', () => {\n  expect(getApi().provider._url).toBe('ws://localhost:8546');\n});\n\nit('should correctly set a new Api', () => {\n  const mockApi = resolveApi(undefined, false); // Pubsub\n  setApi(mockApi);\n  expect(getApi()).toBe(mockApi);\n});\n\nit('should correctly set a new Api', () => {\n  const mockApi = resolveApi(undefined, false); // Not pubsub\n  setApi(mockApi);\n  expect(getApi()).toBe(mockApi);\n});\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/api.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 52,
+    "kind": "file",
+    "name": "src/frequency/accounts.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport api from '../api';\nimport createOnFromPubsub from './utils/createOnFromPubsub';\n\n/**\n * Observable that emits each time the default account changes\n */\nexport const onAccountsChanged$ = createOnFromPubsub('eth_accounts', api);\nonAccountsChanged$.metadata = { name: 'onAccountsChanged$' };\n\n/**\n * Observable that emits each time the default account changes\n */\nexport const onAccountsInfoChanged$ = createOnFromPubsub(\n  'parity_accountsInfo',\n  api\n);\nonAccountsInfoChanged$.metadata = { name: 'onAccountsInfoChanged$' };\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/accounts.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 53,
+    "kind": "variable",
+    "name": "onAccountsChanged$",
+    "memberof": "src/frequency/accounts.js",
+    "static": true,
+    "longname": "src/frequency/accounts.js~onAccountsChanged$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/frequency/accounts.js",
+    "importStyle": "{onAccountsChanged$}",
+    "description": "Observable that emits each time the default account changes",
+    "lineNumber": 12,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "variable",
+    "name": "onAccountsInfoChanged$",
+    "memberof": "src/frequency/accounts.js",
+    "static": true,
+    "longname": "src/frequency/accounts.js~onAccountsInfoChanged$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/frequency/accounts.js",
+    "importStyle": "{onAccountsInfoChanged$}",
+    "description": "Observable that emits each time the default account changes",
+    "lineNumber": 18,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "file",
+    "name": "src/frequency/accounts.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport * as accounts from './accounts';\nimport testFrequency from '../utils/testHelpers/testFrequency';\n\nObject.keys(accounts).forEach(key => testFrequency(key, accounts[key]));\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/accounts.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 56,
+    "kind": "file",
+    "name": "src/frequency/blocks.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { filter, map } from 'rxjs/operators';\n\nimport api from '../api';\nimport createOnFromPubsub from './utils/createOnFromPubsub';\n\n/**\n * Observable that emits on every new block.\n */\nexport const onEveryBlock$ = createOnFromPubsub('eth_blockNumber', api).pipe(\n  map(v => +v) // Return number instead of BigNumber\n);\nonEveryBlock$.metadata = { name: 'onEveryBlock$' };\n\n/**\n * Observable that emits on every 2nd block.\n */\nexport const onEvery2Blocks$ = onEveryBlock$.pipe(\n  filter(n => n % 2 === 0) // Around ~30s on mainnet\n);\nonEvery2Blocks$.metadata = { name: 'onEvery2Blocks$' };\n\n/**\n * Observable that emits on every 4th block.\n */\nexport const onEvery4Blocks$ = onEveryBlock$.pipe(\n  filter(n => n % 4 === 0) // Around ~1min on mainnet\n);\nonEvery4Blocks$.metadata = { name: 'onEvery4Blocks$' };\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/blocks.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 57,
+    "kind": "variable",
+    "name": "onEveryBlock$",
+    "memberof": "src/frequency/blocks.js",
+    "static": true,
+    "longname": "src/frequency/blocks.js~onEveryBlock$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/frequency/blocks.js",
+    "importStyle": "{onEveryBlock$}",
+    "description": "Observable that emits on every new block.",
+    "lineNumber": 14,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "variable",
+    "name": "onEvery2Blocks$",
+    "memberof": "src/frequency/blocks.js",
+    "static": true,
+    "longname": "src/frequency/blocks.js~onEvery2Blocks$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/frequency/blocks.js",
+    "importStyle": "{onEvery2Blocks$}",
+    "description": "Observable that emits on every 2nd block.",
+    "lineNumber": 22,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "variable",
+    "name": "onEvery4Blocks$",
+    "memberof": "src/frequency/blocks.js",
+    "static": true,
+    "longname": "src/frequency/blocks.js~onEvery4Blocks$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/frequency/blocks.js",
+    "importStyle": "{onEvery4Blocks$}",
+    "description": "Observable that emits on every 4th block.",
+    "lineNumber": 30,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "file",
+    "name": "src/frequency/blocks.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport * as blocks from './blocks';\nimport testFrequency from '../utils/testHelpers/testFrequency';\n\nObject.keys(blocks).forEach(key => testFrequency(key, blocks[key]));\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/blocks.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 61,
+    "kind": "file",
+    "name": "src/frequency/health.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport api from '../api';\nimport createOnFromPubsub from './utils/createOnFromPubsub';\n\n/**\n * Observable that emits when syncing status changes.\n */\nexport const onNodeHealthChanged$ = createOnFromPubsub(\n  'parity_nodeHealth',\n  api\n);\nonNodeHealthChanged$.metadata = { name: 'onNodeHealthChanged$' };\n\n/**\n * Observable that emits when syncing status changes.\n */\nexport const onSyncingChanged$ = createOnFromPubsub('eth_syncing', api);\nonSyncingChanged$.metadata = { name: 'onSyncingChanged$' };\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/health.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 62,
+    "kind": "variable",
+    "name": "onNodeHealthChanged$",
+    "memberof": "src/frequency/health.js",
+    "static": true,
+    "longname": "src/frequency/health.js~onNodeHealthChanged$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/frequency/health.js",
+    "importStyle": "{onNodeHealthChanged$}",
+    "description": "Observable that emits when syncing status changes.",
+    "lineNumber": 12,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "variable",
+    "name": "onSyncingChanged$",
+    "memberof": "src/frequency/health.js",
+    "static": true,
+    "longname": "src/frequency/health.js~onSyncingChanged$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/frequency/health.js",
+    "importStyle": "{onSyncingChanged$}",
+    "description": "Observable that emits when syncing status changes.",
+    "lineNumber": 21,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "file",
+    "name": "src/frequency/health.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport * as health from './health';\nimport testFrequency from '../utils/testHelpers/testFrequency';\n\nObject.keys(health).forEach(key => testFrequency(key, health[key]));\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/health.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 65,
+    "kind": "file",
+    "name": "src/frequency/index.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nexport * from './accounts';\nexport * from './blocks';\nexport * from './health';\nexport * from './other';\nexport * from './time';\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 66,
+    "kind": "file",
+    "name": "src/frequency/other.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { of } from 'rxjs';\n\n/**\n * Observable that emits only once.\n */\nexport const onStartup$ = of(0);\nonStartup$.metadata = { name: 'onStartup$' };\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/other.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 67,
+    "kind": "variable",
+    "name": "onStartup$",
+    "memberof": "src/frequency/other.js",
+    "static": true,
+    "longname": "src/frequency/other.js~onStartup$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/frequency/other.js",
+    "importStyle": "{onStartup$}",
+    "description": "Observable that emits only once.",
+    "lineNumber": 11,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "file",
+    "name": "src/frequency/other.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport * as other from './other';\nimport testFrequency from '../utils/testHelpers/testFrequency';\n\nObject.keys(other).forEach(key => testFrequency(key, other[key]));\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/other.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 69,
+    "kind": "file",
+    "name": "src/frequency/time.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { timer } from 'rxjs';\n\n/**\n * Observable that emits on every second.\n */\nexport const onEverySecond$ = timer(0, 1000);\nonEverySecond$.metadata = { name: 'onEverySecond$' };\n\n/**\n * Observable that emits on every other second.\n */\nexport const onEvery2Seconds$ = timer(0, 2000);\nonEvery2Seconds$.metadata = { name: 'onEvery2Seconds$' };\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/time.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 70,
+    "kind": "variable",
+    "name": "onEverySecond$",
+    "memberof": "src/frequency/time.js",
+    "static": true,
+    "longname": "src/frequency/time.js~onEverySecond$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/frequency/time.js",
+    "importStyle": "{onEverySecond$}",
+    "description": "Observable that emits on every second.",
+    "lineNumber": 11,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "variable",
+    "name": "onEvery2Seconds$",
+    "memberof": "src/frequency/time.js",
+    "static": true,
+    "longname": "src/frequency/time.js~onEvery2Seconds$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/frequency/time.js",
+    "importStyle": "{onEvery2Seconds$}",
+    "description": "Observable that emits on every other second.",
+    "lineNumber": 17,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "file",
+    "name": "src/frequency/time.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport * as time from './time';\nimport testFrequency from '../utils/testHelpers/testFrequency';\n\nObject.keys(time).forEach(key => testFrequency(key, time[key]));\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/time.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 73,
+    "kind": "file",
+    "name": "src/frequency/utils/createOnFromPubsub.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { Observable, timer } from 'rxjs';\nimport { switchMap } from 'rxjs/operators';\n\nimport { distinctReplayRefCount } from '../../utils/operators/distinctReplayRefCount';\n\n/**\n * Observable that emits on each pubsub event.\n *\n * @ignore\n * @example onAccountsChanged$, onEveryBlock$...\n */\nconst createOnFromPubsub = (pubsub, api) => {\n  const [namespace, method] = pubsub.split('_');\n\n  // There's a chance the provider doesn't support pubsub, for example\n  // MetaMaskProvider. In this case, as suggested on their Github, the best\n  // solution for now is to poll.\n  if (!api().isPubSub) {\n    return timer(0, 1000).pipe(switchMap(() => api()[namespace][method]()));\n  }\n\n  return Observable.create(observer => {\n    const subscription = api().pubsub[namespace][method]((error, result) => {\n      if (error) {\n        observer.error(error);\n      } else {\n        observer.next(result);\n      }\n    });\n    return () =>\n      subscription.then(subscriptionId =>\n        api().pubsub.unsubscribe(subscriptionId)\n      );\n  }).pipe(distinctReplayRefCount());\n};\n\nexport default createOnFromPubsub;\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/utils/createOnFromPubsub.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 74,
+    "kind": "function",
+    "name": "createOnFromPubsub",
+    "memberof": "src/frequency/utils/createOnFromPubsub.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/frequency/utils/createOnFromPubsub.js~createOnFromPubsub",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/frequency/utils/createOnFromPubsub.js",
+    "importStyle": "createOnFromPubsub",
+    "description": "Observable that emits on each pubsub event.",
+    "examples": [
+      "onAccountsChanged$, onEveryBlock$..."
+    ],
+    "lineNumber": 17,
+    "ignore": true,
+    "params": [
+      {
+        "name": "pubsub",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "api",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "file",
+    "name": "src/frequency/utils/createOnFromPubsub.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport createOnFromPubsub from './createOnFromPubsub';\nimport isObservable from '../../utils/isObservable';\nimport { rejectApi, resolveApi } from '../../utils/testHelpers/mockApi';\n\nit('should return an Observable', () => {\n  expect(isObservable(createOnFromPubsub('fake_method', resolveApi))).toBe(\n    true\n  );\n});\n\nit('should fire an event when pubsub publishes', done => {\n  createOnFromPubsub('fake_method', resolveApi).subscribe(data => {\n    expect(data).toBe('foo');\n    done();\n  });\n});\n\nit('should fire an error when pubsub errors', done => {\n  createOnFromPubsub('fake_method', rejectApi).subscribe(null, err => {\n    expect(err).toEqual(new Error('bar'));\n    done();\n  });\n});\n\nit('should fire an event when polling pubsub  publishes', done => {\n  createOnFromPubsub('fake_method', () =>\n    resolveApi(undefined, false)\n  ).subscribe(data => {\n    expect(data).toBe('foo');\n    done();\n  });\n});\n\nit('should fire an error when polling pubsub errors', done => {\n  createOnFromPubsub('fake_method', () =>\n    rejectApi(undefined, false)\n  ).subscribe(null, err => {\n    expect(err).toEqual(new Error('bar'));\n    done();\n  });\n});\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/frequency/utils/createOnFromPubsub.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 76,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { setApi } from './api';\nimport * as frequency from './frequency';\nimport './overview';\n\nexport * from './rpc';\nexport * from './utils/isLoading';\nexport { withoutLoading } from './utils/operators/withoutLoading';\n\nexport { frequency, setApi };\nexport default { setApi };\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 77,
+    "kind": "file",
+    "name": "src/rpc/eth/eth.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { of } from 'rxjs';\nimport { map, switchMap } from 'rxjs/operators';\n\nimport { switchMapPromise } from '../../utils/operators';\nimport api from '../../api';\nimport createRpc$ from '../utils/createRpc';\nimport getFrequency from '../utils/getFrequency';\nimport { isNullOrLoading, RPC_LOADING } from '../../utils/isLoading';\nimport {\n  onAccountsChanged$,\n  onEvery2Blocks$,\n  onEveryBlock$,\n  onStartup$,\n  onSyncingChanged$\n} from '../../frequency';\n\n/**\n * Observable which contains the array of all addresses managed by the light\n * client.\n *\n * Calls eth_accounts.\n *\n * @return {Observable<Array<String>>} - An Observable containing the list of\n * public addresses.\n */\nexport const accounts$ = createRpc$({\n  calls: ['eth_accounts'],\n  frequency: [onAccountsChanged$]\n})(() => getFrequency(accounts$).pipe());\n\n/**\n * Get the balance of a given account. Calls `eth_getBalance`.\n *\n * @param {String} address - The account address to query the balance.\n * @return {Observable<BigNumber>} - An Observable containing the balance.\n */\nexport const balanceOf$ = createRpc$({\n  calls: ['eth_getBalance'],\n  frequency: [onEvery2Blocks$, onStartup$]\n})(address =>\n  getFrequency(balanceOf$).pipe(\n    switchMapPromise(() => api().eth.getBalance(address))\n  )\n);\n\n/**\n * Get the default account managed by the light client.\n *\n * @return {Observable<Address>} - An Observable containing the public address\n * of the default account.\n */\nexport const defaultAccount$ = createRpc$({\n  dependsOn: ['accounts$']\n})(() => accounts$().pipe(map(accounts => accounts[0])));\n\n/**\n * Get the current block height.\n *\n * @return {Observable<Number>} - An Observable containing the block height.\n */\nexport const height$ = createRpc$({ frequency: [onEveryBlock$] })(() =>\n  getFrequency(height$)\n);\n\n/**\n * Alias for {@link height$}.\n *\n * @return {Observable<Number>} - An Observable containing the block height.\n */\nexport const blockNumber$ = createRpc$({ dependsOn: ['height$'] })(() =>\n  height$()\n);\n\n/**\n * Alias for {@link defaultAccount$}.\n *\n * @return {Observable<Address>} - An Observable containing the public address\n * of the default account.\n */\nexport const me$ = createRpc$({\n  dependsOn: ['defaultAccount$']\n})(() => defaultAccount$());\n\n/**\n * Shorthand for fetching the current account's balance.\n */\nexport const myBalance$ = createRpc$({\n  dependsOn: ['balanceOf$', 'defaultAccount$']\n})(() =>\n  defaultAccount$().pipe(\n    switchMap(\n      defaultAccount =>\n        isNullOrLoading(defaultAccount)\n          ? of(RPC_LOADING)\n          : balanceOf$(defaultAccount)\n    )\n  )\n);\n\n/**\n * Get the syncing state.\n *\n * @return {Observable<Object | Boolean>} - An Observable containing the\n * syncing state object, or false.\n */\nexport const syncing$ = createRpc$({\n  frequency: [onSyncingChanged$]\n})(() => getFrequency(syncing$));\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/eth/eth.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 78,
+    "kind": "variable",
+    "name": "accounts$",
+    "memberof": "src/rpc/eth/eth.js",
+    "static": true,
+    "longname": "src/rpc/eth/eth.js~accounts$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/eth/eth.js",
+    "importStyle": "{accounts$}",
+    "description": "Observable which contains the array of all addresses managed by the light\nclient.\n\nCalls eth_accounts.",
+    "lineNumber": 31,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable<Array<String>>"
+      ],
+      "spread": false,
+      "description": "An Observable containing the list of\npublic addresses."
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 79,
+    "kind": "variable",
+    "name": "balanceOf$",
+    "memberof": "src/rpc/eth/eth.js",
+    "static": true,
+    "longname": "src/rpc/eth/eth.js~balanceOf$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/eth/eth.js",
+    "importStyle": "{balanceOf$}",
+    "description": "Get the balance of a given account. Calls `eth_getBalance`.",
+    "lineNumber": 42,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "address",
+        "description": "The account address to query the balance."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable<BigNumber>"
+      ],
+      "spread": false,
+      "description": "An Observable containing the balance."
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 80,
+    "kind": "variable",
+    "name": "defaultAccount$",
+    "memberof": "src/rpc/eth/eth.js",
+    "static": true,
+    "longname": "src/rpc/eth/eth.js~defaultAccount$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/eth/eth.js",
+    "importStyle": "{defaultAccount$}",
+    "description": "Get the default account managed by the light client.",
+    "lineNumber": 57,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable<Address>"
+      ],
+      "spread": false,
+      "description": "An Observable containing the public address\nof the default account."
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "variable",
+    "name": "height$",
+    "memberof": "src/rpc/eth/eth.js",
+    "static": true,
+    "longname": "src/rpc/eth/eth.js~height$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/eth/eth.js",
+    "importStyle": "{height$}",
+    "description": "Get the current block height.",
+    "lineNumber": 66,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable<Number>"
+      ],
+      "spread": false,
+      "description": "An Observable containing the block height."
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 82,
+    "kind": "variable",
+    "name": "blockNumber$",
+    "memberof": "src/rpc/eth/eth.js",
+    "static": true,
+    "longname": "src/rpc/eth/eth.js~blockNumber$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/eth/eth.js",
+    "importStyle": "{blockNumber$}",
+    "description": "Alias for {@link height$}.",
+    "lineNumber": 75,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable<Number>"
+      ],
+      "spread": false,
+      "description": "An Observable containing the block height."
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "variable",
+    "name": "me$",
+    "memberof": "src/rpc/eth/eth.js",
+    "static": true,
+    "longname": "src/rpc/eth/eth.js~me$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/eth/eth.js",
+    "importStyle": "{me$}",
+    "description": "Alias for {@link defaultAccount$}.",
+    "lineNumber": 85,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable<Address>"
+      ],
+      "spread": false,
+      "description": "An Observable containing the public address\nof the default account."
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "variable",
+    "name": "myBalance$",
+    "memberof": "src/rpc/eth/eth.js",
+    "static": true,
+    "longname": "src/rpc/eth/eth.js~myBalance$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/eth/eth.js",
+    "importStyle": "{myBalance$}",
+    "description": "Shorthand for fetching the current account's balance.",
+    "lineNumber": 92,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 85,
+    "kind": "variable",
+    "name": "syncing$",
+    "memberof": "src/rpc/eth/eth.js",
+    "static": true,
+    "longname": "src/rpc/eth/eth.js~syncing$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/eth/eth.js",
+    "importStyle": "{syncing$}",
+    "description": "Get the syncing state.",
+    "lineNumber": 111,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable<Object | Boolean>"
+      ],
+      "spread": false,
+      "description": "An Observable containing the\nsyncing state object, or false."
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 86,
+    "kind": "file",
+    "name": "src/rpc/eth/eth.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport * as eth from './eth';\nimport testRpc from '../../utils/testHelpers/testRpc';\n\nObject.keys(eth).forEach(key => testRpc(key, eth[key]));\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/eth/eth.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 87,
+    "kind": "file",
+    "name": "src/rpc/eth/index.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nexport * from './eth';\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/eth/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 88,
+    "kind": "file",
+    "name": "src/rpc/index.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nexport * from './eth';\nexport * from './other';\nexport * from './parity';\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 89,
+    "kind": "file",
+    "name": "src/rpc/other/index.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nexport * from './makeContract';\nexport * from './post';\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/other/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 90,
+    "kind": "file",
+    "name": "src/rpc/other/post.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { Observable } from 'rxjs';\n\nimport { distinctReplayRefCount } from '../../utils/operators';\nimport api from '../../api';\n\n/**\n * Post a transaction to the network.\n *\n * Calls, in this order, `eth_estimateGas`, `parity_postTransaction`,\n * `parity_checkRequest` and `eth_getTransactionReceipt` to get the status of\n * the transaction.\n *\n * @param {Object} tx - A transaction object.\n * @return {Observable<Object>} - The status of the transaction.\n */\nexport const post$ = (tx, options = {}) => {\n  const source$ = Observable.create(async observer => {\n    try {\n      if (options.estimate) {\n        observer.next({ estimating: true });\n        const gas = await api().eth.estimateGas(tx);\n        observer.next({ estimated: gas });\n      }\n      const signerRequestId = await api().parity.postTransaction(tx);\n      observer.next({ requested: signerRequestId });\n      const transactionHash = await api().pollMethod(\n        'parity_checkRequest',\n        signerRequestId\n      );\n      if (tx.condition) {\n        observer.next({ signed: transactionHash, schedule: tx.condition });\n      } else {\n        observer.next({ signed: transactionHash });\n        const receipt = await api().pollMethod(\n          'eth_getTransactionReceipt',\n          transactionHash,\n          receipt =>\n            receipt && receipt.blockNumber && !receipt.blockNumber.eq(0)\n        );\n        observer.next({ confirmed: receipt });\n      }\n\n      observer.complete();\n    } catch (error) {\n      observer.next({ failed: error });\n      observer.error(error);\n    }\n  }).pipe(distinctReplayRefCount());\n\n  source$.subscribe(); // Run this Observable immediately;\n  return source$;\n};\npost$.metadata = {\n  calls: [\n    'eth_estimateGas',\n    'parity_postTransaction',\n    'parity_checkRequest',\n    'eth_getTransactionReceipt'\n  ]\n};\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/other/post.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 91,
+    "kind": "function",
+    "name": "post$",
+    "memberof": "src/rpc/other/post.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/rpc/other/post.js~post$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/other/post.js",
+    "importStyle": "{post$}",
+    "description": "Post a transaction to the network.\n\nCalls, in this order, `eth_estimateGas`, `parity_postTransaction`,\n`parity_checkRequest` and `eth_getTransactionReceipt` to get the status of\nthe transaction.",
+    "lineNumber": 21,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tx",
+        "description": "A transaction object."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable<Object>"
+      ],
+      "spread": false,
+      "description": "The status of the transaction."
+    }
+  },
+  {
+    "__docId__": 92,
+    "kind": "file",
+    "name": "src/rpc/parity/index.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nexport * from './parity';\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/parity/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 93,
+    "kind": "file",
+    "name": "src/rpc/parity/parity.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { switchMapPromise } from '../../utils/operators';\nimport api from '../../api';\nimport createRpc$ from '../utils/createRpc';\nimport getFrequency from '../utils/getFrequency';\nimport {\n  onAccountsInfoChanged$,\n  onNodeHealthChanged$,\n  onStartup$\n} from '../../frequency';\n\n/**\n * Get accounts info. Calls `parity_accountsInfo`.\n *\n * @return {Observable<Object>} - An Observable containing all info that can be\n * accessed by user concerning accounts.\n */\nexport const accountsInfo$ = createRpc$({\n  calls: ['parity_accountsInfo'],\n  frequency: [onAccountsInfoChanged$]\n})(() => getFrequency(accountsInfo$));\n\n/**\n * Get the name of the current chain. Calls `parity_netChain`.\n *\n * @return {Observable<String>} - An Observable containing the name of the\n * current chain.\n */\nexport const chainName$ = createRpc$({\n  calls: ['parity_netChain'],\n  frequency: [onStartup$]\n})(() =>\n  getFrequency(chainName$).pipe(switchMapPromise(() => api().parity.netChain()))\n);\n\n/**\n * Get the node's health. Calls `parity_nodeHealth`.\n *\n * @return {Observable<Object>} - An Observable containing the health.\n */\nexport const nodeHealth$ = createRpc$({\n  calls: ['parity_nodeHealth'],\n  frequency: [onNodeHealthChanged$]\n})(() => getFrequency(nodeHealth$));\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/parity/parity.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 94,
+    "kind": "variable",
+    "name": "accountsInfo$",
+    "memberof": "src/rpc/parity/parity.js",
+    "static": true,
+    "longname": "src/rpc/parity/parity.js~accountsInfo$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/parity/parity.js",
+    "importStyle": "{accountsInfo$}",
+    "description": "Get accounts info. Calls `parity_accountsInfo`.",
+    "lineNumber": 22,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable<Object>"
+      ],
+      "spread": false,
+      "description": "An Observable containing all info that can be\naccessed by user concerning accounts."
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 95,
+    "kind": "variable",
+    "name": "chainName$",
+    "memberof": "src/rpc/parity/parity.js",
+    "static": true,
+    "longname": "src/rpc/parity/parity.js~chainName$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/parity/parity.js",
+    "importStyle": "{chainName$}",
+    "description": "Get the name of the current chain. Calls `parity_netChain`.",
+    "lineNumber": 33,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable<String>"
+      ],
+      "spread": false,
+      "description": "An Observable containing the name of the\ncurrent chain."
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 96,
+    "kind": "variable",
+    "name": "nodeHealth$",
+    "memberof": "src/rpc/parity/parity.js",
+    "static": true,
+    "longname": "src/rpc/parity/parity.js~nodeHealth$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/parity/parity.js",
+    "importStyle": "{nodeHealth$}",
+    "description": "Get the node's health. Calls `parity_nodeHealth`.",
+    "lineNumber": 45,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable<Object>"
+      ],
+      "spread": false,
+      "description": "An Observable containing the health."
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 97,
+    "kind": "file",
+    "name": "src/rpc/parity/parity.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport * as parity from './parity';\nimport testRpc from '../../utils/testHelpers/testRpc';\n\nObject.keys(parity).forEach(key => testRpc(key, parity[key]));\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/parity/parity.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 98,
+    "kind": "file",
+    "name": "src/rpc/utils/createRpc.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport memoizee from 'memoizee';\nimport { multicast, refCount } from 'rxjs/operators';\nimport prune from 'json-prune';\nimport { ReplaySubject } from 'rxjs';\n\nimport { withoutLoading } from '../../utils/operators';\n\n/**\n * Mixins (aka. interface in Java or trait in Rust) that are added into an rpc$\n * Observable.\n *\n * @ignore\n */\nconst frequencyMixins = {\n  /**\n   * Change the frequency of a RPC Observable.\n   *\n   * @param {Array<Observable>} frequency - An array of frequency Observables.\n   * @return {Null}\n   * @example\n   * balanceOf$.setFrequency([onEverySecond$, onStartup$]); // Will fetch\n   * balance once on startup, and then every second.\n   */\n  setFrequency (frequency) {\n    // TODO Check that frequency is well-formed\n\n    this.metadata.frequency = frequency;\n\n    // If necessary, we clear the memoize cache\n    if (typeof this.clear === 'function') {\n      this.clear();\n    }\n  }\n};\n\n/**\n * Add metadata to an rpc$ Observable, and transform it into a ReplaySubject(1).\n *\n * @ignore\n * @param {Object} metadata - The metadata to add.\n * @return {Observable} - The original rpc$ Observable with patched metadata.\n */\nconst createRpc = (metadata = {}) => source$ => {\n  const rpc$ = (...args) => {\n    // The last arguments is an options, if it's an object\n    // TODO What if we pass a single object as argument, which is not options?\n    const options =\n      args && args.length && typeof args[args.length - 1] === 'object'\n        ? args.pop()\n        : {};\n\n    const subject$ = new ReplaySubject(1);\n\n    // The pipes to add, from the options\n    const pipes = [multicast(() => subject$), refCount()];\n    if (options.withoutLoading === true) {\n      pipes.push(withoutLoading());\n    }\n\n    // Add a field in the calledWith object, so that we know this function has\n    // been called with these particular args in the app. See overview.js on\n    // how this is used.\n    if (!metadata.calledWith) {\n      metadata.calledWith = {};\n    }\n    metadata.calledWith[prune(args)] = subject$;\n\n    return source$(...args).pipe(...pipes);\n  };\n\n  const result$ = memoizee(rpc$, { length: false });\n  Object.assign(result$, frequencyMixins, { metadata });\n  return result$;\n};\n\nexport default createRpc;\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/utils/createRpc.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 99,
+    "kind": "variable",
+    "name": "frequencyMixins",
+    "memberof": "src/rpc/utils/createRpc.js",
+    "static": true,
+    "longname": "src/rpc/utils/createRpc.js~frequencyMixins",
+    "access": "public",
+    "export": false,
+    "importPath": "@parity/light.js/src/rpc/utils/createRpc.js",
+    "importStyle": null,
+    "description": "Mixins (aka. interface in Java or trait in Rust) that are added into an rpc$\nObservable.",
+    "lineNumber": 19,
+    "ignore": true,
+    "type": {
+      "types": [
+        "{\"setFrequency\": function}"
+      ]
+    }
+  },
+  {
+    "__docId__": 100,
+    "kind": "function",
+    "name": "createRpc",
+    "memberof": "src/rpc/utils/createRpc.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/rpc/utils/createRpc.js~createRpc",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/utils/createRpc.js",
+    "importStyle": "createRpc",
+    "description": "Add metadata to an rpc$ Observable, and transform it into a ReplaySubject(1).",
+    "lineNumber": 48,
+    "ignore": true,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "metadata",
+        "description": "The metadata to add."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable"
+      ],
+      "spread": false,
+      "description": "The original rpc$ Observable with patched metadata."
+    }
+  },
+  {
+    "__docId__": 101,
+    "kind": "file",
+    "name": "src/rpc/utils/createRpc.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { timer } from 'rxjs';\n\nimport createRpc from './createRpc';\nimport mockRpc$ from '../../utils/testHelpers/mockRpc';\n\nit('should return a function', () => {\n  expect(typeof createRpc()).toBe('function');\n});\n\nit('should add empty metadata by default', () => {\n  expect(createRpc()(mockRpc$).metadata).toEqual({});\n});\n\nit('should append input metadata', () => {\n  expect(createRpc({ foo: 'bar' })(mockRpc$).metadata).toEqual({ foo: 'bar' });\n});\n\nit('should contain frequencyMixins', () => {\n  expect(typeof createRpc()(mockRpc$).setFrequency).toBe('function');\n});\n\nit('should set correct frequency', () => {\n  const frequency = timer(0, 1000);\n  const rpc$ = createRpc()(mockRpc$);\n  rpc$.setFrequency([frequency]);\n  expect(rpc$.metadata.frequency).toEqual([frequency]);\n});\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/utils/createRpc.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 102,
+    "kind": "file",
+    "name": "src/rpc/utils/getFrequency.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { empty } from 'rxjs';\nimport { merge } from 'rxjs/operators';\n\n/**\n * Get the frequency Observable of a RPC Observable, which represents how often\n * this RPC Observable gets updated. Each RPC Observable has a metadata field\n * with an array of Observables, the frequency Observable is constructed by\n * merging (as in Observable.merge) these Observables.\n *\n * @ignore\n * @param {String} rpc$ - The RPC Observable.\n * @return {Observable} - An Observable that represents the frequency.\n */\nconst getFrequency = rpc$ => empty().pipe(merge(...rpc$.metadata.frequency));\n\nexport default getFrequency;\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/utils/getFrequency.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 103,
+    "kind": "function",
+    "name": "getFrequency",
+    "memberof": "src/rpc/utils/getFrequency.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/rpc/utils/getFrequency.js~getFrequency",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/rpc/utils/getFrequency.js",
+    "importStyle": "getFrequency",
+    "description": "Get the frequency Observable of a RPC Observable, which represents how often\nthis RPC Observable gets updated. Each RPC Observable has a metadata field\nwith an array of Observables, the frequency Observable is constructed by\nmerging (as in Observable.merge) these Observables.",
+    "lineNumber": 19,
+    "ignore": true,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "rpc$",
+        "description": "The RPC Observable."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Observable"
+      ],
+      "spread": false,
+      "description": "An Observable that represents the frequency."
+    }
+  },
+  {
+    "__docId__": 104,
+    "kind": "file",
+    "name": "src/rpc/utils/getFrequency.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport getFrequency from './getFrequency';\nimport isObservable from '../../utils/isObservable';\nimport mockRpc$ from '../../utils/testHelpers/mockRpc';\n\nit('should return the correct frequency', () => {\n  expect(isObservable(getFrequency(mockRpc$))).toBe(true);\n});\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/rpc/utils/getFrequency.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 105,
+    "kind": "file",
+    "name": "src/utils/index.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\n// Export for the user all utils in @parity/api\nexport * from '@parity/api/lib/util';\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 106,
+    "kind": "file",
+    "name": "src/utils/isLoading.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nexport const RPC_LOADING = Symbol('Fetching RPC...');\n\n/**\n * Check if a rpc$ value is loading.\n *\n * @param {Any} value - The value to test.\n * @return {Boolean} - Returns true if it's loading.\n */\nexport const isLoading = value => value === RPC_LOADING;\n\n/**\n * Check if a rpc$ value is `null, `undefined` or loading.\n *\n * @param {Any} value - The value to test.\n * @return {Boolean} - Returns true if it's `null, `undefined` or loading.\n */\nexport const isNullOrLoading = value => value == null || isLoading(value);\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/isLoading.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 107,
+    "kind": "variable",
+    "name": "RPC_LOADING",
+    "memberof": "src/utils/isLoading.js",
+    "static": true,
+    "longname": "src/utils/isLoading.js~RPC_LOADING",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/utils/isLoading.js",
+    "importStyle": "{RPC_LOADING}",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 108,
+    "kind": "function",
+    "name": "isLoading",
+    "memberof": "src/utils/isLoading.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/isLoading.js~isLoading",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/utils/isLoading.js",
+    "importStyle": "{isLoading}",
+    "description": "Check if a rpc$ value is loading.",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to test."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "Returns true if it's loading."
+    }
+  },
+  {
+    "__docId__": 109,
+    "kind": "function",
+    "name": "isNullOrLoading",
+    "memberof": "src/utils/isLoading.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/isLoading.js~isNullOrLoading",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/utils/isLoading.js",
+    "importStyle": "{isNullOrLoading}",
+    "description": "Check if a rpc$ value is `null, `undefined` or loading.",
+    "lineNumber": 22,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "The value to test."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "Returns true if it's `null, `undefined` or loading."
+    }
+  },
+  {
+    "__docId__": 110,
+    "kind": "file",
+    "name": "src/utils/isObservable.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { Observable } from 'rxjs';\n\n/**\n * @ignore\n * @param {Any} source$ - The Observable to test.\n * @return {Boolean} - Returns true if it's an Observable.\n */\nconst isObservable = source$ => {\n  return source$ instanceof Observable;\n};\n\nexport default isObservable;\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/isObservable.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 111,
+    "kind": "function",
+    "name": "isObservable",
+    "memberof": "src/utils/isObservable.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/isObservable.js~isObservable",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/utils/isObservable.js",
+    "importStyle": "isObservable",
+    "description": "",
+    "lineNumber": 13,
+    "ignore": true,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "source$",
+        "description": "The Observable to test."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": "Returns true if it's an Observable."
+    }
+  },
+  {
+    "__docId__": 112,
+    "kind": "file",
+    "name": "src/utils/isObservable.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { of } from 'rxjs';\n\nimport isObservable from './isObservable';\n\n/**\n * Helper function to test isObservable.\n *\n * @param {String} name - A friendly name to show what we are testing.\n * @param {Any} input - The input to the isObservable function.\n * @param {Boolean} expected - The expected output.\n */\nconst testIsObservable = (name, input, expected) => {\n  it(`should return ${expected} for a ${name}`, () => {\n    expect(isObservable(input)).toBe(expected);\n  });\n};\n\ntestIsObservable('Observable', of(1), true);\ntestIsObservable('function', () => {}, false);\ntestIsObservable('object', {}, false);\ntestIsObservable('null', null, false);\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/isObservable.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 113,
+    "kind": "function",
+    "name": "testIsObservable",
+    "memberof": "src/utils/isObservable.spec.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/isObservable.spec.js~testIsObservable",
+    "access": "public",
+    "export": false,
+    "importPath": "@parity/light.js/src/utils/isObservable.spec.js",
+    "importStyle": null,
+    "description": "Helper function to test isObservable.",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "name",
+        "description": "A friendly name to show what we are testing."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "input",
+        "description": "The input to the isObservable function."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expected",
+        "description": "The expected output."
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 114,
+    "kind": "file",
+    "name": "src/utils/operators/distinctReplayRefCount.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { distinctUntilChanged, publishReplay, refCount } from 'rxjs/operators';\n\n/**\n * Shorthand for distinctUntilChanged(), publishReplay(1) and refCount().\n *\n * @ignore\n */\nexport const distinctReplayRefCount = () => source$ =>\n  source$.pipe(\n    distinctUntilChanged(),\n    publishReplay(1),\n    refCount()\n  );\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/operators/distinctReplayRefCount.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 115,
+    "kind": "function",
+    "name": "distinctReplayRefCount",
+    "memberof": "src/utils/operators/distinctReplayRefCount.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/operators/distinctReplayRefCount.js~distinctReplayRefCount",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/utils/operators/distinctReplayRefCount.js",
+    "importStyle": "{distinctReplayRefCount}",
+    "description": "Shorthand for distinctUntilChanged(), publishReplay(1) and refCount().",
+    "lineNumber": 13,
+    "ignore": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 116,
+    "kind": "file",
+    "name": "src/utils/operators/distinctReplayRefCount.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { distinctReplayRefCount } from './distinctReplayRefCount';\nimport isObservable from '../isObservable';\nimport mockRpc$ from '../testHelpers/mockRpc';\n\nit('should return an Observable', () => {\n  expect(isObservable(mockRpc$().pipe(distinctReplayRefCount()))).toBe(true);\n});\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/operators/distinctReplayRefCount.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 117,
+    "kind": "file",
+    "name": "src/utils/operators/index.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nexport * from './distinctReplayRefCount';\nexport * from './switchMapPromise';\nexport * from './withoutLoading';\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/operators/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 118,
+    "kind": "file",
+    "name": "src/utils/operators/switchMapPromise.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { catchError, startWith, switchMap } from 'rxjs/operators';\nimport { empty, from } from 'rxjs';\n\nimport { RPC_LOADING } from '../isLoading';\n\n/**\n * SwitchMap to an Observable.from. The Observable.from will return an empty\n * Observable if the Promise throws an error, will log an error in the console\n * on error.\n *\n * @ignore\n */\nexport const switchMapPromise = promise => source$ =>\n  source$.pipe(\n    switchMap(() =>\n      from(\n        promise().then(result => {\n          // The result can sometimes be {id: 2, jsonrpc: \"2.0\", error: {...}}\n          if (result.error) {\n            return Promise.reject(result);\n          }\n          return result;\n        })\n      ).pipe(\n        startWith(RPC_LOADING),\n        catchError(err => {\n          console.group();\n          console.error({ call: promise.toString(), err });\n          console.error(\n            new Error(\n              'Error while executing API call, see error log above for more information.'\n            )\n          );\n          console.groupEnd();\n          return empty();\n        })\n      )\n    )\n  );\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/operators/switchMapPromise.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 119,
+    "kind": "function",
+    "name": "switchMapPromise",
+    "memberof": "src/utils/operators/switchMapPromise.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/operators/switchMapPromise.js~switchMapPromise",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/utils/operators/switchMapPromise.js",
+    "importStyle": "{switchMapPromise}",
+    "description": "SwitchMap to an Observable.from. The Observable.from will return an empty\nObservable if the Promise throws an error, will log an error in the console\non error.",
+    "lineNumber": 18,
+    "ignore": true,
+    "params": [
+      {
+        "name": "promise",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 120,
+    "kind": "file",
+    "name": "src/utils/operators/switchMapPromise.spec.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { skip } from 'rxjs/operators';\n\nimport mockRpc$ from '../testHelpers/mockRpc';\nimport { rejectApi, resolveApi } from '../testHelpers/mockApi';\nimport { RPC_LOADING } from '../isLoading';\nimport { switchMapPromise } from './switchMapPromise';\n\nit('should not error when the promise resolves with an error', done => {\n  mockRpc$()\n    .pipe(switchMapPromise(resolveApi({ error: 'bar' }).fake.method))\n    .subscribe();\n\n  // If after 0.1s, nothing has been called, then our Observable has not fired\n  // any event, which is what we want\n  setTimeout(done, 100);\n});\n\nit('should not error when the promise rejects', done => {\n  mockRpc$()\n    .pipe(switchMapPromise(rejectApi().fake.method))\n    .subscribe();\n\n  // If after 0.1s, nothing has been called, then our Observable has not fired\n  // any event, which is what we want\n  setTimeout(done, 100);\n});\n\nit('should fire an event when the promise resolves', done => {\n  mockRpc$()\n    .pipe(switchMapPromise(resolveApi().fake.method))\n    .subscribe(data => {\n      expect(data).toBe(RPC_LOADING);\n      done();\n    });\n});\n\nit('should fire an event when the promise resolves', done => {\n  mockRpc$()\n    .pipe(\n      switchMapPromise(resolveApi().fake.method),\n      skip(1) // Skip the RPC_LOADING\n    )\n    .subscribe(data => {\n      expect(data).toBe('foo');\n      done();\n    });\n});\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/operators/switchMapPromise.spec.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 121,
+    "kind": "file",
+    "name": "src/utils/operators/withoutLoading.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { distinctUntilChanged, filter } from 'rxjs/operators';\n\nimport { isLoading } from '../isLoading';\n/**\n * Filter out the loading states in our observable.\n *\n *\n */\nexport const withoutLoading = () => source$ =>\n  source$.pipe(\n    filter(value => !isLoading(value)),\n    distinctUntilChanged()\n  );\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/operators/withoutLoading.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 122,
+    "kind": "function",
+    "name": "withoutLoading",
+    "memberof": "src/utils/operators/withoutLoading.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/operators/withoutLoading.js~withoutLoading",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/utils/operators/withoutLoading.js",
+    "importStyle": "{withoutLoading}",
+    "description": "Filter out the loading states in our observable.",
+    "lineNumber": 14,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 123,
+    "kind": "file",
+    "name": "src/utils/testHelpers/mockApi.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\n/**\n * A pubsub Api object that rejects.\n *\n * @ignore\n */\nexport const rejectApi = (rejectWith = new Error('bar'), isPubSub = true) => ({\n  fake: {\n    method () {\n      return Promise.reject(rejectWith);\n    }\n  },\n  isPubSub,\n  pubsub: {\n    fake: {\n      method (callback) {\n        callback(rejectWith, null);\n        return Promise.resolve(1); // Resolves to subscriptionId\n      }\n    },\n    unsubscribe: () => Promise.resolve()\n  }\n});\n\n/**\n * A pubsub Api object that resolves.\n *\n * @ignore\n */\nexport const resolveApi = (resolveWith = 'foo', isPubSub = true) => ({\n  fake: {\n    method () {\n      return Promise.resolve(resolveWith);\n    }\n  },\n  isPubSub,\n  pubsub: {\n    fake: {\n      method (callback) {\n        callback(null, resolveWith);\n        return Promise.resolve(1); // Resolves to subscriptionId\n      }\n    },\n    unsubscribe: () => Promise.resolve()\n  }\n});\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/testHelpers/mockApi.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 124,
+    "kind": "function",
+    "name": "rejectApi",
+    "memberof": "src/utils/testHelpers/mockApi.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/testHelpers/mockApi.js~rejectApi",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/utils/testHelpers/mockApi.js",
+    "importStyle": "{rejectApi}",
+    "description": "A pubsub Api object that rejects.",
+    "lineNumber": 11,
+    "ignore": true,
+    "params": [
+      {
+        "name": "rejectWith",
+        "optional": true,
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "isPubSub",
+        "optional": true,
+        "types": [
+          "boolean"
+        ],
+        "defaultRaw": true,
+        "defaultValue": "true"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 125,
+    "kind": "function",
+    "name": "resolveApi",
+    "memberof": "src/utils/testHelpers/mockApi.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/testHelpers/mockApi.js~resolveApi",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/utils/testHelpers/mockApi.js",
+    "importStyle": "{resolveApi}",
+    "description": "A pubsub Api object that resolves.",
+    "lineNumber": 34,
+    "ignore": true,
+    "params": [
+      {
+        "name": "resolveWith",
+        "optional": true,
+        "types": [
+          "string"
+        ],
+        "defaultRaw": "foo",
+        "defaultValue": "foo"
+      },
+      {
+        "name": "isPubSub",
+        "optional": true,
+        "types": [
+          "boolean"
+        ],
+        "defaultRaw": true,
+        "defaultValue": "true"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 126,
+    "kind": "file",
+    "name": "src/utils/testHelpers/mockRpc.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport { of, timer } from 'rxjs';\n\nimport createRpc from '../../rpc/utils/createRpc';\n\n/**\n * Create a fake rpc$ Observable.\n *\n * @ignore\n */\nconst mockRpc$ = createRpc({ frequency: [timer(0, 1000)] })(() =>\n  of('mockRpc')\n);\n\nexport default mockRpc$;\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/testHelpers/mockRpc.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 127,
+    "kind": "variable",
+    "name": "mockRpc$",
+    "memberof": "src/utils/testHelpers/mockRpc.js",
+    "static": true,
+    "longname": "src/utils/testHelpers/mockRpc.js~mockRpc$",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/utils/testHelpers/mockRpc.js",
+    "importStyle": "mockRpc$",
+    "description": "Create a fake rpc$ Observable.",
+    "lineNumber": 15,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 128,
+    "kind": "file",
+    "name": "src/utils/testHelpers/testFrequency.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport isObservable from '../isObservable';\n\n/**\n * Helper function to make basic tests for frequency$ observables.\n *\n * @ignore\n */\nconst testFrequency = (name, frequency$) =>\n  describe(`${name} rpc`, () => {\n    it('should be an Observable', () => {\n      expect(isObservable(frequency$)).toBe(true);\n    });\n\n    it('should be subscribable', () => {\n      expect(() => frequency$.subscribe()).not.toThrow();\n    });\n\n    it('should contain a `metadata` field', () => {\n      expect(frequency$.metadata).toBeTruthy();\n    });\n\n    it('should contain `name` in metadata', () => {\n      const { metadata } = frequency$;\n      expect(metadata.name).toBeTruthy();\n    });\n  });\n\nexport default testFrequency;\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/testHelpers/testFrequency.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 129,
+    "kind": "function",
+    "name": "testFrequency",
+    "memberof": "src/utils/testHelpers/testFrequency.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/testHelpers/testFrequency.js~testFrequency",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/utils/testHelpers/testFrequency.js",
+    "importStyle": "testFrequency",
+    "description": "Helper function to make basic tests for frequency$ observables.",
+    "lineNumber": 13,
+    "ignore": true,
+    "params": [
+      {
+        "name": "name",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "frequency$",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 130,
+    "kind": "file",
+    "name": "src/utils/testHelpers/testRpc.js",
+    "content": "// Copyright 2015-2018 Parity Technologies (UK) Ltd.\n// This file is part of Parity.\n//\n// SPDX-License-Identifier: MIT\n\nimport isObservable from '../isObservable';\n\n/**\n * Helper function to make basic tests for rpc$ observables.\n *\n * @ignore\n */\nconst testRpc = (name, rpc$) =>\n  describe(`${name} rpc`, () => {\n    it('should be a function', () => {\n      expect(typeof rpc$).toBe('function');\n    });\n\n    it('function should return an Observable', () => {\n      expect(isObservable(rpc$())).toBe(true);\n    });\n\n    it('function result Observable should be subscribable', () => {\n      expect(() => rpc$().subscribe()).not.toThrow();\n    });\n\n    it('function should return the same Observable upon re-running (memoization)', () => {\n      const initial$ = rpc$();\n      expect(rpc$()).toBe(initial$);\n    });\n\n    it('should contain a `metadata` field', () => {\n      expect(rpc$.metadata).toBeTruthy();\n    });\n\n    it('should either contain a `frequency` or `dependsOn` field in metadata', () => {\n      const { metadata } = rpc$;\n      expect(\n        (metadata.frequency && metadata.frequency.length) || metadata.dependsOn\n      ).toBeTruthy();\n    });\n  });\n\nexport default testRpc;\n",
+    "static": true,
+    "longname": "/Users/amaurymartiny/Workspace/light.js/src/utils/testHelpers/testRpc.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 131,
+    "kind": "function",
+    "name": "testRpc",
+    "memberof": "src/utils/testHelpers/testRpc.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/testHelpers/testRpc.js~testRpc",
+    "access": "public",
+    "export": true,
+    "importPath": "@parity/light.js/src/utils/testHelpers/testRpc.js",
+    "importStyle": "testRpc",
+    "description": "Helper function to make basic tests for rpc$ observables.",
+    "lineNumber": 13,
+    "ignore": true,
+    "params": [
+      {
+        "name": "name",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "rpc$",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "kind": "index",
+    "content": "# @parity/light.js\n\nA high-level reactive JS library optimized for light clients.\n\n## Getting Started\n\n```bash\nyarn install @parity/light.js\n```\n\n## Usage\n\nReactively observe JSONRPC methods:\n\n```javascript\nimport { defaultAccount$ } from '@parity/light.js';\n\ndefaultAccount$().subscribe(publicAddress => console.log(publicAddress));\n// Outputs your public address 0x...\n// Everytime you change your default account (e.g. via MetaMask), it will output your new public address\n```\n\nAll RxJS tools are available for manipulating Observables:\n\n```javascript\nimport { balanceOf$, blockNumber$, defaultAccount$ } from '@parity/light.js';\nimport { filter, map, switchMap } from 'rxjs/operators';\n\n// Only log pair blocks\nblockNumber$()\n  .pipe(filter(n => n % 2 === 0))\n  .subscribe(console.log);\n\n// Get the balance of the default account\n// Will update when balance or default account changes\ndefaultAccount$()\n  .pipe(\n    switchMap(balanceOf$),\n    map(value => +value) // Return number instead of BigNumber\n  )\n  .subscribe(console.log); \n\n// There's actually an alias for the above Observable:\nimport { myBalance$ } from '@parity/light.js';\nmyBalance$().subscribe(console.log);\n```\n\nContract support:\n\n```javascript\nimport { defaultAccount$, makeContract$ } from '@parity/light.js';\nimport { map, switchMap } from 'rxjs/operators';\n\ndefaultAccount$()\n  .pipe(\n    switchMap(defaultAccount =>\n      makeContract$(/* contract address */, /* abi */)\n        .myMethod(defaultAccount) // Calling method of contract with arguments\n    )  )\n  .subscribe(console.log); // Will log the result, and everytime the result changes\n```\n\n\nAll available methods are documented here [TODO].\n\n## Usage with React\n\nThe libray provides a higher-order component to use these Observables easily with React apps.\n\n```javascript\nimport light from '???'; // ??? to be decided\nimport { syncing$ } from '@parity/light.js';\n\n@light({\n  syncingVariable: syncing$\n})\nclass MyClass extends React.Component {\n  render() {\n    return <div>{JSON.stringify(this.props.syncingVariable)}</div>;\n  }\n}\n```\n\nThe UI will automatically update when the syncing state changes.\n\n## Advanced Usage\n\n### Frequency\n\nEach Observable has a frequency upon which it is called. The frequency is documented in each method's documentation [link TODO].\n\nFor example, the frequency of `balanceOf$` is:\n\n```frequency: [onStartup$, onEvery2Blocks$]```\n\nwhich means that the underlying JSONRPC call `eth_getBalance` will be made once when the Observable is subscribed (on startup), and once every 2 blocks.\n\nFor the needs of your dapp, you can change the frequency of all Observables like this:\n\n```javascript\nimport { balanceOf$, onEvery2Seconds$, onStartup$ };\n\nbalanceOf$.setFrequency([onStartup$, onEvery2Seconds$]);\nbalanceOf$('0x123').subscribe(console.log);\n// `eth_getBalance` will be called once immediately, and once every 2 seconds\n```\n\nA list of possible frequency Observables is here [TODO doc link], but you can of course put any array of Observables you want.\n\n### RPC Overview\n\nTo see an overview of all currently active Observables, type `window.parity.rpcOverview()` in the browser console. The output will be:\n\n```javascript\n{\n  accounts$: {\n    calls: ['eth_accounts'],\n    frequency: ['onAccountsChanged$'],\n    subscribersCount: 4\n  },\n  balanceOf$: {\n    calls: ['eth_getBalance'],\n    frequency: ['onEvery2Blocks$', 'onStartup$'],\n    subscribersCount: 2\n  },\n  defaultAccount$: {\n    dependsOn: ['accounts$'],\n    subscribersCount: 3\n  },\n  height$: {\n    frequency: ['onEveryBlock$'],\n    subscribersCount: 2\n  },\n  me$: {\n    dependsOn: ['defaultAccount$'],\n    subscribersCount: 1\n  },\n  syncing$: {\n    frequency: ['onSyncingChanged$'],\n    subscribersCount: 1\n  }\n}\n```\n\nThe keys are the Observables you are using in your dapp, each containing an object where:\n- `calls`: the underlying JSONRPC calls made.\n- `dependsOn`: means that the current Observable depends on other Observables, so it doesn't make any JSONRPC calls itself, and doesn't have a frequency.\n- `frequency`: the frequency upon which the Observable is called.\n- `subscribersCount`: the number of subscribers this Observable has.\n\nThis output can of course be different on different pages of your dapp, if they use different Observables.\n\n### Rationale\n\nThe rationale behind this is how the light client works. TODO finish this paragraph\n\n## Notes about Implementation\n\n### Observables are cold\n\nThe underlying JSONRPC method is only called if there's at least one subscriber.\n\n```javascript\nimport { balanceOf$ } from '@parity/light.js';\n\nconst myObs$ = balanceOf$('0x123');\n// Observable created, but `eth_getBalance` not called yet\nconst subscription = myObs$.subscribe(console.log);\n// `eth_getBalance` called for the 1st time\n\n// Some other code...\n\nsubscription.unsubscribe();\n// `eth_getBalance` stops being called\n```\n\n### Observables are PublishReplay(1)\n\nLet's take `blockNumber()$` which fires blocks 7, 8 and 9, and has 3 subscribers that don't subscribe at the same time.\n\nWe have the following marble diagram (`^` denotes when the subscriber subscribes).\n\n```\nblockNumber$(): -----7----------8------9-----|\nsubscriber1:    -^---7----------8------9-----|\nsubscriber2:    ------------^7--8------9-----|\nsubscriber3:    --------------------------^9-|\n```\n\nNote: the default behavior for Observables is without PublishReplay, i.e.\n\n```\nblockNumber$(): -----7----------8------9-----|\nsubscriber1:    -^---7----------8------9-----|\nsubscriber2:    ------------^---8------9-----|\nsubscriber3:    --------------------------^--|\n```\n\nBut Observables in this library are PublishReplay(1). [Read more](https://blog.angularindepth.com/rxjs-how-to-use-refcount-73a0c6619a4e) about PublishReplay.\n\n### Observables are memoized\n\n```javascript\nconst obs1$ = balanceOf$('0x123');\nconst obs2$ = balanceOf$('0x123');\nconsole.log(obs1$ === obs2$); // true\n\nconst obs3$ = balanceOf$('0x456')\nconsole.log(obs1$ === obs3$); // false\n```\n\n### Underlying API calls are not unnessarily repeated\n\n```javascript\nconst obs1$ = balanceOf$('0x123');\nconst obs2$ = balanceOf$('0x123');\n\nobs1$.subscribe(console.log);\nobs1$.subscribe(console.log);\nobs2$.subscribe(console.log);\n// Logs 3 times the balance\n// But only one call to `eth_getBalance` has been made\n\nconst obs3$ = balanceOf$('0x456');\n// Logs a new balance, another call to `eth_getBalance` is made\n```\n\n### Underlying PubSub subscriptions are dropped when there's no subscriber\n\n```javascript\nimport { blockNumber$ } from '@parity/light.js';\n\nconst myObs$ = blockNumber$();\nconsole.log(blockNumber$.frequency); // [onEveryBlock$]\n// Note: onEveryBlock$ creates a pubsub on `eth_blockNumber`\n\nconst subscription = myObs$.subscribe(console.log);\n// Creates a pubsub subscription\n\n// Some other code...\n\nsubscription.unsubscribe();\n// Drops the pubsub subscription\n```\n\n## TODO\n\n* Don't commit `lib/` anymore, when it's on npm.\n",
+    "longname": "/Users/amaurymartiny/Workspace/light.js/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"@parity/light.js\",\n  \"description\": \"A high-level reactive JS library optimized for light clients\",\n  \"version\": \"1.0.0\",\n  \"main\": \"lib/index.js\",\n  \"author\": \"Parity Team <admin@parity.io>\",\n  \"maintainers\": [\n    \"Jaco Greeff\",\n    \"Amaury Martiny\"\n  ],\n  \"contributors\": [],\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/parity-js/light.js.git\"\n  },\n  \"keywords\": [\n    \"API\",\n    \"Ethereum\",\n    \"Light\",\n    \"Light Client\",\n    \"Observable\",\n    \"Parity\",\n    \"Reactive\",\n    \"RxJS\"\n  ],\n  \"scripts\": {\n    \"build\": \"rimraf lib && babel src --out-dir lib\",\n    \"docs\": \"esdoc\",\n    \"lint\": \"semistandard 'src/**/*.js' --parser babel-eslint --env jest\",\n    \"test\": \"jest\"\n  },\n  \"dependencies\": {\n    \"@babel/runtime\": \"^7.0.0-beta.49\",\n    \"@parity/api\": \"^2.1.23\",\n    \"json-prune\": \"^1.1.0\",\n    \"memoizee\": \"^0.4.12\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.0.0-beta.49\",\n    \"@babel/core\": \"^7.0.0-beta.49\",\n    \"@babel/plugin-transform-runtime\": \"^7.0.0-beta.49\",\n    \"@babel/preset-env\": \"^7.0.0-beta.49\",\n    \"babel-core\": \"^7.0.0-0\",\n    \"babel-eslint\": \"^8.2.3\",\n    \"babel-jest\": \"^23.0.1\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"jest\": \"^23.1.0\",\n    \"rimraf\": \"^2.6.2\",\n    \"rxjs\": \"^6.2.0\",\n    \"semistandard\": \"^12.0.1\"\n  },\n  \"peerDependencies\": {\n    \"rxjs\": \"^6.2.0\"\n  }\n}\n",
+    "longname": "/Users/amaurymartiny/Workspace/light.js/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]
