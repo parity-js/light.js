@@ -16,7 +16,7 @@ if (typeof window !== 'undefined') {
   }
 
   Object.assign(window.parity, {
-    rpcOverview () {
+    rpcOverview() {
       const overview = {};
       Object.keys(rpc).forEach(key => {
         const rpc$ = rpc[key];

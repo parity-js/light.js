@@ -3,6 +3,8 @@
 //
 // SPDX-License-Identifier: MIT
 
+/* eslint-env jest */
+
 import { getApi, setApi } from './api';
 import { resolveApi } from './utils/testHelpers/mockApi';
 

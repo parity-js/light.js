@@ -14,7 +14,7 @@ import { distinctReplayRefCount } from '../../utils/operators/distinctReplayRefC
  * @ignore
  * @example onAccountsChanged$, onEveryBlock$...
  */
-const createOnFromPubsub = (pubsub, api) => {
+const createOnFromPubsub = <T>(pubsub: string, api: any): Observable<T> => {
   const [namespace, method] = pubsub.split('_');
 
   // There's a chance the provider doesn't support pubsub, for example

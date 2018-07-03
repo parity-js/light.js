@@ -10,8 +10,7 @@ import { Observable } from 'rxjs';
  * @param {Any} source$ - The Observable to test.
  * @return {Boolean} - Returns true if it's an Observable.
  */
-const isObservable = source$ => {
-  return source$ instanceof Observable;
-};
+const isObservable = (source$: Observable<any>): Boolean =>
+  source$ instanceof Observable;
 
 export default isObservable;

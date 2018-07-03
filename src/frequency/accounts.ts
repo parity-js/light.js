@@ -3,19 +3,22 @@
 //
 // SPDX-License-Identifier: MIT
 
+import { AccountsInfo, Address, ObservableWithMetadata } from '../types';
 import api from '../api';
 import createOnFromPubsub from './utils/createOnFromPubsub';
 
 /**
  * Observable that emits each time the default account changes
  */
-export const onAccountsChanged$ = createOnFromPubsub('eth_accounts', api);
+export const onAccountsChanged$: ObservableWithMetadata<
+  Array<Address>
+> = createOnFromPubsub('eth_accounts', api);
 onAccountsChanged$.metadata = { name: 'onAccountsChanged$' };
 
 /**
  * Observable that emits each time the default account changes
  */
-export const onAccountsInfoChanged$ = createOnFromPubsub(
+export const onAccountsInfoChanged$ = createOnFromPubsub<AccountsInfo>(
   'parity_accountsInfo',
   api
 );
