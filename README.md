@@ -38,7 +38,7 @@ defaultAccount$()
     switchMap(balanceOf$),
     map(value => +value) // Return number instead of BigNumber
   )
-  .subscribe(console.log); 
+  .subscribe(console.log);
 
 // There's actually an alias for the above Observable:
 import { myBalance$ } from '@parity/light.js';
@@ -60,8 +60,7 @@ defaultAccount$()
   .subscribe(console.log); // Will log the result, and everytime the result changes
 ```
 
-
-All available methods are documented here [TODO].
+All available methods are documented [in the docs](https://parity-js.github.io/light.js/).
 
 ## Usage with React
 
@@ -87,11 +86,11 @@ The UI will automatically update when the syncing state changes.
 
 ### Frequency
 
-Each Observable has a frequency upon which it is called. The frequency is documented in each method's documentation [link TODO].
+Each Observable has a frequency upon which it is called. The frequency is documented in each method's [documentation](https://parity-js.github.io/light.js/).
 
 For example, the frequency of `balanceOf$` is:
 
-```frequency: [onStartup$, onEvery2Blocks$]```
+`frequency: [onStartup$, onEvery2Blocks$]`
 
 which means that the underlying JSONRPC call `eth_getBalance` will be made once when the Observable is subscribed (on startup), and once every 2 blocks.
 
@@ -143,16 +142,13 @@ To see an overview of all currently active Observables, type `window.parity.rpcO
 ```
 
 The keys are the Observables you are using in your dapp, each containing an object where:
+
 - `calls`: the underlying JSONRPC calls made.
 - `dependsOn`: means that the current Observable depends on other Observables, so it doesn't make any JSONRPC calls itself, and doesn't have a frequency.
 - `frequency`: the frequency upon which the Observable is called.
 - `subscribersCount`: the number of subscribers this Observable has.
 
 This output can of course be different on different pages of your dapp, if they use different Observables.
-
-### Rationale
-
-The rationale behind this is how the light client works. TODO finish this paragraph
 
 ## Notes about Implementation
 
@@ -205,7 +201,7 @@ const obs1$ = balanceOf$('0x123');
 const obs2$ = balanceOf$('0x123');
 console.log(obs1$ === obs2$); // true
 
-const obs3$ = balanceOf$('0x456')
+const obs3$ = balanceOf$('0x456');
 console.log(obs1$ === obs3$); // false
 ```
 
@@ -245,4 +241,6 @@ subscription.unsubscribe();
 
 ## TODO
 
-* Don't commit `lib/` anymore, when it's on npm.
+- Don't commit `lib/` anymore, when it's on npm.
+- Switch to TypeScript.
+- Have 100% test coverage.
