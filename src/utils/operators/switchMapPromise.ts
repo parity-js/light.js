@@ -23,7 +23,7 @@ export const switchMapPromise = <T>(promise: () => Promise<T>) => (
       from(
         promise().then(result => {
           // The result can sometimes be {id: 2, jsonrpc: "2.0", error: {...}}
-          if ((<any>result).error) {
+          if ((result as any).error) {
             return Promise.reject(result);
           }
           return Promise.resolve(result);

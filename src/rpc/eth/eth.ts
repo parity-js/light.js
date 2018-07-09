@@ -6,7 +6,7 @@
 import { of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
-import { Address, RpcObservable } from '../../types';
+import { Address } from '../../types';
 import api from '../../api';
 import createRpc$ from '../utils/createRpc';
 import getFrequency from '../utils/getFrequency';

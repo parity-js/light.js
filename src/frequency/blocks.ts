@@ -21,15 +21,15 @@ export const onEveryBlock$ = createOnFromPubsub('eth_blockNumber', api, {
 /**
  * Observable that emits on every 2nd block.
  */
-export const onEvery2Blocks$ = <FrequencyObservable<number>>onEveryBlock$.pipe(
+export const onEvery2Blocks$ = onEveryBlock$.pipe(
   filter(n => n % 2 === 0) // Around ~30s on mainnet
-);
+) as FrequencyObservable<number>;
 onEvery2Blocks$.metadata = { name: 'onEvery2Blocks$' };
 
 /**
  * Observable that emits on every 4th block.
  */
-export const onEvery4Blocks$ = <FrequencyObservable<number>>onEveryBlock$.pipe(
+export const onEvery4Blocks$ = onEveryBlock$.pipe(
   filter(n => n % 4 === 0) // Around ~1min on mainnet
-);
+) as FrequencyObservable<number>;
 onEvery4Blocks$.metadata = { name: 'onEvery4Blocks$' };

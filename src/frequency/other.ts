@@ -10,5 +10,5 @@ import { FrequencyObservable } from '../types';
 /**
  * Observable that emits only once.
  */
-export const onStartup$ = <FrequencyObservable<number>>of(0);
+export const onStartup$ = of(0) as FrequencyObservable<number>;
 onStartup$.metadata = { name: 'onStartup$' };

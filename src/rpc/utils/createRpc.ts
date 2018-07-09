@@ -3,9 +3,9 @@
 //
 // SPDX-License-Identifier: MIT
 
-import memoizee from 'memoizee';
+import * as memoizee from 'memoizee';
 import { multicast, refCount } from 'rxjs/operators';
-import prune from 'json-prune';
+import * as prune from 'json-prune';
 import { ReplaySubject, Observable } from 'rxjs';
 
 import { Metadata, RpcObservable } from '../../types';
@@ -27,7 +27,7 @@ const frequencyMixins = {
    * balanceOf$.setFrequency([onEverySecond$, onStartup$]); // Will fetch
    * balance once on startup, and then every second.
    */
-  setFrequency(frequency: Observable<any>[]) {
+  setFrequency (frequency: Observable<any>[]) {
     // TODO Check that frequency is well-formed
 
     this.metadata.frequency = frequency;

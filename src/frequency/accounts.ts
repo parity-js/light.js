@@ -12,7 +12,7 @@ import createOnFromPubsub from './utils/createOnFromPubsub';
  */
 export const onAccountsChanged$: FrequencyObservable<
   Array<Address>
-> = createOnFromPubsub('eth_accounts', api, { name: 'onAccountsChanged$' });
+  > = createOnFromPubsub('eth_accounts', api, { name: 'onAccountsChanged$' });
 
 /**
  * Observable that emits each time the default account changes

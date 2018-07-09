@@ -5,7 +5,7 @@
 
 import Abi from '@parity/abi';
 import { abiEncode } from '@parity/api/lib/util/encode';
-import memoizee from 'memoizee';
+import * as memoizee from 'memoizee';
 
 import { Abi as AbiType, Address } from '../../types';
 import {
@@ -48,7 +48,7 @@ export const makeContract$ = memoizee(
     const result = {
       abi: abi,
       address: address,
-      get contractObject() {
+      get contractObject () {
         return getContract(address, abiJson);
       }
     };
