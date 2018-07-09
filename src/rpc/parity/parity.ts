@@ -3,7 +3,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { switchMapPromise } from '../../utils/operators';
+import { AccountsInfo } from '../../types';
 import api from '../../api';
 import createRpc$ from '../utils/createRpc';
 import getFrequency from '../utils/getFrequency';
@@ -12,6 +12,7 @@ import {
   onNodeHealthChanged$,
   onStartup$
 } from '../../frequency';
+import { switchMapPromise } from '../../utils/operators';
 
 /**
  * Get accounts info. Calls `parity_accountsInfo`.
@@ -19,7 +20,7 @@ import {
  * @return {Observable<Object>} - An Observable containing all info that can be
  * accessed by user concerning accounts.
  */
-export const accountsInfo$ = createRpc$({
+export const accountsInfo$ = createRpc$<AccountsInfo>({
   calls: ['parity_accountsInfo'],
   frequency: [onAccountsInfoChanged$]
 })(() => getFrequency(accountsInfo$));
@@ -30,7 +31,7 @@ export const accountsInfo$ = createRpc$({
  * @return {Observable<String>} - An Observable containing the name of the
  * current chain.
  */
-export const chainName$ = createRpc$({
+export const chainName$ = createRpc$<string>({
   calls: ['parity_netChain'],
   frequency: [onStartup$]
 })(() =>
@@ -42,7 +43,7 @@ export const chainName$ = createRpc$({
  *
  * @return {Observable<Object>} - An Observable containing the health.
  */
-export const nodeHealth$ = createRpc$({
+export const nodeHealth$ = createRpc$<Object>({
   calls: ['parity_nodeHealth'],
   frequency: [onNodeHealthChanged$]
 })(() => getFrequency(nodeHealth$));

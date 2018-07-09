@@ -11,7 +11,7 @@ declare global {
   }
 }
 
-export type Abi = Array<Object>;
+export type Abi = Array<Object>; // TODO Better type?
 
 // TODO This should be on @parity/api
 export type AccountsInfo = {
@@ -37,7 +37,7 @@ export interface FrequencyObservable<T> extends Observable<T> {
 
 export interface RpcObservable<T> {
   (...args: any[]): Observable<T>;
-  metadata?: Metadata; // TODO All RpcObservables should have metadata
+  metadata?: Metadata; // TODO All RpcObservables should have metadata?
   setFrequency? (frequency: Observable<any>[]): void; // post$, makeContract$... don't have setFrequency
 }
 
@@ -49,7 +49,7 @@ export type Tx = {
 };
 
 export interface TxStatus {
-  confirmed: any;
+  confirmed: any; // TODO Receipt from @parity/api
   estimating?: boolean;
   estimated?: any; // BigNumber
   requested?: string;

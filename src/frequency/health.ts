@@ -11,13 +11,14 @@ import createOnFromPubsub from './utils/createOnFromPubsub';
  */
 export const onNodeHealthChanged$ = createOnFromPubsub(
   'parity_nodeHealth',
-  api,
-  { name: 'onNodeHealthChanged$' }
+  api
 );
+onNodeHealthChanged$.metadata = { name: 'onNodeHealthChanged$' };
 
 /**
  * Observable that emits when syncing status changes.
  */
-export const onSyncingChanged$ = createOnFromPubsub('eth_syncing', api, {
+export const onSyncingChanged$ = createOnFromPubsub('eth_syncing', api);
+onSyncingChanged$.metadata = {
   name: 'onSyncingChanged$'
-});
+};

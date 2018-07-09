@@ -31,7 +31,10 @@ export const rejectApi = (rejectWith = new Error('bar'), isPubSub = true) => ({
  *
  * @ignore
  */
-export const resolveApi = (resolveWith = 'foo', isPubSub = true) => ({
+export const resolveApi = (
+  resolveWith: string | { error: string } = 'foo',
+  isPubSub = true
+) => ({
   fake: {
     method () {
       return Promise.resolve(resolveWith);

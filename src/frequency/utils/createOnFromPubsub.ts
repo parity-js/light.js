@@ -17,8 +17,7 @@ import { distinctReplayRefCount } from '../../utils/operators/distinctReplayRefC
  */
 const createOnFromPubsub = <T>(
   pubsub: string,
-  api: any,
-  metadata: { name: string }
+  api: any
 ): FrequencyObservable<T> => {
   const [namespace, method] = pubsub.split('_');
 
@@ -26,11 +25,9 @@ const createOnFromPubsub = <T>(
   // MetaMaskProvider. In this case, as suggested on their Github, the best
   // solution for now is to poll.
   if (!api().isPubSub) {
-    const result = (
-      timer(0, 1000).pipe(switchMap(() => api()[namespace][method]()))
+    return timer(0, 1000).pipe(
+      switchMap(() => api()[namespace][method]())
     ) as FrequencyObservable<T>;
-    result.metadata = metadata;
-    return result;
   }
 
   return Observable.create(observer => {

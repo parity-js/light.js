@@ -21,6 +21,6 @@ const testIsObservable = (name, input, expected) => {
 };
 
 testIsObservable('Observable', of(1), true);
-testIsObservable('function', () => {}, false);
+testIsObservable('function', () => null, false);
 testIsObservable('object', {}, false);
 testIsObservable('null', null, false);

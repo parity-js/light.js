@@ -12,13 +12,14 @@ import createOnFromPubsub from './utils/createOnFromPubsub';
  */
 export const onAccountsChanged$: FrequencyObservable<
   Array<Address>
-  > = createOnFromPubsub('eth_accounts', api, { name: 'onAccountsChanged$' });
+> = createOnFromPubsub('eth_accounts', api);
+onAccountsChanged$.metadata = { name: 'onAccountsChanged$' };
 
 /**
  * Observable that emits each time the default account changes
  */
 export const onAccountsInfoChanged$ = createOnFromPubsub<AccountsInfo>(
   'parity_accountsInfo',
-  api,
-  { name: 'onAccountsInfoChanged$' }
+  api
 );
+onAccountsInfoChanged$.metadata = { name: 'onAccountsInfoChanged$' };

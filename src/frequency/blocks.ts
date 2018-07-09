@@ -12,11 +12,10 @@ import { FrequencyObservable } from '../types';
 /**
  * Observable that emits on every new block.
  */
-export const onEveryBlock$ = createOnFromPubsub('eth_blockNumber', api, {
-  name: 'onEveryBlock$'
-}).pipe(
+export const onEveryBlock$ = createOnFromPubsub('eth_blockNumber', api).pipe(
   map(v => +v) // Return number instead of BigNumber
-);
+) as FrequencyObservable<number>;
+onEveryBlock$.metadata = { name: 'onEveryBlock$' };
 
 /**
  * Observable that emits on every 2nd block.

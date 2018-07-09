@@ -17,7 +17,9 @@ it('should add empty metadata by default', () => {
 });
 
 it('should append input metadata', () => {
-  expect(createRpc({ foo: 'bar' })(mockRpc$).metadata).toEqual({ foo: 'bar' });
+  expect(createRpc({ name: 'bar' })(mockRpc$).metadata).toEqual({
+    name: 'bar'
+  });
 });
 
 it('should contain frequencyMixins', () => {

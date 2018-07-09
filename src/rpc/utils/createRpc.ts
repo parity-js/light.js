@@ -46,7 +46,7 @@ const frequencyMixins = {
  * @param {Object} metadata - The metadata to add.
  * @return {Observable} - The original rpc$ Observable with patched metadata.
  */
-const createRpc = (metadata: Metadata = {}) => <T>(
+const createRpc = <T>(metadata: Metadata = {}) => (
   source$: (...args: any[]) => Observable<T>
 ) => {
   const rpc$ = (...args) => {
