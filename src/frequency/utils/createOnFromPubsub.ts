@@ -3,6 +3,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+import { FrequencyObservable } from '../../types';
 import { Observable, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
@@ -14,14 +15,22 @@ import { distinctReplayRefCount } from '../../utils/operators/distinctReplayRefC
  * @ignore
  * @example onAccountsChanged$, onEveryBlock$...
  */
-const createOnFromPubsub = <T>(pubsub: string, api: any): Observable<T> => {
+const createOnFromPubsub = <T>(
+  pubsub: string,
+  api: any,
+  metadata: { name: string }
+): FrequencyObservable<T> => {
   const [namespace, method] = pubsub.split('_');
 
   // There's a chance the provider doesn't support pubsub, for example
   // MetaMaskProvider. In this case, as suggested on their Github, the best
   // solution for now is to poll.
   if (!api().isPubSub) {
-    return timer(0, 1000).pipe(switchMap(() => api()[namespace][method]()));
+    const result = <FrequencyObservable<T>>(
+      timer(0, 1000).pipe(switchMap(() => api()[namespace][method]()))
+    );
+    result.metadata = metadata;
+    return result;
   }
 
   return Observable.create(observer => {

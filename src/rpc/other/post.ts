@@ -5,8 +5,9 @@
 
 import { Observable } from 'rxjs';
 
-import { distinctReplayRefCount } from '../../utils/operators';
 import api from '../../api';
+import { distinctReplayRefCount } from '../../utils/operators';
+import { RpcObservable, Tx, TxStatus } from '../../types';
 
 /**
  * Post a transaction to the network.
@@ -15,11 +16,13 @@ import api from '../../api';
  * `parity_checkRequest` and `eth_getTransactionReceipt` to get the status of
  * the transaction.
  *
- * @param {Object} tx! - A transaction object.
  * @param {Object} options? - Options to pass.
  * @return {Observable<Object>} - The status of the transaction.
  */
-export const post$ = (tx, options = {}) => {
+export const post$: RpcObservable<TxStatus> = (
+  tx: Tx,
+  options: { estimate?: boolean } = {}
+) => {
   const source$ = Observable.create(async observer => {
     try {
       if (options.estimate) {

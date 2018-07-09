@@ -5,12 +5,57 @@
 
 import { Observable } from 'rxjs';
 
+declare global {
+  interface Window {
+    parity: any;
+  }
+}
+
+export type Abi = Array<Object>;
+
+// TODO This should be on @parity/api
 export type AccountsInfo = {
   name: String;
 };
 
-export type Address = String;
+// TODO This should be on @parity/api
+export type Address = string;
 
-export type ObservableWithMetadata<T> = Observable<T> & {
-  metadata: { name: String };
+export type Metadata = {
+  calledWithArgs?: {
+    [key: string]: any;
+  };
+  calls?: string[];
+  dependsOn?: string[];
+  frequency?: Observable<any>[];
+  name?: string;
 };
+
+export interface FrequencyObservable<T> extends Observable<T> {
+  metadata: { name: string };
+}
+
+export interface RpcObservable<T> {
+  (...args: any[]): Observable<T>;
+  metadata?: Metadata; // TODO All RpcObservables should have metadata
+  setFrequency?(frequency: Observable<any>[]): void; // post$, makeContract$... don't have setFrequency
+}
+
+// TODO This should be on @parity/api
+export type Tx = {
+  from: Address;
+  condition: any; // TODO Which type?
+  to: Address;
+};
+
+export interface TxStatus {
+  confirmed: any;
+  estimating?: boolean;
+  estimated?: any; // BigNumber
+  requested?: string;
+  signed?: string;
+}
+
+export interface WithError<T> {
+  error;
+}

@@ -6,6 +6,8 @@
 import { empty } from 'rxjs';
 import { merge } from 'rxjs/operators';
 
+import { RpcObservable } from '../../types';
+
 /**
  * Get the frequency Observable of a RPC Observable, which represents how often
  * this RPC Observable gets updated. Each RPC Observable has a metadata field
@@ -16,6 +18,8 @@ import { merge } from 'rxjs/operators';
  * @param {String} rpc$ - The RPC Observable.
  * @return {Observable} - An Observable that represents the frequency.
  */
-const getFrequency = rpc$ => empty().pipe(merge(...rpc$.metadata.frequency));
+const getFrequency = <T>(rpc$: RpcObservable<T>) => {
+  return empty().pipe(merge(...rpc$.metadata.frequency));
+};
 
 export default getFrequency;

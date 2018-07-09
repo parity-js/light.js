@@ -5,8 +5,10 @@
 
 import { of } from 'rxjs';
 
+import { FrequencyObservable } from '../types';
+
 /**
  * Observable that emits only once.
  */
-export const onStartup$ = of(0);
+export const onStartup$ = <FrequencyObservable<number>>of(0);
 onStartup$.metadata = { name: 'onStartup$' };

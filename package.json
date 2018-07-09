@@ -25,7 +25,7 @@
     "RxJS"
   ],
   "scripts": {
-    "build": "rimraf lib && babel src --out-dir lib",
+    "build": "rimraf lib && tsc",
     "docs": "esdoc",
     "lint": "semistandard 'src/**/*.js' --parser babel-eslint --env jest",
     "test": "jest"

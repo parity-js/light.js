@@ -6,7 +6,7 @@
 import { of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
-import { switchMapPromise } from '../../utils/operators';
+import { Address, RpcObservable } from '../../types';
 import api from '../../api';
 import createRpc$ from '../utils/createRpc';
 import getFrequency from '../utils/getFrequency';
@@ -18,6 +18,7 @@ import {
   onStartup$,
   onSyncingChanged$
 } from '../../frequency';
+import { switchMapPromise } from '../../utils/operators';
 
 /**
  * Observable which contains the array of all addresses managed by the light
@@ -31,7 +32,7 @@ import {
 export const accounts$ = createRpc$({
   calls: ['eth_accounts'],
   frequency: [onAccountsChanged$]
-})(() => getFrequency(accounts$).pipe());
+})(() => getFrequency(accounts$));
 
 /**
  * Get the balance of a given account. Calls `eth_getBalance`.
@@ -42,7 +43,7 @@ export const accounts$ = createRpc$({
 export const balanceOf$ = createRpc$({
   calls: ['eth_getBalance'],
   frequency: [onEvery2Blocks$, onStartup$]
-})(address =>
+})((address: Address) =>
   getFrequency(balanceOf$).pipe(
     switchMapPromise(() => api().eth.getBalance(address))
   )

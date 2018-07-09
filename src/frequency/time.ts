@@ -5,14 +5,16 @@
 
 import { timer } from 'rxjs';
 
+import { FrequencyObservable } from '../types';
+
 /**
  * Observable that emits on every second.
  */
-export const onEverySecond$ = timer(0, 1000);
+export const onEverySecond$ = <FrequencyObservable<number>>timer(0, 1000);
 onEverySecond$.metadata = { name: 'onEverySecond$' };
 
 /**
  * Observable that emits on every other second.
  */
-export const onEvery2Seconds$ = timer(0, 2000);
+export const onEvery2Seconds$ = <FrequencyObservable<number>>timer(0, 2000);
 onEvery2Seconds$.metadata = { name: 'onEvery2Seconds$' };
