@@ -1,171 +1,165 @@
 window.esdocSearchIndex = [
   [
-    "@parity/light.js/src/utils/isloading.js~rpc_loading",
+    "@parity/light.js/src/utils/isloading.ts~rpc_loading",
     "variable/index.html#static-variable-RPC_LOADING",
-    "<span>RPC_LOADING</span> <span class=\"search-result-import-path\">@parity/light.js/src/utils/isLoading.js</span>",
+    "<span>RPC_LOADING</span> <span class=\"search-result-import-path\">@parity/light.js/src/utils/isLoading.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/rpc/eth/eth.js~accounts$",
+    "@parity/light.js/src/rpc/eth/eth.ts~accounts$",
     "variable/index.html#static-variable-accounts$",
-    "<span>accounts$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.js</span>",
+    "<span>accounts$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/rpc/parity/parity.js~accountsinfo$",
+    "@parity/light.js/src/rpc/parity/parity.ts~accountsinfo$",
     "variable/index.html#static-variable-accountsInfo$",
-    "<span>accountsInfo$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/parity/parity.js</span>",
+    "<span>accountsInfo$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/parity/parity.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/rpc/eth/eth.js~balanceof$",
+    "@parity/light.js/src/rpc/eth/eth.ts~balanceof$",
     "variable/index.html#static-variable-balanceOf$",
-    "<span>balanceOf$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.js</span>",
+    "<span>balanceOf$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/rpc/eth/eth.js~blocknumber$",
+    "@parity/light.js/src/rpc/eth/eth.ts~blocknumber$",
     "variable/index.html#static-variable-blockNumber$",
-    "<span>blockNumber$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.js</span>",
+    "<span>blockNumber$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/rpc/parity/parity.js~chainname$",
+    "@parity/light.js/src/rpc/parity/parity.ts~chainname$",
     "variable/index.html#static-variable-chainName$",
-    "<span>chainName$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/parity/parity.js</span>",
+    "<span>chainName$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/parity/parity.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/rpc/eth/eth.js~defaultaccount$",
+    "@parity/light.js/src/rpc/eth/eth.ts~defaultaccount$",
     "variable/index.html#static-variable-defaultAccount$",
-    "<span>defaultAccount$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.js</span>",
+    "<span>defaultAccount$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/api.js~getapi",
+    "@parity/light.js/src/api.ts~getapi",
     "function/index.html#static-function-getApi",
-    "<span>getApi</span> <span class=\"search-result-import-path\">@parity/light.js/src/api.js</span>",
+    "<span>getApi</span> <span class=\"search-result-import-path\">@parity/light.js/src/api.ts</span>",
     "function"
   ],
   [
-    "@parity/light.js/src/rpc/eth/eth.js~height$",
+    "@parity/light.js/src/rpc/eth/eth.ts~height$",
     "variable/index.html#static-variable-height$",
-    "<span>height$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.js</span>",
+    "<span>height$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/utils/isloading.js~isloading",
+    "@parity/light.js/src/utils/isloading.ts~isloading",
     "function/index.html#static-function-isLoading",
-    "<span>isLoading</span> <span class=\"search-result-import-path\">@parity/light.js/src/utils/isLoading.js</span>",
+    "<span>isLoading</span> <span class=\"search-result-import-path\">@parity/light.js/src/utils/isLoading.ts</span>",
     "function"
   ],
   [
-    "@parity/light.js/src/utils/isloading.js~isnullorloading",
+    "@parity/light.js/src/utils/isloading.ts~isnullorloading",
     "function/index.html#static-function-isNullOrLoading",
-    "<span>isNullOrLoading</span> <span class=\"search-result-import-path\">@parity/light.js/src/utils/isLoading.js</span>",
+    "<span>isNullOrLoading</span> <span class=\"search-result-import-path\">@parity/light.js/src/utils/isLoading.ts</span>",
     "function"
   ],
   [
-    "@parity/light.js/src/rpc/eth/eth.js~me$",
+    "@parity/light.js/src/rpc/eth/eth.ts~me$",
     "variable/index.html#static-variable-me$",
-    "<span>me$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.js</span>",
+    "<span>me$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/rpc/eth/eth.js~mybalance$",
+    "@parity/light.js/src/rpc/eth/eth.ts~mybalance$",
     "variable/index.html#static-variable-myBalance$",
-    "<span>myBalance$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.js</span>",
+    "<span>myBalance$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/rpc/parity/parity.js~nodehealth$",
+    "@parity/light.js/src/rpc/parity/parity.ts~nodehealth$",
     "variable/index.html#static-variable-nodeHealth$",
-    "<span>nodeHealth$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/parity/parity.js</span>",
+    "<span>nodeHealth$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/parity/parity.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/frequency/accounts.js~onaccountschanged$",
+    "@parity/light.js/src/frequency/accounts.ts~onaccountschanged$",
     "variable/index.html#static-variable-onAccountsChanged$",
-    "<span>onAccountsChanged$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/accounts.js</span>",
+    "<span>onAccountsChanged$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/accounts.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/frequency/accounts.js~onaccountsinfochanged$",
+    "@parity/light.js/src/frequency/accounts.ts~onaccountsinfochanged$",
     "variable/index.html#static-variable-onAccountsInfoChanged$",
-    "<span>onAccountsInfoChanged$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/accounts.js</span>",
+    "<span>onAccountsInfoChanged$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/accounts.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/frequency/blocks.js~onevery2blocks$",
+    "@parity/light.js/src/frequency/blocks.ts~onevery2blocks$",
     "variable/index.html#static-variable-onEvery2Blocks$",
-    "<span>onEvery2Blocks$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/blocks.js</span>",
+    "<span>onEvery2Blocks$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/blocks.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/frequency/time.js~onevery2seconds$",
+    "@parity/light.js/src/frequency/time.ts~onevery2seconds$",
     "variable/index.html#static-variable-onEvery2Seconds$",
-    "<span>onEvery2Seconds$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/time.js</span>",
+    "<span>onEvery2Seconds$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/time.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/frequency/blocks.js~onevery4blocks$",
+    "@parity/light.js/src/frequency/blocks.ts~onevery4blocks$",
     "variable/index.html#static-variable-onEvery4Blocks$",
-    "<span>onEvery4Blocks$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/blocks.js</span>",
+    "<span>onEvery4Blocks$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/blocks.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/frequency/blocks.js~oneveryblock$",
+    "@parity/light.js/src/frequency/blocks.ts~oneveryblock$",
     "variable/index.html#static-variable-onEveryBlock$",
-    "<span>onEveryBlock$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/blocks.js</span>",
+    "<span>onEveryBlock$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/blocks.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/frequency/time.js~oneverysecond$",
+    "@parity/light.js/src/frequency/time.ts~oneverysecond$",
     "variable/index.html#static-variable-onEverySecond$",
-    "<span>onEverySecond$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/time.js</span>",
+    "<span>onEverySecond$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/time.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/frequency/health.js~onnodehealthchanged$",
+    "@parity/light.js/src/frequency/health.ts~onnodehealthchanged$",
     "variable/index.html#static-variable-onNodeHealthChanged$",
-    "<span>onNodeHealthChanged$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/health.js</span>",
+    "<span>onNodeHealthChanged$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/health.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/frequency/other.js~onstartup$",
+    "@parity/light.js/src/frequency/other.ts~onstartup$",
     "variable/index.html#static-variable-onStartup$",
-    "<span>onStartup$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/other.js</span>",
+    "<span>onStartup$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/other.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/frequency/health.js~onsyncingchanged$",
+    "@parity/light.js/src/frequency/health.ts~onsyncingchanged$",
     "variable/index.html#static-variable-onSyncingChanged$",
-    "<span>onSyncingChanged$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/health.js</span>",
+    "<span>onSyncingChanged$</span> <span class=\"search-result-import-path\">@parity/light.js/src/frequency/health.ts</span>",
     "variable"
   ],
   [
-    "@parity/light.js/src/rpc/other/post.js~post$",
+    "@parity/light.js/src/rpc/other/post.ts~post$",
     "function/index.html#static-function-post$",
-    "<span>post$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/other/post.js</span>",
+    "<span>post$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/other/post.ts</span>",
     "function"
   ],
   [
-    "@parity/light.js/src/api.js~setapi",
+    "@parity/light.js/src/api.ts~setapi",
     "function/index.html#static-function-setApi",
-    "<span>setApi</span> <span class=\"search-result-import-path\">@parity/light.js/src/api.js</span>",
+    "<span>setApi</span> <span class=\"search-result-import-path\">@parity/light.js/src/api.ts</span>",
     "function"
   ],
   [
-    "@parity/light.js/src/rpc/eth/eth.js~syncing$",
+    "@parity/light.js/src/rpc/eth/eth.ts~syncing$",
     "variable/index.html#static-variable-syncing$",
-    "<span>syncing$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.js</span>",
+    "<span>syncing$</span> <span class=\"search-result-import-path\">@parity/light.js/src/rpc/eth/eth.ts</span>",
     "variable"
-  ],
-  [
-    "@parity/light.js/src/utils/operators/withoutloading.js~withoutloading",
-    "function/index.html#static-function-withoutLoading",
-    "<span>withoutLoading</span> <span class=\"search-result-import-path\">@parity/light.js/src/utils/operators/withoutLoading.js</span>",
-    "function"
   ],
   [
     "src/.external-ecmascript.js~array",
@@ -450,261 +444,183 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/api.js",
-    "file/src/api.js.html",
-    "src/api.js",
+    "src/api.spec.ts",
+    "file/src/api.spec.ts.html",
+    "src/api.spec.ts",
     "file"
   ],
   [
-    "src/api.spec.js",
-    "file/src/api.spec.js.html",
-    "src/api.spec.js",
+    "src/api.ts",
+    "file/src/api.ts.html",
+    "src/api.ts",
     "file"
   ],
   [
-    "src/frequency/accounts.js",
-    "file/src/frequency/accounts.js.html",
-    "src/frequency/accounts.js",
+    "src/frequency/accounts.spec.ts",
+    "file/src/frequency/accounts.spec.ts.html",
+    "src/frequency/accounts.spec.ts",
     "file"
   ],
   [
-    "src/frequency/accounts.spec.js",
-    "file/src/frequency/accounts.spec.js.html",
-    "src/frequency/accounts.spec.js",
+    "src/frequency/accounts.ts",
+    "file/src/frequency/accounts.ts.html",
+    "src/frequency/accounts.ts",
     "file"
   ],
   [
-    "src/frequency/blocks.js",
-    "file/src/frequency/blocks.js.html",
-    "src/frequency/blocks.js",
+    "src/frequency/blocks.spec.ts",
+    "file/src/frequency/blocks.spec.ts.html",
+    "src/frequency/blocks.spec.ts",
     "file"
   ],
   [
-    "src/frequency/blocks.spec.js",
-    "file/src/frequency/blocks.spec.js.html",
-    "src/frequency/blocks.spec.js",
+    "src/frequency/blocks.ts",
+    "file/src/frequency/blocks.ts.html",
+    "src/frequency/blocks.ts",
     "file"
   ],
   [
-    "src/frequency/health.js",
-    "file/src/frequency/health.js.html",
-    "src/frequency/health.js",
+    "src/frequency/health.spec.ts",
+    "file/src/frequency/health.spec.ts.html",
+    "src/frequency/health.spec.ts",
     "file"
   ],
   [
-    "src/frequency/health.spec.js",
-    "file/src/frequency/health.spec.js.html",
-    "src/frequency/health.spec.js",
+    "src/frequency/health.ts",
+    "file/src/frequency/health.ts.html",
+    "src/frequency/health.ts",
     "file"
   ],
   [
-    "src/frequency/index.js",
-    "file/src/frequency/index.js.html",
-    "src/frequency/index.js",
+    "src/frequency/other.spec.ts",
+    "file/src/frequency/other.spec.ts.html",
+    "src/frequency/other.spec.ts",
     "file"
   ],
   [
-    "src/frequency/other.js",
-    "file/src/frequency/other.js.html",
-    "src/frequency/other.js",
+    "src/frequency/other.ts",
+    "file/src/frequency/other.ts.html",
+    "src/frequency/other.ts",
     "file"
   ],
   [
-    "src/frequency/other.spec.js",
-    "file/src/frequency/other.spec.js.html",
-    "src/frequency/other.spec.js",
+    "src/frequency/time.spec.ts",
+    "file/src/frequency/time.spec.ts.html",
+    "src/frequency/time.spec.ts",
     "file"
   ],
   [
-    "src/frequency/time.js",
-    "file/src/frequency/time.js.html",
-    "src/frequency/time.js",
+    "src/frequency/time.ts",
+    "file/src/frequency/time.ts.html",
+    "src/frequency/time.ts",
     "file"
   ],
   [
-    "src/frequency/time.spec.js",
-    "file/src/frequency/time.spec.js.html",
-    "src/frequency/time.spec.js",
+    "src/frequency/utils/createonfrompubsub.spec.ts",
+    "file/src/frequency/utils/createOnFromPubsub.spec.ts.html",
+    "src/frequency/utils/createOnFromPubsub.spec.ts",
     "file"
   ],
   [
-    "src/frequency/utils/createonfrompubsub.js",
-    "file/src/frequency/utils/createOnFromPubsub.js.html",
-    "src/frequency/utils/createOnFromPubsub.js",
+    "src/rpc/eth/eth.spec.ts",
+    "file/src/rpc/eth/eth.spec.ts.html",
+    "src/rpc/eth/eth.spec.ts",
     "file"
   ],
   [
-    "src/frequency/utils/createonfrompubsub.spec.js",
-    "file/src/frequency/utils/createOnFromPubsub.spec.js.html",
-    "src/frequency/utils/createOnFromPubsub.spec.js",
+    "src/rpc/eth/eth.ts",
+    "file/src/rpc/eth/eth.ts.html",
+    "src/rpc/eth/eth.ts",
     "file"
   ],
   [
-    "src/index.js",
-    "file/src/index.js.html",
-    "src/index.js",
+    "src/rpc/other/post.ts",
+    "file/src/rpc/other/post.ts.html",
+    "src/rpc/other/post.ts",
     "file"
   ],
   [
-    "src/rpc/eth/eth.js",
-    "file/src/rpc/eth/eth.js.html",
-    "src/rpc/eth/eth.js",
+    "src/rpc/parity/parity.spec.ts",
+    "file/src/rpc/parity/parity.spec.ts.html",
+    "src/rpc/parity/parity.spec.ts",
     "file"
   ],
   [
-    "src/rpc/eth/eth.spec.js",
-    "file/src/rpc/eth/eth.spec.js.html",
-    "src/rpc/eth/eth.spec.js",
+    "src/rpc/parity/parity.ts",
+    "file/src/rpc/parity/parity.ts.html",
+    "src/rpc/parity/parity.ts",
     "file"
   ],
   [
-    "src/rpc/eth/index.js",
-    "file/src/rpc/eth/index.js.html",
-    "src/rpc/eth/index.js",
+    "src/rpc/utils/createrpc.spec.ts",
+    "file/src/rpc/utils/createRpc.spec.ts.html",
+    "src/rpc/utils/createRpc.spec.ts",
     "file"
   ],
   [
-    "src/rpc/index.js",
-    "file/src/rpc/index.js.html",
-    "src/rpc/index.js",
+    "src/rpc/utils/getfrequency.spec.ts",
+    "file/src/rpc/utils/getFrequency.spec.ts.html",
+    "src/rpc/utils/getFrequency.spec.ts",
     "file"
   ],
   [
-    "src/rpc/other/index.js",
-    "file/src/rpc/other/index.js.html",
-    "src/rpc/other/index.js",
+    "src/types.d.ts",
+    "file/src/types.d.ts.html",
+    "src/types.d.ts",
     "file"
   ],
   [
-    "src/rpc/other/post.js",
-    "file/src/rpc/other/post.js.html",
-    "src/rpc/other/post.js",
+    "src/utils/isloading.ts",
+    "file/src/utils/isLoading.ts.html",
+    "src/utils/isLoading.ts",
     "file"
   ],
   [
-    "src/rpc/parity/index.js",
-    "file/src/rpc/parity/index.js.html",
-    "src/rpc/parity/index.js",
+    "src/utils/isobservable.spec.ts",
+    "file/src/utils/isObservable.spec.ts.html",
+    "src/utils/isObservable.spec.ts",
     "file"
   ],
   [
-    "src/rpc/parity/parity.js",
-    "file/src/rpc/parity/parity.js.html",
-    "src/rpc/parity/parity.js",
+    "src/utils/isobservable.ts",
+    "file/src/utils/isObservable.ts.html",
+    "src/utils/isObservable.ts",
     "file"
   ],
   [
-    "src/rpc/parity/parity.spec.js",
-    "file/src/rpc/parity/parity.spec.js.html",
-    "src/rpc/parity/parity.spec.js",
+    "src/utils/operators/distinctreplayrefcount.spec.ts",
+    "file/src/utils/operators/distinctReplayRefCount.spec.ts.html",
+    "src/utils/operators/distinctReplayRefCount.spec.ts",
     "file"
   ],
   [
-    "src/rpc/utils/createrpc.js",
-    "file/src/rpc/utils/createRpc.js.html",
-    "src/rpc/utils/createRpc.js",
+    "src/utils/operators/switchmappromise.spec.ts",
+    "file/src/utils/operators/switchMapPromise.spec.ts.html",
+    "src/utils/operators/switchMapPromise.spec.ts",
     "file"
   ],
   [
-    "src/rpc/utils/createrpc.spec.js",
-    "file/src/rpc/utils/createRpc.spec.js.html",
-    "src/rpc/utils/createRpc.spec.js",
+    "src/utils/testhelpers/mockapi.ts",
+    "file/src/utils/testHelpers/mockApi.ts.html",
+    "src/utils/testHelpers/mockApi.ts",
     "file"
   ],
   [
-    "src/rpc/utils/getfrequency.js",
-    "file/src/rpc/utils/getFrequency.js.html",
-    "src/rpc/utils/getFrequency.js",
+    "src/utils/testhelpers/mockrpc.ts",
+    "file/src/utils/testHelpers/mockRpc.ts.html",
+    "src/utils/testHelpers/mockRpc.ts",
     "file"
   ],
   [
-    "src/rpc/utils/getfrequency.spec.js",
-    "file/src/rpc/utils/getFrequency.spec.js.html",
-    "src/rpc/utils/getFrequency.spec.js",
+    "src/utils/testhelpers/testfrequency.ts",
+    "file/src/utils/testHelpers/testFrequency.ts.html",
+    "src/utils/testHelpers/testFrequency.ts",
     "file"
   ],
   [
-    "src/utils/index.js",
-    "file/src/utils/index.js.html",
-    "src/utils/index.js",
-    "file"
-  ],
-  [
-    "src/utils/isloading.js",
-    "file/src/utils/isLoading.js.html",
-    "src/utils/isLoading.js",
-    "file"
-  ],
-  [
-    "src/utils/isobservable.js",
-    "file/src/utils/isObservable.js.html",
-    "src/utils/isObservable.js",
-    "file"
-  ],
-  [
-    "src/utils/isobservable.spec.js",
-    "file/src/utils/isObservable.spec.js.html",
-    "src/utils/isObservable.spec.js",
-    "file"
-  ],
-  [
-    "src/utils/operators/distinctreplayrefcount.js",
-    "file/src/utils/operators/distinctReplayRefCount.js.html",
-    "src/utils/operators/distinctReplayRefCount.js",
-    "file"
-  ],
-  [
-    "src/utils/operators/distinctreplayrefcount.spec.js",
-    "file/src/utils/operators/distinctReplayRefCount.spec.js.html",
-    "src/utils/operators/distinctReplayRefCount.spec.js",
-    "file"
-  ],
-  [
-    "src/utils/operators/index.js",
-    "file/src/utils/operators/index.js.html",
-    "src/utils/operators/index.js",
-    "file"
-  ],
-  [
-    "src/utils/operators/switchmappromise.js",
-    "file/src/utils/operators/switchMapPromise.js.html",
-    "src/utils/operators/switchMapPromise.js",
-    "file"
-  ],
-  [
-    "src/utils/operators/switchmappromise.spec.js",
-    "file/src/utils/operators/switchMapPromise.spec.js.html",
-    "src/utils/operators/switchMapPromise.spec.js",
-    "file"
-  ],
-  [
-    "src/utils/operators/withoutloading.js",
-    "file/src/utils/operators/withoutLoading.js.html",
-    "src/utils/operators/withoutLoading.js",
-    "file"
-  ],
-  [
-    "src/utils/testhelpers/mockapi.js",
-    "file/src/utils/testHelpers/mockApi.js.html",
-    "src/utils/testHelpers/mockApi.js",
-    "file"
-  ],
-  [
-    "src/utils/testhelpers/mockrpc.js",
-    "file/src/utils/testHelpers/mockRpc.js.html",
-    "src/utils/testHelpers/mockRpc.js",
-    "file"
-  ],
-  [
-    "src/utils/testhelpers/testfrequency.js",
-    "file/src/utils/testHelpers/testFrequency.js.html",
-    "src/utils/testHelpers/testFrequency.js",
-    "file"
-  ],
-  [
-    "src/utils/testhelpers/testrpc.js",
-    "file/src/utils/testHelpers/testRpc.js.html",
-    "src/utils/testHelpers/testRpc.js",
+    "src/utils/testhelpers/testrpc.ts",
+    "file/src/utils/testHelpers/testRpc.ts.html",
+    "src/utils/testHelpers/testRpc.ts",
     "file"
   ]
 ]

@@ -16,9 +16,6 @@ import { switchMapPromise } from '../../utils/operators';
 
 /**
  * Get accounts info. Calls `parity_accountsInfo`.
- *
- * @return {Observable<Object>} - An Observable containing all info that can be
- * accessed by user concerning accounts.
  */
 export const accountsInfo$ = createRpc$<AccountsInfo>({
   calls: ['parity_accountsInfo'],
@@ -27,9 +24,6 @@ export const accountsInfo$ = createRpc$<AccountsInfo>({
 
 /**
  * Get the name of the current chain. Calls `parity_netChain`.
- *
- * @return {Observable<String>} - An Observable containing the name of the
- * current chain.
  */
 export const chainName$ = createRpc$<string>({
   calls: ['parity_netChain'],
@@ -40,8 +34,6 @@ export const chainName$ = createRpc$<string>({
 
 /**
  * Get the node's health. Calls `parity_nodeHealth`.
- *
- * @return {Observable<Object>} - An Observable containing the health.
  */
 export const nodeHealth$ = createRpc$<Object>({
   calls: ['parity_nodeHealth'],

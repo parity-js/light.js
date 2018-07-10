@@ -56,7 +56,6 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#utils">utils</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isLoading">isLoading</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isNullOrLoading">isNullOrLoading</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RPC_LOADING">RPC_LOADING</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#utils-operators">utils/operators</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-withoutLoading">withoutLoading</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -169,7 +168,7 @@ data structure to be reused.</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-post$">post$</a></span></span><span class="code" data-ice="signature">(tx: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>Observable</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-post$">post$</a></span></span><span class="code" data-ice="signature">(options?: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>Observable</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>&gt;</span>
         </p>
       </div>
       <div>
@@ -213,35 +212,6 @@ data structure to be reused.</p>
       
     </td>
   </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-withoutLoading">withoutLoading</a></span></span><span class="code" data-ice="signature">()</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        <div data-ice="description"><p>Filter out the loading states in our observable.</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
 </tbody>
 </table>
 </div>
@@ -259,11 +229,11 @@ data structure to be reused.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/api.js.html#lineNumber34">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/api.ts.html#lineNumber27">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {getApi} from &apos;<span><a href="file/src/api.js.html#lineNumber34">@parity/light.js/src/api.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {getApi} from &apos;<span><a href="file/src/api.ts.html#lineNumber27">@parity/light.js/src/api.ts</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>We only ever use api() at call-time of functions; this allows the options
@@ -318,11 +288,11 @@ data structure to be reused.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/isLoading.js.html#lineNumber14">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/isLoading.ts.html#lineNumber12">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {isLoading} from &apos;<span><a href="file/src/utils/isLoading.js.html#lineNumber14">@parity/light.js/src/utils/isLoading.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {isLoading} from &apos;<span><a href="file/src/utils/isLoading.ts.html#lineNumber12">@parity/light.js/src/utils/isLoading.ts</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Check if a rpc$ value is loading.</p>
@@ -392,11 +362,11 @@ data structure to be reused.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/utils/isLoading.js.html#lineNumber22">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/utils/isLoading.ts.html#lineNumber19">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {isNullOrLoading} from &apos;<span><a href="file/src/utils/isLoading.js.html#lineNumber22">@parity/light.js/src/utils/isLoading.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {isNullOrLoading} from &apos;<span><a href="file/src/utils/isLoading.ts.html#lineNumber19">@parity/light.js/src/utils/isLoading.ts</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Check if a rpc$ value is <code>null,</code>undefined` or loading.</p>
@@ -462,15 +432,15 @@ data structure to be reused.</p>
     
     
     
-    <span class="code" data-ice="name">post$</span><span class="code" data-ice="signature">(tx: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>Observable</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>&gt;</span>
+    <span class="code" data-ice="name">post$</span><span class="code" data-ice="signature">(options?: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>Observable</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>&gt;</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/rpc/other/post.js.html#lineNumber21">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/rpc/other/post.ts.html#lineNumber18">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {post$} from &apos;<span><a href="file/src/rpc/other/post.js.html#lineNumber21">@parity/light.js/src/rpc/other/post.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {post$} from &apos;<span><a href="file/src/rpc/other/post.ts.html#lineNumber18">@parity/light.js/src/rpc/other/post.ts</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Post a transaction to the network.</p>
@@ -490,10 +460,10 @@ the transaction.</p>
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">tx</td>
+      <td data-ice="name" class="code" data-depth="0">options?</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>A transaction object.</p>
+      <td data-ice="description"><p>Options to pass.</p>
 </td>
     </tr>
 </tbody>
@@ -543,11 +513,11 @@ the transaction.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/api.js.html#lineNumber18">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/api.ts.html#lineNumber14">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {setApi} from &apos;<span><a href="file/src/api.js.html#lineNumber18">@parity/light.js/src/api.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {setApi} from &apos;<span><a href="file/src/api.ts.html#lineNumber14">@parity/light.js/src/api.ts</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Sets an Api object.</p>
@@ -588,50 +558,6 @@ the transaction.</p>
     <div data-ice="returnProperties">
 </div>
   </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-withoutLoading">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">withoutLoading</span><span class="code" data-ice="signature">()</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/utils/operators/withoutLoading.js.html#lineNumber14">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {withoutLoading} from &apos;<span><a href="file/src/utils/operators/withoutLoading.js.html#lineNumber14">@parity/light.js/src/utils/operators/withoutLoading.js</a></span>&apos;</code></pre></div>
-  
-  
-  <div data-ice="description"><p>Filter out the loading states in our observable.</p>
-</div>
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
 
   
 

@@ -6,7 +6,7 @@
 import { of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
-import { Address } from '../../types';
+import { Address, RpcObservable } from '../../types';
 import api from '../../api';
 import createRpc$ from '../utils/createRpc';
 import getFrequency from '../utils/getFrequency';
@@ -26,8 +26,6 @@ import { switchMapPromise } from '../../utils/operators';
  *
  * Calls eth_accounts.
  *
- * @return {Observable<Array<String>>} - An Observable containing the list of
- * public addresses.
  */
 export const accounts$ = createRpc$<Address[]>({
   calls: ['eth_accounts'],
@@ -36,9 +34,6 @@ export const accounts$ = createRpc$<Address[]>({
 
 /**
  * Get the balance of a given account. Calls `eth_getBalance`.
- *
- * @param {String} address - The account address to query the balance.
- * @return {Observable<BigNumber>} - An Observable containing the balance.
  */
 export const balanceOf$ = createRpc$<Object>({
   calls: ['eth_getBalance'],
@@ -51,9 +46,6 @@ export const balanceOf$ = createRpc$<Object>({
 
 /**
  * Get the default account managed by the light client.
- *
- * @return {Observable<Address>} - An Observable containing the public address
- * of the default account.
  */
 export const defaultAccount$ = createRpc$<Address>({
   dependsOn: ['accounts$']
@@ -61,8 +53,6 @@ export const defaultAccount$ = createRpc$<Address>({
 
 /**
  * Get the current block height.
- *
- * @return {Observable<Number>} - An Observable containing the block height.
  */
 export const height$ = createRpc$<number>({ frequency: [onEveryBlock$] })(() =>
   getFrequency(height$)
@@ -70,8 +60,6 @@ export const height$ = createRpc$<number>({ frequency: [onEveryBlock$] })(() =>
 
 /**
  * Alias for {@link height$}.
- *
- * @return {Observable<Number>} - An Observable containing the block height.
  */
 export const blockNumber$ = createRpc$<number>({ dependsOn: ['height$'] })(() =>
   height$()
@@ -79,9 +67,6 @@ export const blockNumber$ = createRpc$<number>({ dependsOn: ['height$'] })(() =>
 
 /**
  * Alias for {@link defaultAccount$}.
- *
- * @return {Observable<Address>} - An Observable containing the public address
- * of the default account.
  */
 export const me$ = createRpc$<Address>({
   dependsOn: ['defaultAccount$']
@@ -106,8 +91,7 @@ export const myBalance$ = createRpc$<Object>({
 /**
  * Get the syncing state.
  *
- * @return {Observable<Object | Boolean>} - An Observable containing the
- * syncing state object, or false.
+ * @return {RpcObservable<Object | Boolean>} - An Observable containing the
  */
 export const syncing$ = createRpc$<Object | boolean>({
   frequency: [onSyncingChanged$]

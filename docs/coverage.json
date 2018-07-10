@@ -1,116 +1,86 @@
 {
-  "coverage": "97.56%",
-  "expectCount": 41,
-  "actualCount": 40,
+  "coverage": "97.05%",
+  "expectCount": 34,
+  "actualCount": 33,
   "files": {
-    "src/api.js": {
+    "src/api.ts": {
       "expectCount": 2,
       "actualCount": 2,
       "undocumentLines": []
     },
-    "src/frequency/accounts.js": {
+    "src/frequency/accounts.ts": {
       "expectCount": 2,
       "actualCount": 2,
       "undocumentLines": []
     },
-    "src/frequency/blocks.js": {
+    "src/frequency/blocks.ts": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []
     },
-    "src/frequency/health.js": {
+    "src/frequency/health.ts": {
       "expectCount": 2,
       "actualCount": 2,
       "undocumentLines": []
     },
-    "src/frequency/other.js": {
+    "src/frequency/other.ts": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/frequency/time.js": {
+    "src/frequency/time.ts": {
       "expectCount": 2,
       "actualCount": 2,
       "undocumentLines": []
     },
-    "src/frequency/utils/createOnFromPubsub.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/rpc/eth/eth.js": {
+    "src/rpc/eth/eth.ts": {
       "expectCount": 8,
       "actualCount": 8,
       "undocumentLines": []
     },
-    "src/rpc/other/post.js": {
+    "src/rpc/other/post.ts": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/rpc/parity/parity.js": {
+    "src/rpc/parity/parity.ts": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []
     },
-    "src/rpc/utils/createRpc.js": {
-      "expectCount": 2,
-      "actualCount": 2,
-      "undocumentLines": []
-    },
-    "src/rpc/utils/getFrequency.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/utils/isLoading.js": {
+    "src/utils/isLoading.ts": {
       "expectCount": 3,
       "actualCount": 2,
       "undocumentLines": [
-        6
+        5
       ]
     },
-    "src/utils/isObservable.js": {
+    "src/utils/isObservable.spec.ts": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/utils/isObservable.spec.js": {
+    "src/utils/isObservable.ts": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/utils/operators/distinctReplayRefCount.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/utils/operators/switchMapPromise.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/utils/operators/withoutLoading.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/utils/testHelpers/mockApi.js": {
+    "src/utils/testHelpers/mockApi.ts": {
       "expectCount": 2,
       "actualCount": 2,
       "undocumentLines": []
     },
-    "src/utils/testHelpers/mockRpc.js": {
+    "src/utils/testHelpers/mockRpc.ts": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/utils/testHelpers/testFrequency.js": {
+    "src/utils/testHelpers/testFrequency.ts": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/utils/testHelpers/testRpc.js": {
+    "src/utils/testHelpers/testRpc.ts": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []

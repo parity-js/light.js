@@ -56,7 +56,6 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#utils">utils</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isLoading">isLoading</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isNullOrLoading">isNullOrLoading</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RPC_LOADING">RPC_LOADING</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#utils-operators">utils/operators</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-withoutLoading">withoutLoading</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -87,7 +86,7 @@ defaultAccount$()
     switchMap(balanceOf$),
     map(value =&gt; +value) // Return number instead of BigNumber
   )
-  .subscribe(console.log); 
+  .subscribe(console.log);
 
 // There&apos;s actually an alias for the above Observable:
 import { myBalance$ } from &apos;@parity/light.js&apos;;
@@ -105,7 +104,7 @@ defaultAccount$()
     )  )
   .subscribe(console.log); // Will log the result, and everytime the result changes</code>
 </code></pre>
-<p>All available methods are documented here [TODO].</p>
+<p>All available methods are documented <a href="https://parity-js.github.io/light.js/">in the docs</a>.</p>
 <h2 id="usage-with-react">Usage with React</h2><p>The libray provides a higher-order component to use these Observables easily with React apps.</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">import light from &apos;???&apos;; // ??? to be decided
 import { syncing$ } from &apos;@parity/light.js&apos;;
@@ -120,7 +119,7 @@ class MyClass extends React.Component {
 }</code>
 </code></pre>
 <p>The UI will automatically update when the syncing state changes.</p>
-<h2 id="advanced-usage">Advanced Usage</h2><h3 id="frequency">Frequency</h3><p>Each Observable has a frequency upon which it is called. The frequency is documented in each method&apos;s documentation [link TODO].</p>
+<h2 id="advanced-usage">Advanced Usage</h2><h3 id="frequency">Frequency</h3><p>Each Observable has a frequency upon which it is called. The frequency is documented in each method&apos;s <a href="https://parity-js.github.io/light.js/">documentation</a>.</p>
 <p>For example, the frequency of <code>balanceOf$</code> is:</p>
 <p><code>frequency: [onStartup$, onEvery2Blocks$]</code></p>
 <p>which means that the underlying JSONRPC call <code>eth_getBalance</code> will be made once when the Observable is subscribed (on startup), and once every 2 blocks.</p>
@@ -170,7 +169,6 @@ balanceOf$(&apos;0x123&apos;).subscribe(console.log);
 <li><code>subscribersCount</code>: the number of subscribers this Observable has.</li>
 </ul>
 <p>This output can of course be different on different pages of your dapp, if they use different Observables.</p>
-<h3 id="rationale">Rationale</h3><p>The rationale behind this is how the light client works. TODO finish this paragraph</p>
 <h2 id="notes-about-implementation">Notes about Implementation</h2><h3 id="observables-are-cold">Observables are cold</h3><p>The underlying JSONRPC method is only called if there&apos;s at least one subscriber.</p>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">import { balanceOf$ } from &apos;@parity/light.js&apos;;
 
@@ -200,7 +198,7 @@ subscriber3:    --------------------------^--|</code>
 const obs2$ = balanceOf$(&apos;0x123&apos;);
 console.log(obs1$ === obs2$); // true
 
-const obs3$ = balanceOf$(&apos;0x456&apos;)
+const obs3$ = balanceOf$(&apos;0x456&apos;);
 console.log(obs1$ === obs3$); // false</code>
 </code></pre>
 <h3 id="underlying-api-calls-are-not-unnessarily-repeated">Underlying API calls are not unnessarily repeated</h3><pre><code class="lang-javascript"><code class="source-code prettyprint">const obs1$ = balanceOf$(&apos;0x123&apos;);
@@ -231,6 +229,8 @@ subscription.unsubscribe();
 </code></pre>
 <h2 id="todo">TODO</h2><ul>
 <li>Don&apos;t commit <code>lib/</code> anymore, when it&apos;s on npm.</li>
+<li>Switch to TypeScript.</li>
+<li>Have 100% test coverage.</li>
 </ul>
 </div>
 </div>

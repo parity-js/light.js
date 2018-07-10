@@ -39,6 +39,7 @@
     "@types/jest": "^23.1.4",
     "esdoc": "^1.1.0",
     "esdoc-standard-plugin": "^1.0.0",
+    "esdoc-typescript-plugin": "^1.0.1",
     "jest": "^23.1.0",
     "rimraf": "^2.6.2",
     "rxjs": "^6.2.1",
