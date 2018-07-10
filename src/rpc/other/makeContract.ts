@@ -5,8 +5,9 @@
 
 import Abi from '@parity/abi';
 import { abiEncode } from '@parity/api/lib/util/encode';
-import memoizee from 'memoizee';
+import * as memoizee from 'memoizee';
 
+import { Abi as AbiType, Address } from '../../types';
 import {
   distinctReplayRefCount,
   switchMapPromise
@@ -27,7 +28,7 @@ import { post$ } from './post';
  * @return {Object} - The contract object as defined in @parity/api.
  */
 const getContract = memoizee(
-  (address, abiJson) => api().newContract(abiJson, address),
+  (address: Address, abiJson: AbiType) => api().newContract(abiJson, address),
   { length: 1 } // Only memoize by address
 );
 
@@ -41,7 +42,7 @@ const getContract = memoizee(
  * function resolves.
  */
 export const makeContract$ = memoizee(
-  (address, abiJson) => {
+  (address: Address, abiJson: AbiType) => {
     const abi = new Abi(abiJson);
     // Variable result will hold the final object to return
     const result = {

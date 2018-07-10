@@ -3,11 +3,12 @@
 //
 // SPDX-License-Identifier: MIT
 
-import memoizee from 'memoizee';
+import * as memoizee from 'memoizee';
 import { multicast, refCount } from 'rxjs/operators';
-import prune from 'json-prune';
-import { ReplaySubject } from 'rxjs';
+import * as prune from 'json-prune';
+import { ReplaySubject, Observable } from 'rxjs';
 
+import { Metadata, RpcObservable } from '../../types';
 import { withoutLoading } from '../../utils/operators';
 
 /**
@@ -26,7 +27,7 @@ const frequencyMixins = {
    * balanceOf$.setFrequency([onEverySecond$, onStartup$]); // Will fetch
    * balance once on startup, and then every second.
    */
-  setFrequency (frequency) {
+  setFrequency (frequency: Observable<any>[]) {
     // TODO Check that frequency is well-formed
 
     this.metadata.frequency = frequency;
@@ -45,7 +46,9 @@ const frequencyMixins = {
  * @param {Object} metadata - The metadata to add.
  * @return {Observable} - The original rpc$ Observable with patched metadata.
  */
-const createRpc = (metadata = {}) => source$ => {
+const createRpc = <T>(metadata: Metadata = {}) => (
+  source$: (...args: any[]) => Observable<T>
+) => {
   const rpc$ = (...args) => {
     // The last arguments is an options, if it's an object
     // TODO What if we pass a single object as argument, which is not options?
@@ -62,19 +65,21 @@ const createRpc = (metadata = {}) => source$ => {
       pipes.push(withoutLoading());
     }
 
-    // Add a field in the calledWith object, so that we know this function has
+    // Add a field in the calledWithArgs object, so that we know this function has
     // been called with these particular args in the app. See overview.js on
     // how this is used.
-    if (!metadata.calledWith) {
-      metadata.calledWith = {};
+    if (!metadata.calledWithArgs) {
+      metadata.calledWithArgs = {};
     }
-    metadata.calledWith[prune(args)] = subject$;
+    metadata.calledWithArgs[prune(args)] = subject$;
 
     return source$(...args).pipe(...pipes);
   };
 
-  const result$ = memoizee(rpc$, { length: false });
+  const result$: RpcObservable<T> = memoizee(rpc$, { length: false });
+
   Object.assign(result$, frequencyMixins, { metadata });
+
   return result$;
 };
 

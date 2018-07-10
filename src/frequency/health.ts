@@ -19,4 +19,6 @@ onNodeHealthChanged$.metadata = { name: 'onNodeHealthChanged$' };
  * Observable that emits when syncing status changes.
  */
 export const onSyncingChanged$ = createOnFromPubsub('eth_syncing', api);
-onSyncingChanged$.metadata = { name: 'onSyncingChanged$' };
+onSyncingChanged$.metadata = {
+  name: 'onSyncingChanged$'
+};

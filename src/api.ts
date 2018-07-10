@@ -3,9 +3,9 @@
 //
 // SPDX-License-Identifier: MIT
 
-import Api from '@parity/api';
+import * as Api from '@parity/api';
 
-import { name } from '../package.json';
+// import { name } from '../package.json';
 
 let api;
 
@@ -19,7 +19,7 @@ export const setApi = newApi => {
   api = newApi;
   if (!api.isPubSub) {
     console.warn(
-      `Current provider does not support pubsub. ${name} will poll every second to listen to changes.`
+      `Current provider does not support pubsub. @parity/light.js will poll every second to listen to changes.`
     );
   }
 };

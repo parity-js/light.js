@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: MIT
 
 import { catchError, startWith, switchMap } from 'rxjs/operators';
-import { empty, from } from 'rxjs';
+import { empty, from, Observable } from 'rxjs';
 
 import { RPC_LOADING } from '../isLoading';
 
@@ -15,16 +15,18 @@ import { RPC_LOADING } from '../isLoading';
  *
  * @ignore
  */
-export const switchMapPromise = promise => source$ =>
+export const switchMapPromise = <T>(promise: () => Promise<T>) => (
+  source$: Observable<T>
+) =>
   source$.pipe(
     switchMap(() =>
       from(
         promise().then(result => {
           // The result can sometimes be {id: 2, jsonrpc: "2.0", error: {...}}
-          if (result.error) {
+          if ((result as any).error) {
             return Promise.reject(result);
           }
-          return result;
+          return Promise.resolve(result);
         })
       ).pipe(
         startWith(RPC_LOADING),
