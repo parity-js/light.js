@@ -13,7 +13,7 @@ import { RPC_LOADING } from '../isLoading';
  * Observable if the Promise throws an error, will log an error in the console
  * on error.
  *
- * @ignore
+ * @hidden
  */
 export const switchMapPromise = <T>(promise: () => Promise<T>) => (
   source$: Observable<T>

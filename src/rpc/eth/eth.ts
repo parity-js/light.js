@@ -6,7 +6,7 @@
 import { of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
-import { Address, RpcObservable } from '../../types';
+import { Address } from '../../types';
 import api from '../../api';
 import createRpc$ from '../utils/createRpc';
 import getFrequency from '../utils/getFrequency';
@@ -24,8 +24,10 @@ import { switchMapPromise } from '../../utils/operators';
  * Observable which contains the array of all addresses managed by the light
  * client.
  *
- * Calls eth_accounts.
+ * Calls: `eth_accounts`.
+ * Default frequency: [{@link onAccountsChanged$}].
  *
+ * @return An Rpc Observable that fires when your accounts change.
  */
 export const accounts$ = createRpc$<Address[]>({
   calls: ['eth_accounts'],
@@ -90,8 +92,6 @@ export const myBalance$ = createRpc$<Object>({
 
 /**
  * Get the syncing state.
- *
- * @return {RpcObservable<Object | Boolean>} - An Observable containing the
  */
 export const syncing$ = createRpc$<Object | boolean>({
   frequency: [onSyncingChanged$]

@@ -12,8 +12,7 @@ let api;
 /**
  * Sets an Api object.
  *
- * @param {Object} newApi - The Api object.
- * @return {Null}
+ * @param newApi - The Api object.
  */
 export const setApi = newApi => {
   api = newApi;
@@ -29,7 +28,7 @@ export const setApi = newApi => {
  * (particularly the transport option) to be changed dynamically and the
  * data structure to be reused.
  *
- * @return {Object} - The current Api object.
+ * @return The current Api object.
  */
 export const getApi = () => {
   if (!api) {

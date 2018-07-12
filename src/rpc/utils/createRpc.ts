@@ -15,7 +15,7 @@ import { withoutLoading } from '../../utils/operators';
  * Mixins (aka. interface in Java or trait in Rust) that are added into an rpc$
  * Observable.
  *
- * @ignore
+ * @hidden
  */
 const frequencyMixins = {
   /**
@@ -42,7 +42,7 @@ const frequencyMixins = {
 /**
  * Add metadata to an rpc$ Observable, and transform it into a ReplaySubject(1).
  *
- * @ignore
+ * @hidden
  * @param {Object} metadata - The metadata to add.
  * @return {Observable} - The original rpc$ Observable with patched metadata.
  */

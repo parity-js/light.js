@@ -10,7 +10,7 @@ import createRpc from '../../rpc/utils/createRpc';
 /**
  * Create a fake rpc$ Observable.
  *
- * @ignore
+ * @hidden
  */
 const mockRpc$ = createRpc({ frequency: [timer(0, 1000)] })(() =>
   of('mockRpc')

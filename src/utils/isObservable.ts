@@ -6,9 +6,9 @@
 import { Observable } from 'rxjs';
 
 /**
- * @ignore
- * @param {Any} source$ - The Observable to test.
- * @return {Boolean} - Returns true if it's an Observable.
+ * @hidden
+ * @param source$ - The Observable to test.
+ * @return Returns true if it's an Observable.
  */
 const isObservable = (source$: Observable<any>): source$ is Observable<any> =>
   source$ instanceof Observable;

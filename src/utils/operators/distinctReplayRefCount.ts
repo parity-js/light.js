@@ -9,11 +9,9 @@ import { Observable } from 'rxjs';
 /**
  * Shorthand for distinctUntilChanged(), publishReplay(1) and refCount().
  *
- * @ignore
+ * @hidden
  */
-export const distinctReplayRefCount = () => <T>(
-  source$: Observable<T>
-): Observable<T> =>
+export const distinctReplayRefCount = () => <T>(source$: Observable<T>) =>
   source$.pipe(
     distinctUntilChanged(),
     publishReplay(1),

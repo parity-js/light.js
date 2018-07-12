@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "build": "rimraf lib && tsc",
-    "docs": "esdoc",
+    "docs": "typedoc --out docs --module modules --exclude index.ts",
     "lint": "tslint 'src/**/*.ts'",
     "test": "jest"
   },
@@ -37,15 +37,13 @@
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",
-    "esdoc": "^1.1.0",
-    "esdoc-standard-plugin": "^1.0.0",
-    "esdoc-typescript-plugin": "^1.0.1",
     "jest": "^23.1.0",
     "rimraf": "^2.6.2",
     "rxjs": "^6.2.1",
     "ts-jest": "^23.0.0",
     "tslint": "^5.10.0",
     "tslint-config-semistandard": "^7.0.0",
+    "typedoc": "^0.11.1",
     "typescript": "^2.9.2"
   },
   "peerDependencies": {

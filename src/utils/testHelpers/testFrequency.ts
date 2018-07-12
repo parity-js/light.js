@@ -8,7 +8,7 @@ import isObservable from '../isObservable';
 /**
  * Helper function to make basic tests for frequency$ observables.
  *
- * @ignore
+ * @hidden
  */
 const testFrequency = (name, frequency$) =>
   describe(`${name} rpc`, () => {

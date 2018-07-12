@@ -1,250 +1,414 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="default no-js">
 <head>
-  <meta charset="utf-8">
-  <base data-ice="baseUrl">
-  <title data-ice="title">Home | @parity/light.js</title>
-  <link type="text/css" rel="stylesheet" href="css/style.css">
-  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
-  <script src="script/prettify/prettify.js"></script>
-  <script src="script/manual.js"></script>
-<meta name="description" content="A high-level reactive JS library optimized for light clients"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@parity/light.js"><meta property="twitter:description" content="A high-level reactive JS library optimized for light clients"></head>
-<body class="layout-container" data-ice="rootContainer">
-
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@parity/light.js</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
 <header>
-  <a href="./">Home</a>
-  
-  <a href="identifiers.html">Reference</a>
-  <a href="source.html">Source</a>
-  
-  <div class="search-box">
-  <span>
-    <img src="./image/search.png">
-    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
-  </span>
-    <ul class="search-result"></ul>
-  </div>
-<a style="position:relative; top:3px;" href="https://github.com/parity-js/light.js"><img width="20px" src="./image/github.png"></a></header>
-
-<nav class="navigation" data-ice="nav"><div>
-  <ul>
-    
-  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getApi">getApi</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setApi">setApi</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#frequency">frequency</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-onAccountsChanged$">onAccountsChanged$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-onAccountsInfoChanged$">onAccountsInfoChanged$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-onEvery2Blocks$">onEvery2Blocks$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-onEvery4Blocks$">onEvery4Blocks$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-onEveryBlock$">onEveryBlock$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-onNodeHealthChanged$">onNodeHealthChanged$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-onSyncingChanged$">onSyncingChanged$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-onStartup$">onStartup$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-onEvery2Seconds$">onEvery2Seconds$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-onEverySecond$">onEverySecond$</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#rpc-eth">rpc/eth</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-accounts$">accounts$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-balanceOf$">balanceOf$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-blockNumber$">blockNumber$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultAccount$">defaultAccount$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-height$">height$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-me$">me$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-myBalance$">myBalance$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-syncing$">syncing$</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#rpc-other">rpc/other</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-post$">post$</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#rpc-parity">rpc/parity</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-accountsInfo$">accountsInfo$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-chainName$">chainName$</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-nodeHealth$">nodeHealth$</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#utils">utils</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isLoading">isLoading</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isNullOrLoading">isNullOrLoading</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RPC_LOADING">RPC_LOADING</a></span></span></li>
-</ul>
-</div>
-</nav>
-
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-parity-light-js">@parity/light.js</h1><p>A high-level reactive JS library optimized for light clients.</p>
-<h2 id="getting-started">Getting Started</h2><pre><code class="lang-bash"><code class="source-code prettyprint">yarn install @parity/light.js</code>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@parity/light.js</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> @parity/light.js</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="-parity-light-js">@parity/light.js</h1>
+				<p>A high-level reactive JS library optimized for light clients.</p>
+				<h2 id="getting-started">Getting Started</h2>
+				<pre><code class="lang-bash">yarn install @parity/light.js
 </code></pre>
-<h2 id="usage">Usage</h2><p>Reactively observe JSONRPC methods:</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">import { defaultAccount$ } from &apos;@parity/light.js&apos;;
+				<h2 id="usage">Usage</h2>
+				<p>Reactively observe JSONRPC methods:</p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { defaultAccount$ } <span class="hljs-keyword">from</span> <span class="hljs-string">'@parity/light.js'</span>;
 
-defaultAccount$().subscribe(publicAddress =&gt; console.log(publicAddress));
-// Outputs your public address 0x...
-// Everytime you change your default account (e.g. via MetaMask), it will output your new public address</code>
+defaultAccount$().subscribe(<span class="hljs-function"><span class="hljs-params">publicAddress</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(publicAddress));
+<span class="hljs-comment">// Outputs your public address 0x...</span>
+<span class="hljs-comment">// Everytime you change your default account (e.g. via MetaMask), it will output your new public address</span>
 </code></pre>
-<p>All RxJS tools are available for manipulating Observables:</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">import { balanceOf$, blockNumber$, defaultAccount$ } from &apos;@parity/light.js&apos;;
-import { filter, map, switchMap } from &apos;rxjs/operators&apos;;
+				<p>All RxJS tools are available for manipulating Observables:</p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { balanceOf$, blockNumber$, defaultAccount$ } <span class="hljs-keyword">from</span> <span class="hljs-string">'@parity/light.js'</span>;
+<span class="hljs-keyword">import</span> { filter, map, switchMap } <span class="hljs-keyword">from</span> <span class="hljs-string">'rxjs/operators'</span>;
 
-// Only log pair blocks
+<span class="hljs-comment">// Only log pair blocks</span>
 blockNumber$()
-  .pipe(filter(n =&gt; n % 2 === 0))
-  .subscribe(console.log);
+  .pipe(filter(<span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> n % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>))
+  .subscribe(<span class="hljs-built_in">console</span>.log);
 
-// Get the balance of the default account
-// Will update when balance or default account changes
+<span class="hljs-comment">// Get the balance of the default account</span>
+<span class="hljs-comment">// Will update when balance or default account changes</span>
 defaultAccount$()
   .pipe(
     switchMap(balanceOf$),
-    map(value =&gt; +value) // Return number instead of BigNumber
+    map(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> +value) <span class="hljs-comment">// Return number instead of BigNumber</span>
   )
-  .subscribe(console.log);
+  .subscribe(<span class="hljs-built_in">console</span>.log);
 
-// There&apos;s actually an alias for the above Observable:
-import { myBalance$ } from &apos;@parity/light.js&apos;;
-myBalance$().subscribe(console.log);</code>
+<span class="hljs-comment">// There's actually an alias for the above Observable:</span>
+<span class="hljs-keyword">import</span> { myBalance$ } <span class="hljs-keyword">from</span> <span class="hljs-string">'@parity/light.js'</span>;
+myBalance$().subscribe(<span class="hljs-built_in">console</span>.log);
 </code></pre>
-<p>Contract support:</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">import { defaultAccount$, makeContract$ } from &apos;@parity/light.js&apos;;
-import { map, switchMap } from &apos;rxjs/operators&apos;;
+				<p>Contract support:</p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { defaultAccount$, makeContract$ } <span class="hljs-keyword">from</span> <span class="hljs-string">'@parity/light.js'</span>;
+<span class="hljs-keyword">import</span> { map, switchMap } <span class="hljs-keyword">from</span> <span class="hljs-string">'rxjs/operators'</span>;
 
 defaultAccount$()
   .pipe(
-    switchMap(defaultAccount =&gt;
-      makeContract$(/* contract address */, /* abi */)
-        .myMethod(defaultAccount) // Calling method of contract with arguments
+    switchMap(<span class="hljs-function"><span class="hljs-params">defaultAccount</span> =&gt;</span>
+      makeContract$(<span class="hljs-comment">/* contract address */</span>, <span class="hljs-comment">/* abi */</span>)
+        .myMethod(defaultAccount) <span class="hljs-comment">// Calling method of contract with arguments</span>
     )  )
-  .subscribe(console.log); // Will log the result, and everytime the result changes</code>
+  .subscribe(<span class="hljs-built_in">console</span>.log); <span class="hljs-comment">// Will log the result, and everytime the result changes</span>
 </code></pre>
-<p>All available methods are documented <a href="https://parity-js.github.io/light.js/">in the docs</a>.</p>
-<h2 id="usage-with-react">Usage with React</h2><p>The libray provides a higher-order component to use these Observables easily with React apps.</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">import light from &apos;???&apos;; // ??? to be decided
-import { syncing$ } from &apos;@parity/light.js&apos;;
+				<p>All available methods are documented <a href="https://parity-js.github.io/light.js/">in the docs</a>.</p>
+				<h2 id="usage-with-react">Usage with React</h2>
+				<p>The libray provides a higher-order component to use these Observables easily with React apps.</p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> light <span class="hljs-keyword">from</span> <span class="hljs-string">'???'</span>; <span class="hljs-comment">// ??? to be decided</span>
+<span class="hljs-keyword">import</span> { syncing$ } <span class="hljs-keyword">from</span> <span class="hljs-string">'@parity/light.js'</span>;
 
 @light({
-  syncingVariable: syncing$
+  <span class="hljs-attr">syncingVariable</span>: syncing$
 })
-class MyClass extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
   render() {
-    return &lt;div&gt;{JSON.stringify(this.props.syncingVariable)}&lt;/div&gt;;
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{JSON.stringify(this.props.syncingVariable)}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
   }
-}</code>
+}
 </code></pre>
-<p>The UI will automatically update when the syncing state changes.</p>
-<h2 id="advanced-usage">Advanced Usage</h2><h3 id="frequency">Frequency</h3><p>Each Observable has a frequency upon which it is called. The frequency is documented in each method&apos;s <a href="https://parity-js.github.io/light.js/">documentation</a>.</p>
-<p>For example, the frequency of <code>balanceOf$</code> is:</p>
-<p><code>frequency: [onStartup$, onEvery2Blocks$]</code></p>
-<p>which means that the underlying JSONRPC call <code>eth_getBalance</code> will be made once when the Observable is subscribed (on startup), and once every 2 blocks.</p>
-<p>For the needs of your dapp, you can change the frequency of all Observables like this:</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">import { balanceOf$, onEvery2Seconds$, onStartup$ };
+				<p>The UI will automatically update when the syncing state changes.</p>
+				<h2 id="advanced-usage">Advanced Usage</h2>
+				<h3 id="frequency">Frequency</h3>
+				<p>Each Observable has a frequency upon which it is called. The frequency is documented in each method&#39;s <a href="https://parity-js.github.io/light.js/">documentation</a>.</p>
+				<p>For example, the frequency of <code>balanceOf$</code> is:</p>
+				<p><code>frequency: [onStartup$, onEvery2Blocks$]</code></p>
+				<p>which means that the underlying JSONRPC call <code>eth_getBalance</code> will be made once when the Observable is subscribed (on startup), and once every 2 blocks.</p>
+				<p>For the needs of your dapp, you can change the frequency of all Observables like this:</p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { balanceOf$, onEvery2Seconds$, onStartup$ };
 
 balanceOf$.setFrequency([onStartup$, onEvery2Seconds$]);
-balanceOf$(&apos;0x123&apos;).subscribe(console.log);
-// `eth_getBalance` will be called once immediately, and once every 2 seconds</code>
+balanceOf$(<span class="hljs-string">'0x123'</span>).subscribe(<span class="hljs-built_in">console</span>.log);
+<span class="hljs-comment">// `eth_getBalance` will be called once immediately, and once every 2 seconds</span>
 </code></pre>
-<p>A list of possible frequency Observables is here [TODO doc link], but you can of course put any array of Observables you want.</p>
-<h3 id="rpc-overview">RPC Overview</h3><p>To see an overview of all currently active Observables, type <code>window.parity.rpcOverview()</code> in the browser console. The output will be:</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">{
-  accounts$: {
-    calls: [&apos;eth_accounts&apos;],
-    frequency: [&apos;onAccountsChanged$&apos;],
-    subscribersCount: 4
+				<p>A list of possible frequency Observables is here [TODO doc link], but you can of course put any array of Observables you want.</p>
+				<h3 id="rpc-overview">RPC Overview</h3>
+				<p>To see an overview of all currently active Observables, type <code>window.parity.rpcOverview()</code> in the browser console. The output will be:</p>
+				<pre><code class="lang-javascript">{
+  <span class="hljs-attr">accounts$</span>: {
+    <span class="hljs-attr">calls</span>: [<span class="hljs-string">'eth_accounts'</span>],
+    <span class="hljs-attr">frequency</span>: [<span class="hljs-string">'onAccountsChanged$'</span>],
+    <span class="hljs-attr">subscribersCount</span>: <span class="hljs-number">4</span>
   },
-  balanceOf$: {
-    calls: [&apos;eth_getBalance&apos;],
-    frequency: [&apos;onEvery2Blocks$&apos;, &apos;onStartup$&apos;],
-    subscribersCount: 2
+  <span class="hljs-attr">balanceOf$</span>: {
+    <span class="hljs-attr">calls</span>: [<span class="hljs-string">'eth_getBalance'</span>],
+    <span class="hljs-attr">frequency</span>: [<span class="hljs-string">'onEvery2Blocks$'</span>, <span class="hljs-string">'onStartup$'</span>],
+    <span class="hljs-attr">subscribersCount</span>: <span class="hljs-number">2</span>
   },
-  defaultAccount$: {
-    dependsOn: [&apos;accounts$&apos;],
-    subscribersCount: 3
+  <span class="hljs-attr">defaultAccount$</span>: {
+    <span class="hljs-attr">dependsOn</span>: [<span class="hljs-string">'accounts$'</span>],
+    <span class="hljs-attr">subscribersCount</span>: <span class="hljs-number">3</span>
   },
-  height$: {
-    frequency: [&apos;onEveryBlock$&apos;],
-    subscribersCount: 2
+  <span class="hljs-attr">height$</span>: {
+    <span class="hljs-attr">frequency</span>: [<span class="hljs-string">'onEveryBlock$'</span>],
+    <span class="hljs-attr">subscribersCount</span>: <span class="hljs-number">2</span>
   },
-  me$: {
-    dependsOn: [&apos;defaultAccount$&apos;],
-    subscribersCount: 1
+  <span class="hljs-attr">me$</span>: {
+    <span class="hljs-attr">dependsOn</span>: [<span class="hljs-string">'defaultAccount$'</span>],
+    <span class="hljs-attr">subscribersCount</span>: <span class="hljs-number">1</span>
   },
-  syncing$: {
-    frequency: [&apos;onSyncingChanged$&apos;],
-    subscribersCount: 1
+  <span class="hljs-attr">syncing$</span>: {
+    <span class="hljs-attr">frequency</span>: [<span class="hljs-string">'onSyncingChanged$'</span>],
+    <span class="hljs-attr">subscribersCount</span>: <span class="hljs-number">1</span>
   }
-}</code>
+}
 </code></pre>
-<p>The keys are the Observables you are using in your dapp, each containing an object where:</p>
-<ul>
-<li><code>calls</code>: the underlying JSONRPC calls made.</li>
-<li><code>dependsOn</code>: means that the current Observable depends on other Observables, so it doesn&apos;t make any JSONRPC calls itself, and doesn&apos;t have a frequency.</li>
-<li><code>frequency</code>: the frequency upon which the Observable is called.</li>
-<li><code>subscribersCount</code>: the number of subscribers this Observable has.</li>
-</ul>
-<p>This output can of course be different on different pages of your dapp, if they use different Observables.</p>
-<h2 id="notes-about-implementation">Notes about Implementation</h2><h3 id="observables-are-cold">Observables are cold</h3><p>The underlying JSONRPC method is only called if there&apos;s at least one subscriber.</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">import { balanceOf$ } from &apos;@parity/light.js&apos;;
+				<p>The keys are the Observables you are using in your dapp, each containing an object where:</p>
+				<ul>
+					<li><code>calls</code>: the underlying JSONRPC calls made.</li>
+					<li><code>dependsOn</code>: means that the current Observable depends on other Observables, so it doesn&#39;t make any JSONRPC calls itself, and doesn&#39;t have a frequency.</li>
+					<li><code>frequency</code>: the frequency upon which the Observable is called.</li>
+					<li><code>subscribersCount</code>: the number of subscribers this Observable has.</li>
+				</ul>
+				<p>This output can of course be different on different pages of your dapp, if they use different Observables.</p>
+				<h2 id="notes-about-implementation">Notes about Implementation</h2>
+				<h3 id="observables-are-cold">Observables are cold</h3>
+				<p>The underlying JSONRPC method is only called if there&#39;s at least one subscriber.</p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { balanceOf$ } <span class="hljs-keyword">from</span> <span class="hljs-string">'@parity/light.js'</span>;
 
-const myObs$ = balanceOf$(&apos;0x123&apos;);
-// Observable created, but `eth_getBalance` not called yet
-const subscription = myObs$.subscribe(console.log);
-// `eth_getBalance` called for the 1st time
+<span class="hljs-keyword">const</span> myObs$ = balanceOf$(<span class="hljs-string">'0x123'</span>);
+<span class="hljs-comment">// Observable created, but `eth_getBalance` not called yet</span>
+<span class="hljs-keyword">const</span> subscription = myObs$.subscribe(<span class="hljs-built_in">console</span>.log);
+<span class="hljs-comment">// `eth_getBalance` called for the 1st time</span>
 
-// Some other code...
+<span class="hljs-comment">// Some other code...</span>
 
 subscription.unsubscribe();
-// `eth_getBalance` stops being called</code>
+<span class="hljs-comment">// `eth_getBalance` stops being called</span>
 </code></pre>
-<h3 id="observables-are-publishreplay-1-">Observables are PublishReplay(1)</h3><p>Let&apos;s take <code>blockNumber()$</code> which fires blocks 7, 8 and 9, and has 3 subscribers that don&apos;t subscribe at the same time.</p>
-<p>We have the following marble diagram (<code>^</code> denotes when the subscriber subscribes).</p>
-<pre><code><code class="source-code prettyprint">blockNumber$(): -----7----------8------9-----|
-subscriber1:    -^---7----------8------9-----|
-subscriber2:    ------------^7--8------9-----|
-subscriber3:    --------------------------^9-|</code>
+				<h3 id="observables-are-publishreplay-1-">Observables are PublishReplay(1)</h3>
+				<p>Let&#39;s take <code>blockNumber()$</code> which fires blocks 7, 8 and 9, and has 3 subscribers that don&#39;t subscribe at the same time.</p>
+				<p>We have the following marble diagram (<code>^</code> denotes when the subscriber subscribes).</p>
+				<pre><code><span class="hljs-comment">blockNumber$():</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">7</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">8</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">9</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span>
+<span class="hljs-comment">subscriber1:</span>    <span class="hljs-literal">-</span><span class="hljs-comment">^</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">7</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">8</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">9</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span>
+<span class="hljs-comment">subscriber2:</span>    <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">^7</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">8</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">9</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span>
+<span class="hljs-comment">subscriber3:</span>    <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">^9</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span>
 </code></pre><p>Note: the default behavior for Observables is without PublishReplay, i.e.</p>
-<pre><code><code class="source-code prettyprint">blockNumber$(): -----7----------8------9-----|
-subscriber1:    -^---7----------8------9-----|
-subscriber2:    ------------^---8------9-----|
-subscriber3:    --------------------------^--|</code>
+				<pre><code><span class="hljs-comment">blockNumber$():</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">7</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">8</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">9</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span>
+<span class="hljs-comment">subscriber1:</span>    <span class="hljs-literal">-</span><span class="hljs-comment">^</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">7</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">8</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">9</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span>
+<span class="hljs-comment">subscriber2:</span>    <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">^</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">8</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">9</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span>
+<span class="hljs-comment">subscriber3:</span>    <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">^</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span>
 </code></pre><p>But Observables in this library are PublishReplay(1). <a href="https://blog.angularindepth.com/rxjs-how-to-use-refcount-73a0c6619a4e">Read more</a> about PublishReplay.</p>
-<h3 id="observables-are-memoized">Observables are memoized</h3><pre><code class="lang-javascript"><code class="source-code prettyprint">const obs1$ = balanceOf$(&apos;0x123&apos;);
-const obs2$ = balanceOf$(&apos;0x123&apos;);
-console.log(obs1$ === obs2$); // true
+				<h3 id="observables-are-memoized">Observables are memoized</h3>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> obs1$ = balanceOf$(<span class="hljs-string">'0x123'</span>);
+<span class="hljs-keyword">const</span> obs2$ = balanceOf$(<span class="hljs-string">'0x123'</span>);
+<span class="hljs-built_in">console</span>.log(obs1$ === obs2$); <span class="hljs-comment">// true</span>
 
-const obs3$ = balanceOf$(&apos;0x456&apos;);
-console.log(obs1$ === obs3$); // false</code>
+<span class="hljs-keyword">const</span> obs3$ = balanceOf$(<span class="hljs-string">'0x456'</span>);
+<span class="hljs-built_in">console</span>.log(obs1$ === obs3$); <span class="hljs-comment">// false</span>
 </code></pre>
-<h3 id="underlying-api-calls-are-not-unnessarily-repeated">Underlying API calls are not unnessarily repeated</h3><pre><code class="lang-javascript"><code class="source-code prettyprint">const obs1$ = balanceOf$(&apos;0x123&apos;);
-const obs2$ = balanceOf$(&apos;0x123&apos;);
+				<h3 id="underlying-api-calls-are-not-unnessarily-repeated">Underlying API calls are not unnessarily repeated</h3>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> obs1$ = balanceOf$(<span class="hljs-string">'0x123'</span>);
+<span class="hljs-keyword">const</span> obs2$ = balanceOf$(<span class="hljs-string">'0x123'</span>);
 
-obs1$.subscribe(console.log);
-obs1$.subscribe(console.log);
-obs2$.subscribe(console.log);
-// Logs 3 times the balance
-// But only one call to `eth_getBalance` has been made
+obs1$.subscribe(<span class="hljs-built_in">console</span>.log);
+obs1$.subscribe(<span class="hljs-built_in">console</span>.log);
+obs2$.subscribe(<span class="hljs-built_in">console</span>.log);
+<span class="hljs-comment">// Logs 3 times the balance</span>
+<span class="hljs-comment">// But only one call to `eth_getBalance` has been made</span>
 
-const obs3$ = balanceOf$(&apos;0x456&apos;);
-// Logs a new balance, another call to `eth_getBalance` is made</code>
+<span class="hljs-keyword">const</span> obs3$ = balanceOf$(<span class="hljs-string">'0x456'</span>);
+<span class="hljs-comment">// Logs a new balance, another call to `eth_getBalance` is made</span>
 </code></pre>
-<h3 id="underlying-pubsub-subscriptions-are-dropped-when-there--39-s-no-subscriber">Underlying PubSub subscriptions are dropped when there&apos;s no subscriber</h3><pre><code class="lang-javascript"><code class="source-code prettyprint">import { blockNumber$ } from &apos;@parity/light.js&apos;;
+				<h3 id="underlying-pubsub-subscriptions-are-dropped-when-there-s-no-subscriber">Underlying PubSub subscriptions are dropped when there&#39;s no subscriber</h3>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { blockNumber$ } <span class="hljs-keyword">from</span> <span class="hljs-string">'@parity/light.js'</span>;
 
-const myObs$ = blockNumber$();
-console.log(blockNumber$.frequency); // [onEveryBlock$]
-// Note: onEveryBlock$ creates a pubsub on `eth_blockNumber`
+<span class="hljs-keyword">const</span> myObs$ = blockNumber$();
+<span class="hljs-built_in">console</span>.log(blockNumber$.frequency); <span class="hljs-comment">// [onEveryBlock$]</span>
+<span class="hljs-comment">// Note: onEveryBlock$ creates a pubsub on `eth_blockNumber`</span>
 
-const subscription = myObs$.subscribe(console.log);
-// Creates a pubsub subscription
+<span class="hljs-keyword">const</span> subscription = myObs$.subscribe(<span class="hljs-built_in">console</span>.log);
+<span class="hljs-comment">// Creates a pubsub subscription</span>
 
-// Some other code...
+<span class="hljs-comment">// Some other code...</span>
 
 subscription.unsubscribe();
-// Drops the pubsub subscription</code>
+<span class="hljs-comment">// Drops the pubsub subscription</span>
 </code></pre>
-<h2 id="todo">TODO</h2><ul>
-<li>Don&apos;t commit <code>lib/</code> anymore, when it&apos;s on npm.</li>
-<li>Switch to TypeScript.</li>
-<li>Have 100% test coverage.</li>
-</ul>
+				<h2 id="todo">TODO</h2>
+				<ul>
+					<li>Don&#39;t commit <code>lib/</code> anymore, when it&#39;s on npm.</li>
+					<li>Switch to TypeScript.</li>
+					<li>Have 100% test coverage.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_api_.html">"api"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_frequency_accounts_.html">"frequency/accounts"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_frequency_blocks_.html">"frequency/blocks"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_frequency_health_.html">"frequency/health"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_frequency_index_.html">"frequency/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_frequency_other_.html">"frequency/other"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_frequency_time_.html">"frequency/time"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_frequency_utils_createonfrompubsub_.html">"frequency/utils/create<wbr>OnFrom<wbr>Pubsub"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_index_.html">"index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_overview_index_.html">"overview/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_rpc_eth_eth_.html">"rpc/eth/eth"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_rpc_eth_index_.html">"rpc/eth/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_rpc_index_.html">"rpc/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_rpc_other_index_.html">"rpc/other/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_rpc_other_makecontract_.html">"rpc/other/make<wbr>Contract"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_rpc_other_post_.html">"rpc/other/post"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_rpc_parity_index_.html">"rpc/parity/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_rpc_parity_parity_.html">"rpc/parity/parity"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_rpc_utils_createrpc_.html">"rpc/utils/create<wbr>Rpc"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_rpc_utils_getfrequency_.html">"rpc/utils/get<wbr>Frequency"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_utils_isloading_.html">"utils/is<wbr>Loading"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_utils_isobservable_.html">"utils/is<wbr>Observable"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_utils_operators_distinctreplayrefcount_.html">"utils/operators/distinct<wbr>Replay<wbr>Ref<wbr>Count"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_utils_operators_index_.html">"utils/operators/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_utils_operators_switchmappromise_.html">"utils/operators/switch<wbr>Map<wbr>Promise"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_utils_operators_withoutloading_.html">"utils/operators/without<wbr>Loading"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
 </div>
-</div>
-
-<footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
 </footer>
-
-<script src="script/search_index.js"></script>
-<script src="script/search.js"></script>
-<script src="script/pretty-print.js"></script>
-<script src="script/inherited-summary.js"></script>
-<script src="script/test-summary.js"></script>
-<script src="script/inner-link.js"></script>
-<script src="script/patch-for-local.js"></script>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

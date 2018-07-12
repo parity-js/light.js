@@ -6,7 +6,7 @@
 /**
  * A pubsub Api object that rejects.
  *
- * @ignore
+ * @hidden
  */
 export const rejectApi = (rejectWith = new Error('bar'), isPubSub = true) => ({
   fake: {
@@ -29,7 +29,7 @@ export const rejectApi = (rejectWith = new Error('bar'), isPubSub = true) => ({
 /**
  * A pubsub Api object that resolves.
  *
- * @ignore
+ * @hidden
  */
 export const resolveApi = (
   resolveWith: string | { error: string } = 'foo',

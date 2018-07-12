@@ -12,7 +12,7 @@ import { distinctReplayRefCount } from '../../utils/operators/distinctReplayRefC
 /**
  * Observable that emits on each pubsub event.
  *
- * @ignore
+ * @hidden
  * @example onAccountsChanged$, onEveryBlock$...
  */
 const createOnFromPubsub = <T>(pubsub: string, api: any) => {
