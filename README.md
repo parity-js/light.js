@@ -2,6 +2,8 @@
 
 A high-level reactive JS library optimized for light clients.
 
+[Documentation](https://parity-js.github.io/light.js/)
+
 ## Getting Started
 
 ```bash
