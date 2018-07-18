@@ -50,14 +50,14 @@ myBalance$().subscribe(console.log);
 Contract support:
 
 ```javascript
-import { defaultAccount$, makeContract$ } from '@parity/light.js';
+import { defaultAccount$, makeContract } from '@parity/light.js';
 import { map, switchMap } from 'rxjs/operators';
 
 defaultAccount$()
   .pipe(
     switchMap(defaultAccount =>
-      makeContract$(/* contract address */, /* abi */)
-        .myMethod(defaultAccount) // Calling method of contract with arguments
+      makeContract(/* contract address */, /* abi */)
+        .myMethod$(defaultAccount) // Calling method of contract with arguments, note the additional $ at the end
     )  )
   .subscribe(console.log); // Will log the result, and everytime the result changes
 ```
