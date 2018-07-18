@@ -21,7 +21,6 @@ const testFrequency = (name, frequency$) =>
     });
 
     it('should contain a `metadata` field', () => {
-      console.log(frequency$);
       expect(frequency$.metadata).toBeTruthy();
     });
 
