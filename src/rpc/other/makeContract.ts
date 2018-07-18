@@ -48,7 +48,7 @@ export const makeContract = memoizee(
     const result = {
       abi: abi,
       address: address,
-      get contractObject() {
+      get contractObject () {
         return getContract(address, abiJson);
       }
     };
