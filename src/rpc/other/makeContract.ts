@@ -41,7 +41,7 @@ const getContract = memoizee(
  * contract, and each function return an Observable which will fire when the
  * function resolves.
  */
-export const makeContract$ = memoizee(
+export const makeContract = memoizee(
   (address: Address, abiJson: AbiType) => {
     const abi = new Abi(abiJson);
     // Variable result will hold the final object to return
@@ -68,7 +68,7 @@ export const makeContract$ = memoizee(
           args.length === method.inputs.length + 1 ? args.pop() : {};
 
         if (method.constant) {
-          return getFrequency(makeContract$).pipe(
+          return getFrequency(makeContract).pipe(
             switchMapPromise(() => contract.instance[name].call(options, args)),
             distinctReplayRefCount()
           );
@@ -90,7 +90,7 @@ export const makeContract$ = memoizee(
   },
   { length: 1 } // Only memoize by address
 );
-makeContract$.metadata = {
+makeContract.metadata = {
   calls: [],
   frequency: [onEveryBlock$]
 };
