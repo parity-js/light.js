@@ -9,9 +9,7 @@ node_modules
 # production
 build
 dist
-# /lib # TODO Don't commit lib when we publish to npm
-/lib/**/*.spec.js
-/lib/utils/testHelpers
+lib
 
 # logs
 *.log*

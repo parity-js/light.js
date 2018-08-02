@@ -26,6 +26,7 @@
   ],
   "scripts": {
     "build": "rimraf lib && tsc",
+    "install": "npm run build",
     "docs": "esdoc",
     "lint": "tslint 'src/**/*.ts'",
     "test": "jest"
