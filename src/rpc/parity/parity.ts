@@ -9,7 +9,7 @@ import createRpc$ from '../utils/createRpc';
 import getFrequency from '../utils/getFrequency';
 import {
   onAccountsInfoChanged$,
-  onNodeHealthChanged$,
+  onEvery5Seconds$,
   onStartup$
 } from '../../frequency';
 import { switchMapPromise } from '../../utils/operators';
@@ -39,11 +39,11 @@ export const chainName$ = createRpc$<string>({
 );
 
 /**
- * Get the node's health. Calls `parity_nodeHealth`.
+ * Get the amount of peers. Calls `net_peerCount`
  *
- * @return {Observable<Object>} - An Observable containing the health.
+ * @return {Observable<Number>} - An Observable containing the number.
  */
-export const nodeHealth$ = createRpc$<Object>({
-  calls: ['parity_nodeHealth'],
-  frequency: [onNodeHealthChanged$]
-})(() => getFrequency(nodeHealth$));
+export const peerCount$ = createRpc$<Number>({
+  calls: ['net_peerCount'],
+  frequency: [onEvery5Seconds$]
+})(() => getFrequency(peerCount$).pipe(switchMapPromise(() => api().net.peerCount())));

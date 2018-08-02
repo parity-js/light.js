@@ -3,8 +3,7 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { empty } from 'rxjs';
-import { merge } from 'rxjs/operators';
+import { merge } from 'rxjs';
 
 import { RpcObservable } from '../../types';
 
@@ -19,7 +18,7 @@ import { RpcObservable } from '../../types';
  * @return {Observable} - An Observable that represents the frequency.
  */
 const getFrequency = <T>(rpc$: RpcObservable<T>) => {
-  return empty().pipe(merge(...rpc$.metadata.frequency));
+  return merge(...rpc$.metadata.frequency);
 };
 
 export default getFrequency;
