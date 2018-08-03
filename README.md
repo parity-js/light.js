@@ -243,6 +243,5 @@ subscription.unsubscribe();
 
 ## TODO
 
-- Don't commit `lib/` anymore, when it's on npm.
 - Switch to TypeScript.
 - Have 100% test coverage.
