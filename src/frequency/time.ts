@@ -18,3 +18,9 @@ onEverySecond$.metadata = { name: 'onEverySecond$' };
  */
 export const onEvery2Seconds$ = timer(0, 2000) as FrequencyObservable<number>;
 onEvery2Seconds$.metadata = { name: 'onEvery2Seconds$' };
+
+/**
+ * Observable that emits every five seconds.
+ */
+export const onEvery5Seconds$ = timer(0, 5000) as FrequencyObservable<number>;
+onEvery5Seconds$.metadata = { name: 'onEvery5Seconds$' };
