@@ -159,12 +159,116 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../guides/guide1.html">
+        <li class="chapter " data-level="1.3.1" data-path="../guides/tutorial1-set-up-a-light-client.html">
             
-                <a href="../guides/guide1.html">
+                <a href="../guides/tutorial1-set-up-a-light-client.html">
             
                     
-                    Guide1
+                    Tutorial Part 1: Set up a Light Client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../guides/tutorial2-our-first-rpcobservable.html">
+            
+                <a href="../guides/tutorial2-our-first-rpcobservable.html">
+            
+                    
+                    Tutorial Part 2: Our First RpcObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../guides/tutorial3-manipulating-rpcobservables.html">
+            
+                <a href="../guides/tutorial3-manipulating-rpcobservables.html">
+            
+                    
+                    Tutorial Part 3: Manipulating RpcObservables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../guides/tutorial4-send-a-transaction.html">
+            
+                <a href="../guides/tutorial4-send-a-transaction.html">
+            
+                    
+                    Tutorial Part 4: Send a Transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../guides/tutorial5-work-with-contracts.html">
+            
+                <a href="../guides/tutorial5-work-with-contracts.html">
+            
+                    
+                    Tutorial Part 5: Work with Contracts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../guides/tutorial6-integrate-with-react.md">
+            
+                <span>
+            
+                    
+                    Tutorial Part 6: Integrate with React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../guides/redux-integration.md">
+            
+                <span>
+            
+                    
+                    Redux Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../guides/angular-integration.md">
+            
+                <span>
+            
+                    
+                    Angular Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../guides/ovewview-of-active-rpcobservables.md">
+            
+                <span>
+            
+                    
+                    Overview of Active RpcObservables
             
                 </a>
             
@@ -248,9 +352,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../api/API.html">
+        <li class="chapter " data-level="1.5" data-path="../api/API.md">
             
-                <a href="../api/API.html">
+                <span>
             
                     
                     API
@@ -611,8 +715,9 @@
                                 
                                 <h1 id="installation">Installation</h1>
 <h2 id="from-npm">From npm</h2>
-<pre><code class="lang-bash">yarn install @parity/light.js <span class="hljs-comment"># Or npm install @parity/light.js</span>
+<pre><code class="lang-bash">yarn install rxjs @parity/light.js <span class="hljs-comment"># Or npm install</span>
 </code></pre>
+<p>RxJS is a needed peer-dependency.</p>
 <h2 id="usage">Usage</h2>
 <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> light, { balanceOf$ } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./light.js&apos;</span>;
 
@@ -623,10 +728,7 @@ balanceOf$(<span class="hljs-string">&apos;0xbb9bc244d798123fde783fcc1c72d3bb8c1
 </code></pre>
 <p>Here are some examples of providers you can use.</p>
 <h3 id="provider-1-your-own-light-client-recommended-way-for-development">Provider 1: Your own Light Client (Recommended Way for development)</h3>
-<p>Please install Parity Ethereum first: <a href="https://parity.io" target="_blank">https://parity.io</a>. Then run Parity Ethereum with the following flags:</p>
-<pre><code class="lang-bash">/path/to/parity --chain kovan --light --ws-origins all
-</code></pre>
-<p>We are using the Kovan testnet so that we are not testing our dapp with real Ether. To get some fake Kovan ETH to play with, head to the faucet: <a href="https://faucet.kovan.network/" target="_blank">https://faucet.kovan.network/</a>.</p>
+<p>Make sure a Light Client is running locally with a WebSocket server on port 8546. Follow <a href="../guides/tutorial1-set-up-a-light-client.html">this tutorial</a> to learn how to do it.</p>
 <p>Then create a new provider that connects to the Light Client:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">import</span> Api <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@parity/api&apos;</span>;
 <span class="hljs-keyword">import</span> light <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@parity/light.js&apos;</span>;
@@ -716,7 +818,7 @@ light.setProvider(provider);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Installation","level":"1.2.1","depth":2,"next":{"title":"Does this work with a full node?","level":"1.2.2","depth":2,"path":"getting-started/does-it-work-with-a-full-node.md","ref":"getting-started/does-it-work-with-a-full-node.md","articles":[]},"previous":{"title":"Getting started","level":"1.2","depth":1,"ref":"","articles":[{"title":"Installation","level":"1.2.1","depth":2,"path":"getting-started/installation.md","ref":"getting-started/installation.md","articles":[]},{"title":"Does this work with a full node?","level":"1.2.2","depth":2,"path":"getting-started/does-it-work-with-a-full-node.md","ref":"getting-started/does-it-work-with-a-full-node.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"getting-started/installation.md","mtime":"2018-08-27T09:15:18.625Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-27T11:55:46.463Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Installation","level":"1.2.1","depth":2,"next":{"title":"Does this work with a full node?","level":"1.2.2","depth":2,"path":"getting-started/does-it-work-with-a-full-node.md","ref":"getting-started/does-it-work-with-a-full-node.md","articles":[]},"previous":{"title":"Getting started","level":"1.2","depth":1,"ref":"","articles":[{"title":"Installation","level":"1.2.1","depth":2,"path":"getting-started/installation.md","ref":"getting-started/installation.md","articles":[]},{"title":"Does this work with a full node?","level":"1.2.2","depth":2,"path":"getting-started/does-it-work-with-a-full-node.md","ref":"getting-started/does-it-work-with-a-full-node.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"getting-started/installation.md","mtime":"2018-08-30T13:32:23.388Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T14:35:31.468Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

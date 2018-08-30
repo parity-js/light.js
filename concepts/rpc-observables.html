@@ -161,12 +161,116 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../guides/guide1.html">
+        <li class="chapter " data-level="1.3.1" data-path="../guides/tutorial1-set-up-a-light-client.html">
             
-                <a href="../guides/guide1.html">
+                <a href="../guides/tutorial1-set-up-a-light-client.html">
             
                     
-                    Guide1
+                    Tutorial Part 1: Set up a Light Client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../guides/tutorial2-our-first-rpcobservable.html">
+            
+                <a href="../guides/tutorial2-our-first-rpcobservable.html">
+            
+                    
+                    Tutorial Part 2: Our First RpcObservable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../guides/tutorial3-manipulating-rpcobservables.html">
+            
+                <a href="../guides/tutorial3-manipulating-rpcobservables.html">
+            
+                    
+                    Tutorial Part 3: Manipulating RpcObservables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../guides/tutorial4-send-a-transaction.html">
+            
+                <a href="../guides/tutorial4-send-a-transaction.html">
+            
+                    
+                    Tutorial Part 4: Send a Transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../guides/tutorial5-work-with-contracts.html">
+            
+                <a href="../guides/tutorial5-work-with-contracts.html">
+            
+                    
+                    Tutorial Part 5: Work with Contracts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../guides/tutorial6-integrate-with-react.md">
+            
+                <span>
+            
+                    
+                    Tutorial Part 6: Integrate with React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../guides/redux-integration.md">
+            
+                <span>
+            
+                    
+                    Redux Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../guides/angular-integration.md">
+            
+                <span>
+            
+                    
+                    Angular Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../guides/ovewview-of-active-rpcobservables.md">
+            
+                <span>
+            
+                    
+                    Overview of Active RpcObservables
             
                 </a>
             
@@ -250,9 +354,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../api/API.html">
+        <li class="chapter " data-level="1.5" data-path="../api/API.md">
             
-                <a href="../api/API.html">
+                <span>
             
                     
                     API
@@ -612,15 +716,15 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="rpcobservables">RpcObservables</h1>
-<p>The whole library <code>@parity/light.js</code> works with the concept of <code>RpcObservable</code>s.</p>
-<p>The name <em>RpcObservable</em> might actually not be the best, because it&apos;s actually <strong>not</strong> an Observable. A <code>RpcObservable</code> is a function returning an Observable.</p>
-<p>Here&apos;s the TypeScript type of a <code>RpcObservable</code>:</p>
+<p>The whole library <code>@parity/light.js</code> works with the concept of RpcObservables.</p>
+<p>The name <em>RpcObservable</em> might actually not be the best, because it&apos;s actually <strong>not</strong> an Observable. A RpcObservable is a function returning an Observable.</p>
+<p>Here&apos;s the TypeScript type of a RpcObservable:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> interface RpcObservable&lt;Source, Out&gt; {
   (...args: any[]): Observable&lt;Out&gt;;
   metadata?: Metadata&lt;Source, Out&gt;;
 }
 </code></pre>
-<p>Or in simple words: a <code>RpcObservable</code> is a function returning an Observable, and this function has some metadata.</p>
+<p>Or in simple words: a RpcObservable is a function returning an Observable, and this function has some metadata.</p>
 <p>Let&apos;s have a look at <code>MetaData</code>:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">export</span> interface Metadata&lt;Source, Out&gt; {
   <span class="hljs-comment">// --snip--</span>
@@ -667,25 +771,25 @@ onEvery5Seconds$.pipe(switchMap(checkPeerCount)));
 <li><code>onStartup$</code> (fires once at dapp start)</li>
 <li>etc.</li>
 </ul>
-<p>The full list can be seen in the <a href="../api/API.html">API section</a>.</p>
-<h2 id="rpcobservable"><code>RpcObservable</code></h2>
-<p>An <code>RpcObservable</code> can either have a frequency, or depend on another <code>RpcObservable</code> which has a frequency.</p>
-<h3 id="rpcobservable-with-frequencies"><code>RpcObservable</code> with frequencies</h3>
-<p>An <code>RpcObservable</code> with a frequency has its <code>Metadata.frequency</code> field filled with one or more <code>FrequencyObservable</code>s. For example, <code>balanceOf$</code> has as frequency of <code>[onEveryBlock$]</code>.</p>
-<p>Then, this <code>RpcObservable</code> has an array of pipes, which will be piped to the <code>FrequencyObservable</code>. For example, <code>balanceOf$</code> has one pipe which make a <code>eth_getBalance</code> JSONRPC request.</p>
-<h3 id="rpcobservable-which-depends-on-another-rpcobservable"><code>RpcObservable</code> which depends on another <code>RpcObservable</code></h3>
-<p>Some <code>RpcObservable</code> don&apos;t have their own frequencies, but depend on a parent <code>RpcObservable</code>. This is the case of <code>defaultAccount$</code>, which depends on <code>account$</code>. In this case, the <code>Metadata.dependsOn</code> field points to the parent <code>RpcObservable</code>.</p>
-<p>These <code>RpcObservable</code>s still have some pipes. For example <code>defaultAccount$</code> has one pipe which takes the 1st element of the array returned by <code>accounts$</code>.</p>
-<h3 id="calling-an-rpcobservable">Calling an <code>RpcObservable</code></h3>
-<p>As per the TypeScript signature, the <code>RpcObservable</code> function can take arguments. These arguments are then passed down into the pipes. For instance, the argument <code>0x123</code> in <code>balanceOf$(&apos;0x123&apos;)</code> is passed down into <code>balanceOf$</code>&apos;s pipes, i.e. into the JSONRPC <code>eth_getBalance</code> call.</p>
-<h3 id="examples-of-rpcobservable">Examples of <code>RpcObservable</code></h3>
+<p>The full list can be seen in the <a href="../api/API.md">API section</a>.</p>
+<h2 id="rpcobservable">RpcObservable</h2>
+<p>An RpcObservable can either have a frequency, or depend on another RpcObservable which has a frequency.</p>
+<h3 id="rpcobservable-with-frequencies">RpcObservable with frequencies</h3>
+<p>An RpcObservable with a frequency has its <code>Metadata.frequency</code> field filled with one or more <code>FrequencyObservable</code>s. For example, <code>balanceOf$</code> has as frequency of <code>[onEveryBlock$]</code>.</p>
+<p>Then, this RpcObservable has an array of pipes, which will be piped to the <code>FrequencyObservable</code>. For example, <code>balanceOf$</code> has one pipe which make a <code>eth_getBalance</code> JSONRPC request.</p>
+<h3 id="rpcobservable-which-depends-on-another-rpcobservable">RpcObservable which depends on another RpcObservable</h3>
+<p>Some RpcObservable don&apos;t have their own frequencies, but depend on a parent RpcObservable. This is the case of <code>defaultAccount$</code>, which depends on <code>account$</code>. In this case, the <code>Metadata.dependsOn</code> field points to the parent RpcObservable.</p>
+<p>These RpcObservables still have some pipes. For example <code>defaultAccount$</code> has one pipe which takes the 1st element of the array returned by <code>accounts$</code>.</p>
+<h3 id="calling-an-rpcobservable">Calling an RpcObservable</h3>
+<p>As per the TypeScript signature, the RpcObservable function can take arguments. These arguments are then passed down into the pipes. For instance, the argument <code>0x123</code> in <code>balanceOf$(&apos;0x123&apos;)</code> is passed down into <code>balanceOf$</code>&apos;s pipes, i.e. into the JSONRPC <code>eth_getBalance</code> call.</p>
+<h3 id="examples-of-rpcobservable">Examples of RpcObservable</h3>
 <ul>
 <li><code>accounts$</code>: Returns the array of accounts managed by the node. Frequency is <code>onAccountsChanged$</code>.</li>
 <li><code>defaultAccount$</code>: Returns the default active account. Depends on <code>accounts$</code>.</li>
 <li><code>blockNumber$</code>: Returns the current block number. Frequency is <code>onEveryBlock$</code>.</li>
 <li><code>peerCount$</code>: Returns the number of peers. Frequency is <code>onEvery5Seconds$</code>.</li>
 </ul>
-<p>The full list can be seen in the <a href="../api/API.html">API section</a>.</p>
+<p>The full list can be seen in the <a href="../api/API.md">API section</a>.</p>
 
                                 
                                 </section>
@@ -729,7 +833,7 @@ onEvery5Seconds$.pipe(switchMap(checkPeerCount)));
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"RpcObservables","level":"1.4.3","depth":2,"next":{"title":"RpcObservables Properties","level":"1.4.4","depth":2,"path":"concepts/rpc-observables-properties.md","ref":"concepts/rpc-observables-properties.md","articles":[]},"previous":{"title":"Reactive Programming","level":"1.4.2","depth":2,"path":"concepts/reactive-programming.md","ref":"concepts/reactive-programming.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts/rpc-observables.md","mtime":"2018-08-27T09:15:18.624Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-27T11:55:46.463Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RpcObservables","level":"1.4.3","depth":2,"next":{"title":"RpcObservables Properties","level":"1.4.4","depth":2,"path":"concepts/rpc-observables-properties.md","ref":"concepts/rpc-observables-properties.md","articles":[]},"previous":{"title":"Reactive Programming","level":"1.4.2","depth":2,"path":"concepts/reactive-programming.md","ref":"concepts/reactive-programming.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts/rpc-observables.md","mtime":"2018-08-30T13:32:23.411Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T14:35:31.468Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
