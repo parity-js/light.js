@@ -720,7 +720,7 @@
   frequency: [onAccountsChanged$],
   name: &apos;accounts$&apos;
 })</address[],></p>
-<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/79a5f83/packages/light.js/src/rpc/eth/eth.ts#L30" target="_blank">rpc/eth/eth.ts:30</a></em></p>
+<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/68beba7/packages/light.js/src/rpc/eth/eth.ts#L30" target="_blank">rpc/eth/eth.ts:30</a></em></p>
 <p>Observable which contains the array of all addresses managed by the light client.</p>
 <p>Calls eth<em>accounts.
 *<em>_returns</em></em><em>: </em>   An Observable containing the list of public addresses.</p>
@@ -735,7 +735,7 @@
     switchMapPromise(() =&gt; api().eth.getBalance(address))
   ]
 })</any,></p>
-<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/79a5f83/packages/light.js/src/rpc/eth/eth.ts#L41" target="_blank">rpc/eth/eth.ts:41</a></em></p>
+<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/68beba7/packages/light.js/src/rpc/eth/eth.ts#L41" target="_blank">rpc/eth/eth.ts:41</a></em></p>
 <p>Get the balance of a given account. Calls <code>eth_getBalance</code>.
 <em><strong>param</strong></em>: The account address to query the balance.</p>
 <p><em><strong>returns</strong></em>: *   An Observable containing the balance.</p>
@@ -746,7 +746,7 @@
   frequency: [onEveryBlock$],
   name: &apos;blockNumber$&apos;
 })</bignumber,></p>
-<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/79a5f83/packages/light.js/src/rpc/eth/eth.ts#L67" target="_blank">rpc/eth/eth.ts:67</a></em></p>
+<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/68beba7/packages/light.js/src/rpc/eth/eth.ts#L67" target="_blank">rpc/eth/eth.ts:67</a></em></p>
 <p>Get the current block number.
 <em><strong>returns</strong></em>: *   An Observable containing the block height.</p>
 <hr>
@@ -757,7 +757,7 @@
   name: &apos;defaultAccount$&apos;,
   pipes: () =&gt; [map(accounts =&gt; accounts[0])]
 })</address[],></p>
-<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/79a5f83/packages/light.js/src/rpc/eth/eth.ts#L56" target="_blank">rpc/eth/eth.ts:56</a></em></p>
+<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/68beba7/packages/light.js/src/rpc/eth/eth.ts#L56" target="_blank">rpc/eth/eth.ts:56</a></em></p>
 <p>Get the default account managed by the light client.
 <em><strong>returns</strong></em>: *   An Observable containing the public address of the default account.</p>
 <hr>
@@ -776,7 +776,7 @@
     )
   ]
 })</address,></p>
-<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/79a5f83/packages/light.js/src/rpc/eth/eth.ts#L75" target="_blank">rpc/eth/eth.ts:75</a></em></p>
+<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/68beba7/packages/light.js/src/rpc/eth/eth.ts#L75" target="_blank">rpc/eth/eth.ts:75</a></em></p>
 <p>Shorthand for fetching the current account&apos;s balance.</p>
 <hr>
 <p><a id="syncstatus_"></a></p>
@@ -785,7 +785,7 @@
   frequency: [onSyncingChanged$],
   name: &apos;syncStatus$&apos;
 })</object></p>
-<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/79a5f83/packages/light.js/src/rpc/eth/eth.ts#L94" target="_blank">rpc/eth/eth.ts:94</a></em></p>
+<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/68beba7/packages/light.js/src/rpc/eth/eth.ts#L94" target="_blank">rpc/eth/eth.ts:94</a></em></p>
 <p>Get the syncStatus state.
 <em><strong>returns</strong></em>: *   An Observable containing the syncing state object, or false.</p>
 <hr>
@@ -828,7 +828,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"rpc/eth/eth","level":"1.5.3.1","depth":3,"next":{"title":"rpc/net/net","level":"1.5.3.2","depth":3,"path":"api/modules/_rpc_net_net_.md","ref":"api/modules/_rpc_net_net_.md","articles":[]},"previous":{"title":"RpcObservables","level":"1.5.3","depth":2,"ref":"","articles":[{"title":"rpc/eth/eth","level":"1.5.3.1","depth":3,"path":"api/modules/_rpc_eth_eth_.md","ref":"api/modules/_rpc_eth_eth_.md","articles":[]},{"title":"rpc/net/net","level":"1.5.3.2","depth":3,"path":"api/modules/_rpc_net_net_.md","ref":"api/modules/_rpc_net_net_.md","articles":[]},{"title":"rpc/other/makeContract","level":"1.5.3.3","depth":3,"path":"api/modules/_rpc_other_makecontract_.md","ref":"api/modules/_rpc_other_makecontract_.md","articles":[]},{"title":"rpc/other/post","level":"1.5.3.4","depth":3,"path":"api/modules/_rpc_other_post_.md","ref":"api/modules/_rpc_other_post_.md","articles":[]},{"title":"rpc/parity/parity","level":"1.5.3.5","depth":3,"path":"api/modules/_rpc_parity_parity_.md","ref":"api/modules/_rpc_parity_parity_.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/modules/_rpc_eth_eth_.md","mtime":"2018-08-30T14:36:21.484Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T14:36:24.463Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"rpc/eth/eth","level":"1.5.3.1","depth":3,"next":{"title":"rpc/net/net","level":"1.5.3.2","depth":3,"path":"api/modules/_rpc_net_net_.md","ref":"api/modules/_rpc_net_net_.md","articles":[]},"previous":{"title":"RpcObservables","level":"1.5.3","depth":2,"ref":"","articles":[{"title":"rpc/eth/eth","level":"1.5.3.1","depth":3,"path":"api/modules/_rpc_eth_eth_.md","ref":"api/modules/_rpc_eth_eth_.md","articles":[]},{"title":"rpc/net/net","level":"1.5.3.2","depth":3,"path":"api/modules/_rpc_net_net_.md","ref":"api/modules/_rpc_net_net_.md","articles":[]},{"title":"rpc/other/makeContract","level":"1.5.3.3","depth":3,"path":"api/modules/_rpc_other_makecontract_.md","ref":"api/modules/_rpc_other_makecontract_.md","articles":[]},{"title":"rpc/other/post","level":"1.5.3.4","depth":3,"path":"api/modules/_rpc_other_post_.md","ref":"api/modules/_rpc_other_post_.md","articles":[]},{"title":"rpc/parity/parity","level":"1.5.3.5","depth":3,"path":"api/modules/_rpc_parity_parity_.md","ref":"api/modules/_rpc_parity_parity_.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/modules/_rpc_eth_eth_.md","mtime":"2018-08-30T14:38:45.107Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-30T14:38:47.855Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
