@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="_rpc_parity_parity_.html" />
+    <link rel="next" href="_rpc_parity_parity_.md" />
     
     
     <link rel="prev" href="_rpc_other_makecontract_.html" />
@@ -479,9 +479,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.3.1" data-path="_rpc_eth_eth_.html">
+        <li class="chapter " data-level="1.5.3.1" data-path="_rpc_eth_eth_.md">
             
-                <a href="_rpc_eth_eth_.html">
+                <span>
             
                     
                     rpc/eth/eth
@@ -492,9 +492,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3.2" data-path="_rpc_net_net_.html">
+        <li class="chapter " data-level="1.5.3.2" data-path="_rpc_net_net_.md">
             
-                <a href="_rpc_net_net_.html">
+                <span>
             
                     
                     rpc/net/net
@@ -531,9 +531,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3.5" data-path="_rpc_parity_parity_.html">
+        <li class="chapter " data-level="1.5.3.5" data-path="_rpc_parity_parity_.md">
             
-                <a href="_rpc_parity_parity_.html">
+                <span>
             
                     
                     rpc/parity/parity
@@ -549,23 +549,23 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" >
+        <li class="chapter " data-level="1.5.4" data-path="../../modules/_types_.md">
             
                 <span>
             
                     
                     Types
             
-                </span>
+                </a>
             
 
             
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.4.1" data-path="../interfaces/_types_.frequencyobservable.html">
+        <li class="chapter " data-level="1.5.4.1" data-path="../../interfaces/_types_.frequencyobservable.md">
             
-                <a href="../interfaces/_types_.frequencyobservable.html">
+                <span>
             
                     
                     FrequencyObservable
@@ -576,9 +576,35 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4.2" data-path="../interfaces/_types_.metadata.html">
+        <li class="chapter " data-level="1.5.4.2" data-path="../../interfaces/_types_.frequencyobservableoptions.md">
             
-                <a href="../interfaces/_types_.metadata.html">
+                <span>
+            
+                    
+                    FrequencyObservableOptions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../../interfaces/_types_.makecontract.md">
+            
+                <span>
+            
+                    
+                    MakeContract
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../../interfaces/_types_.metadata.md">
+            
+                <span>
             
                     
                     Metadata
@@ -589,9 +615,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4.3" data-path="../interfaces/_types_.rpcobservable.html">
+        <li class="chapter " data-level="1.5.4.5" data-path="../../interfaces/_types_.rpcobservable.md">
             
-                <a href="../interfaces/_types_.rpcobservable.html">
+                <span>
             
                     
                     RpcObservable
@@ -602,9 +628,22 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4.4" data-path="../interfaces/_types_.txstatus.html">
+        <li class="chapter " data-level="1.5.4.6" data-path="../../interfaces/_types_.rpcobservableoptions.md">
             
-                <a href="../interfaces/_types_.txstatus.html">
+                <span>
+            
+                    
+                    RpcObservableOptions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.7" data-path="../../interfaces/_types_.txstatus.md">
+            
+                <span>
             
                     
                     TxStatus
@@ -717,9 +756,9 @@
                                 
                                 <h1 id="functions">Functions</h1>
 <p><a id="post_"></a></p>
-<h2 id="const-post"><code>&lt;Const&gt;</code> post$</h2>
-<p>&#x25B8; <strong>post$</strong>(tx: <em><a href="_types_.md#tx">Tx</a></em>, options?: <em><code>object</code></em>): <code>any</code></p>
-<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/a68795b/packages/light.js/src/rpc/other/post.ts#L22" target="_blank">rpc/other/post.ts:22</a></em></p>
+<h2 id="post">post$</h2>
+<p>&#x25B8; <strong>post$</strong>(tx: <em><a href="_types_.md#tx">Tx</a></em>, options?: <em><a href="../interfaces/_rpc_other_post_.postoptions.md">PostOptions</a></em>): <code>Observable</code>&lt;<a href="../interfaces/_types_.txstatus.md">TxStatus</a>&gt;</p>
+<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/aab3ee3/packages/light.js/src/rpc/other/post.ts#L26" target="_blank">rpc/other/post.ts:26</a></em></p>
 <p>Post a transaction to the network.</p>
 <p>Calls, in this order, <code>eth_estimateGas</code>, <code>parity_postTransaction</code>, <code>parity_checkRequest</code> and <code>eth_getTransactionReceipt</code> to get the status of the transaction.</p>
 <p><strong>Parameters:</strong></p>
@@ -739,12 +778,12 @@
 </tr>
 <tr>
 <td><code>Default value</code> options</td>
-<td><code>object</code></td>
+<td><a href="../interfaces/_rpc_other_post_.postoptions.md">PostOptions</a></td>
 <td>{}</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Returns:</strong> <code>any</code></p>
+<p><strong>Returns:</strong> <code>Observable</code>&lt;<a href="../interfaces/_types_.txstatus.md">TxStatus</a>&gt;</p>
 <ul>
 <li>The status of the transaction.</li>
 </ul>
@@ -781,7 +820,7 @@
                 </a>
                 
                 
-                <a href="_rpc_parity_parity_.html" class="navigation navigation-next " aria-label="Next page: rpc/parity/parity">
+                <a href="_rpc_parity_parity_.md" class="navigation navigation-next " aria-label="Next page: rpc/parity/parity">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -792,7 +831,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"rpc/other/post","level":"1.5.3.4","depth":3,"next":{"title":"rpc/parity/parity","level":"1.5.3.5","depth":3,"path":"api/modules/_rpc_parity_parity_.md","ref":"api/modules/_rpc_parity_parity_.md","articles":[]},"previous":{"title":"rpc/other/makeContract","level":"1.5.3.3","depth":3,"path":"api/modules/_rpc_other_makecontract_.md","ref":"api/modules/_rpc_other_makecontract_.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/modules/_rpc_other_post_.md","mtime":"2018-09-12T10:56:44.798Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-12T10:56:46.072Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"rpc/other/post","level":"1.5.3.4","depth":3,"next":{"title":"rpc/parity/parity","level":"1.5.3.5","depth":3,"path":"api/modules/_rpc_parity_parity_.md","ref":"api/modules/_rpc_parity_parity_.md","articles":[]},"previous":{"title":"rpc/other/makeContract","level":"1.5.3.3","depth":3,"path":"api/modules/_rpc_other_makecontract_.md","ref":"api/modules/_rpc_other_makecontract_.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/modules/_rpc_other_post_.md","mtime":"2018-09-17T19:24:40.155Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-17T19:24:42.013Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

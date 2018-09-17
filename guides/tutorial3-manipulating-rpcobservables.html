@@ -479,9 +479,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.3.1" data-path="../api/modules/_rpc_eth_eth_.html">
+        <li class="chapter " data-level="1.5.3.1" data-path="../api/modules/_rpc_eth_eth_.md">
             
-                <a href="../api/modules/_rpc_eth_eth_.html">
+                <span>
             
                     
                     rpc/eth/eth
@@ -492,9 +492,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3.2" data-path="../api/modules/_rpc_net_net_.html">
+        <li class="chapter " data-level="1.5.3.2" data-path="../api/modules/_rpc_net_net_.md">
             
-                <a href="../api/modules/_rpc_net_net_.html">
+                <span>
             
                     
                     rpc/net/net
@@ -531,9 +531,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3.5" data-path="../api/modules/_rpc_parity_parity_.html">
+        <li class="chapter " data-level="1.5.3.5" data-path="../api/modules/_rpc_parity_parity_.md">
             
-                <a href="../api/modules/_rpc_parity_parity_.html">
+                <span>
             
                     
                     rpc/parity/parity
@@ -549,23 +549,23 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" >
+        <li class="chapter " data-level="1.5.4" data-path="../modules/_types_.md">
             
                 <span>
             
                     
                     Types
             
-                </span>
+                </a>
             
 
             
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.4.1" data-path="../api/interfaces/_types_.frequencyobservable.html">
+        <li class="chapter " data-level="1.5.4.1" data-path="../interfaces/_types_.frequencyobservable.md">
             
-                <a href="../api/interfaces/_types_.frequencyobservable.html">
+                <span>
             
                     
                     FrequencyObservable
@@ -576,9 +576,35 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4.2" data-path="../api/interfaces/_types_.metadata.html">
+        <li class="chapter " data-level="1.5.4.2" data-path="../interfaces/_types_.frequencyobservableoptions.md">
             
-                <a href="../api/interfaces/_types_.metadata.html">
+                <span>
+            
+                    
+                    FrequencyObservableOptions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../interfaces/_types_.makecontract.md">
+            
+                <span>
+            
+                    
+                    MakeContract
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.4" data-path="../interfaces/_types_.metadata.md">
+            
+                <span>
             
                     
                     Metadata
@@ -589,9 +615,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4.3" data-path="../api/interfaces/_types_.rpcobservable.html">
+        <li class="chapter " data-level="1.5.4.5" data-path="../interfaces/_types_.rpcobservable.md">
             
-                <a href="../api/interfaces/_types_.rpcobservable.html">
+                <span>
             
                     
                     RpcObservable
@@ -602,9 +628,22 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4.4" data-path="../api/interfaces/_types_.txstatus.html">
+        <li class="chapter " data-level="1.5.4.6" data-path="../interfaces/_types_.rpcobservableoptions.md">
             
-                <a href="../api/interfaces/_types_.txstatus.html">
+                <span>
+            
+                    
+                    RpcObservableOptions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.7" data-path="../interfaces/_types_.txstatus.md">
+            
+                <span>
             
                     
                     TxStatus
@@ -722,13 +761,16 @@
 <p>This is what happens with <code>balanceOf$</code>. On every new block, <code>balanceOf$</code> makes a JSONRPC request (<code>eth_getBalance</code>), and the Light Client relays this request to the network. This call has some latency, and the latency is shown with <code>Symbol(Fetching RPC...)</code>.</p>
 <p>Concretely, in your app, a possible UX would be to show a loading spinner while we receive <code>Symbol(Fetching RPC...)</code> from the RpcObservable.</p>
 <h3 id="removing-the-loading-state">Removing the loading state</h3>
-<p>However, if this behavior is not desirable for you, the you can add the <code>withoutLoading</code> options:</p>
+<p>However, if this behavior is not desirable for you, the you can add the <code>withoutLoading</code> operator:</p>
 <pre><code class="lang-javascript">balanceOf$(<span class="hljs-string">&apos;0x407d73d8a49eeb85d32cf465507dd71d507100c1&apos;</span>, {
   withoutLoading: <span class="hljs-literal">true</span>
-}).subscribe(balance =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;balance&apos;</span>, balance));
+})
+  .pipe(withoutLoading())
+  .subscribe(balance =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;balance&apos;</span>, balance));
 </code></pre>
 <p>In this case, the <code>Symbol(Fetching RPC...)</code> will never be logged, and you will only be notified when the balance actually changes.</p>
-<p>See here for a working example: <a href="https://codesandbox.io/s/z6549wqm5l" target="_blank">https://codesandbox.io/s/z6549wqm5l</a></p>
+<p>See here for a working example: <a href="https://codesandbox.io/s/z6549wqm5l" target="_blank">https://codesandbox.io/s/z6549wqm5l</a>.</p>
+<p><code>withoutLoading()</code> here is what we call an RxJS <em>operator</em>. It modifies the result each time an Observable fires. Let&apos;s see some other operators.</p>
 <h2 id="operations-on-observables">Operations on Observables</h2>
 <p>Since <code>@parity/light.js</code> relies heavily on RxJS Observables, all the tools for playing with Observables are available for you to use.</p>
 <h3 id="format-the-balance-nicely">Format the balance nicely</h3>
@@ -823,7 +865,7 @@ blockNumber$()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Tutorial Part 3: Manipulating RpcObservables","level":"1.3.3","depth":2,"next":{"title":"Tutorial Part 4: Send a Transaction","level":"1.3.4","depth":2,"path":"guides/tutorial4-send-a-transaction.md","ref":"guides/tutorial4-send-a-transaction.md","articles":[]},"previous":{"title":"Tutorial Part 2: Our First RpcObservable","level":"1.3.2","depth":2,"path":"guides/tutorial2-our-first-rpcobservable.md","ref":"guides/tutorial2-our-first-rpcobservable.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guides/tutorial3-manipulating-rpcobservables.md","mtime":"2018-09-12T10:51:49.942Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-12T10:56:46.072Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Tutorial Part 3: Manipulating RpcObservables","level":"1.3.3","depth":2,"next":{"title":"Tutorial Part 4: Send a Transaction","level":"1.3.4","depth":2,"path":"guides/tutorial4-send-a-transaction.md","ref":"guides/tutorial4-send-a-transaction.md","articles":[]},"previous":{"title":"Tutorial Part 2: Our First RpcObservable","level":"1.3.2","depth":2,"path":"guides/tutorial2-our-first-rpcobservable.md","ref":"guides/tutorial2-our-first-rpcobservable.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guides/tutorial3-manipulating-rpcobservables.md","mtime":"2018-09-17T19:17:44.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-17T19:24:42.013Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
