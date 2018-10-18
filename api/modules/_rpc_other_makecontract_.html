@@ -265,19 +265,6 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.9" data-path="../../guides/ovewview-of-active-rpcobservables.md">
-            
-                <span>
-            
-                    
-                    Overview of Active RpcObservables
-            
-                </a>
-            
-
-            
-        </li>
-    
 
             </ul>
             
@@ -922,32 +909,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="variables">Variables</h1>
-<p><a id="getcontract"></a></p>
-<h2 id="const-getcontract"><code>&lt;Const&gt;</code> getContract</h2>
-<p><strong>&#x25CF; getContract</strong>: * <code>(Anonymous function)</code> &amp; <code>Memoized</code>&lt;<code>(Anonymous function)</code>&gt;</p>
-<ul>
-<li>=  memoizee(
-(address: Address, abiJson: any[], api: any) =&gt;
-  api.newContract(abiJson, address), // use types from @parity/abi
-)</li>
-</ul>
-<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/9e711c3/packages/light.js/src/rpc/other/makeContract.ts#L35" target="_blank">rpc/other/makeContract.ts:35</a></em></p>
-<p>Cache contracts, so that they are:</p>
-<ul>
-<li>only created after the first call/transaction to a contract has been made</li>
-<li>further calls/transactions to the same contract doesn&apos;t recreate the contract
-<em><strong>param</strong></em>: The contract address.</li>
-</ul>
-<p><em><strong>param</strong></em>: The contract abi.</p>
-<p><em><strong>param</strong></em>: The api Object.</p>
-<p><em><strong>returns</strong></em>: *   The contract object as defined in @parity/api.</p>
-<hr>
-<h1 id="functions">Functions</h1>
+                                <h1 id="functions">Functions</h1>
 <p><a id="makecontract-1"></a></p>
 <h2 id="const-makecontract"><code>&lt;Const&gt;</code> makeContract</h2>
 <p>&#x25B8; <strong>makeContract</strong>(address: <em><a href="_types_.html#address">Address</a></em>, abiJson: <em><code>any</code>[]</em>, options?: <em><code>object</code></em>): <a href="../interfaces/_rpc_other_makecontract_.makecontract.html">MakeContract</a></p>
-<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/9e711c3/packages/light.js/src/rpc/other/makeContract.ts#L118" target="_blank">rpc/other/makeContract.ts:118</a></em></p>
+<p><em>Defined in <a href="https://github.com/paritytech/js-libs/blob/46c1ecd/packages/light.js/src/rpc/other/makeContract.ts#L119" target="_blank">rpc/other/makeContract.ts:119</a></em></p>
 <p>Create a contract.</p>
 <p><strong>Parameters:</strong></p>
 <table>
@@ -1030,7 +996,7 @@ function resolves.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"rpc/other/makeContract","level":"1.5.3.3","depth":3,"next":{"title":"MakeContract","level":"1.5.3.3.1","depth":4,"path":"api/interfaces/_rpc_other_makecontract_.makecontract.md","ref":"api/interfaces/_rpc_other_makecontract_.makecontract.md","articles":[]},"previous":{"title":"rpc/net","level":"1.5.3.2","depth":3,"path":"api/modules/_rpc_net_.md","ref":"api/modules/_rpc_net_.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/modules/_rpc_other_makecontract_.md","mtime":"2018-09-20T13:26:29.471Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-20T13:26:30.747Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"rpc/other/makeContract","level":"1.5.3.3","depth":3,"next":{"title":"MakeContract","level":"1.5.3.3.1","depth":4,"path":"api/interfaces/_rpc_other_makecontract_.makecontract.md","ref":"api/interfaces/_rpc_other_makecontract_.makecontract.md","articles":[]},"previous":{"title":"rpc/net","level":"1.5.3.2","depth":3,"path":"api/modules/_rpc_net_.md","ref":"api/modules/_rpc_net_.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/modules/_rpc_other_makecontract_.md","mtime":"2018-10-18T08:44:29.079Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-18T08:44:30.231Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
