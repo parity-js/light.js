@@ -25,8 +25,8 @@
     utf8 "^2.1.2"
 
 "@parity/api@^2.1.23":
-  version "2.1.23"
-  resolved "https://registry.yarnpkg.com/@parity/api/-/api-2.1.23.tgz#c9cba0d64085cd03fafc69d1bd5b53cbabd0c280"
+  version "2.1.24"
+  resolved "https://registry.yarnpkg.com/@parity/api/-/api-2.1.24.tgz#e04ca177598354b435b83c8cfe7c7c3672bf3e44"
   dependencies:
     "@parity/abi" "~2.1.4"
     "@parity/jsonrpc" "2.1.x"
