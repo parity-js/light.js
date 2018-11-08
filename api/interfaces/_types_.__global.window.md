@@ -12,7 +12,7 @@
 
 **● parity**: *`any`*
 
-*Defined in [types.ts:14](https://github.com/paritytech/js-libs/blob/2fed21b/packages/light.js/src/types.ts#L14)*
+*Defined in [types.ts:14](https://github.com/paritytech/js-libs/blob/faeb5d0/packages/light.js/src/types.ts#L14)*
 
 ___
 
